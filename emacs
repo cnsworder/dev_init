@@ -2,6 +2,16 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
+
+(if (not (package-installed-p `markdown-mode))
+    (package-install `markdown-mode))
+(if (not (package-installed-p `company))
+    (package-install `company))
+(if (not (package-installed-p `markdown-mode))
+    (package-install `markdown-mode))
+(if (not (package-installed-p `sr-speedbar))
+    (package-install `sr-speedbar))
+
 (add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")
 (autoload 'company-mode "company" nil t)
 (load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
