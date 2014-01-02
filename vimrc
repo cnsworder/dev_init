@@ -19,7 +19,12 @@ Bundle 'vim-airline'
 Bundle 'ctrlp.vim'
 
 syntax on
-colorscheme torte
+if has('gui_runing')
+    colorscheme torte
+else
+    colorscheme ron
+enif
+
 set guifont=文泉驿等宽微米黑\ Bold\ 12
 
 set nobackup
