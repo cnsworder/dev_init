@@ -17,6 +17,7 @@ Bundle 'clang-complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-airline'
 Bundle 'ctrlp.vim'
+"Bundle 'snipMate'
 
 syntax on
 colorscheme torte
