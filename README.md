@@ -3,10 +3,11 @@
 
 配置方法
 --------    
-    ```
-       git clone git@github.com:cnsworder/crossword  
-       ./init.sh
-    ```
+
+```
+    git clone git@github.com:cnsworder/crossword  
+    ./init.sh
+ ```
    
 
 说明
