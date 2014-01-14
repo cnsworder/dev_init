@@ -14,7 +14,7 @@
 -----
 
   vim使用vundle进行包管理  
-  emacs使用elpa进行包管理 
+  emacs使用elpa进行包管理  
   配置说明:[cnsworder Blog] [1]   
   
 mail:[cnsworder@gmail.com](mailto:cnsowrder@gmail.com)
