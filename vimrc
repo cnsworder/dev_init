@@ -59,3 +59,4 @@ let g:clang_user_options="-fexceptions -I/usr/include -I/usr/local/include"
 "let g:syntastic_c_cflags_file=".clang_complete"
 let g:airline#extension#tabline#enabled = 1
 "let g:ctrlp_cmd = 'CtrlPBuffer'
+nmap <C-f> :FufBuffer <cr>
