@@ -17,13 +17,14 @@ Bundle 'clang-complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-airline'
 Bundle 'ctrlp.vim'
+Bundle 'molokai'
 "Bundle 'snipMate'
 
 syntax on
 if has('gui_runing')
     colorscheme torte
 else
-    colorscheme ron
+    colorscheme molokai
 endif
 
 set guifont=文泉驿等宽微米黑\ Bold\ 12
