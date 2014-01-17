@@ -11,6 +11,8 @@
     (package-install `markdown-mode))
 (if (not (package-installed-p `sr-speedbar))
     (package-install `sr-speedbar))
+(if (not (package-installed-p `molokai))
+    (package-install `molokai))
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
@@ -32,11 +34,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(custom-enabled-themes (quote (manoj-dark)))
+ '(custom-enabled-themes (quote (molokai)))
  '(ecb-options-version "2.40")
  '(ecb-source-path (quote (("/" "/"))))
  '(ede-project-directories (quote ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder"))))
-(set-default-font "文泉驿等宽正黑 Bold 12")
+(set-default-font "WenQuanYi Micro Hei")
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
