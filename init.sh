@@ -36,4 +36,4 @@ chsh `which zsh`
 ln -s ./crossword/emacs ~/.emacs 
 ln -s ./crossword/vimrc ~/.vimrc
 
-read -p "Init finish..."
+read -p "Init finish..." value
