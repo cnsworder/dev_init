@@ -15,7 +15,7 @@ elif [ -x /usr/bin/yum ]; then
 elif [ -x /usr/bin/emerge ]; then
     PM=emerge
     PM_INSTALL=
-    OS=redhat
+    OS=gentoo
 fi
 
 echo "OS: $OS"
