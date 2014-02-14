@@ -4,13 +4,17 @@ if [ -x /usr/bin/pacman ];then
     PM=${PM:=pacman}
     PM_INSTALL=-S
     OS=arch
-else if [ -x /usr/bin/apt-get ];then
+elif [ -x /usr/bin/apt-get ];then
     PM=apt-get
     PM_INSTALL=install
     OS=debian
-else if [ -x /usr/bin/rpm ]; then
-    PM=rpm
+elif [ -x /usr/bin/yum ]; then
+    PM=yum
     PM_INSTALL=install
+    OS=redhat
+elif [ -x /usr/bin/emerge ]; then
+    PM=emerge
+    PM_INSTALL=
     OS=redhat
 fi
 
