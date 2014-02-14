@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# author: cnsworder
+# email: cnsworder@gmail.com
+# date: 2014--2-14
 
 if [ -x /usr/bin/pacman ];then
     PM=${PM:=pacman}
