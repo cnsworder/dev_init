@@ -13,11 +13,15 @@
     (package-install `sr-speedbar))
 (if (not (package-installed-p `molokai))
     (package-install `molokai))
+(if (not (package-installed-p `tabbar))
+    (package-install `tabbar))
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
 (add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")
+(require `tabbar)
+(tabbar-mode t)
 (autoload 'company-mode "company" nil t)
 (load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
 (require 'ecb)
