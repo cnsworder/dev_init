@@ -50,3 +50,9 @@
  ;; If there is more than one, they won't work right.
  )
 (set-cursor-color "White")
+
+(add-hook  'markdown-mode-hook 
+    (lambda ( )
+     (message "Test")
+      (global-set-key (kbd "C-c p") 'markdown-preview)))
+

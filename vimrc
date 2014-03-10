@@ -52,7 +52,7 @@ set laststatus=2
 "let g:Powerline_symbols = 'unicode'
 
 let g:clang_complete_copen=1
-let g:clang_periodic_quickfix=1
+let g:clang_periodic_quickfix=0
 let g:clang_sinppets=1
 let g:clang_close_preview=1
 let g:clang_user_library=1
