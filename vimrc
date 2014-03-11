@@ -61,3 +61,5 @@ let g:clang_user_options="-fexceptions -I/usr/include -I/usr/local/include"
 let g:airline#extension#tabline#enabled = 1
 "let g:ctrlp_cmd = 'CtrlPBuffer'
 nmap <C-f> :FufBuffer <cr>
+
+"BundleUpdate

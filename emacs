@@ -56,3 +56,4 @@
      (message "Test")
       (global-set-key (kbd "C-c p") 'markdown-preview)))
 
+;;(package-menu-mark-upgrades)
