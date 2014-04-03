@@ -21,10 +21,13 @@ Bundle 'molokai'
 "Bundle 'snipMate'
 
 syntax on
-if has('gui_runing')
-    colorscheme torte
+colorscheme molokai
+
+if has("gui_running")
+    set guioptions-=T    
 else
-    colorscheme molokai
+    set t_Co=256
+"    colorscheme molokai
 endif
 
 set guifont=文泉驿等宽微米黑\ Bold\ 12
