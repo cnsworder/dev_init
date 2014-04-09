@@ -18,6 +18,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'vim-airline'
 Bundle 'ctrlp.vim'
 Bundle 'molokai'
+Bundle 'Keithbsmiley/investigate.vim'
 "Bundle 'snipMate'
 
 syntax on

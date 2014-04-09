@@ -26,7 +26,7 @@ echo "using Package Manager $PM"
 
 echo "Installing packages..."
 
-PACKAGES=vim emacs tmux python ctags cscope curl aria2 zsh
+PACKAGES=vim emacs tmux python ctags cscope curl aria2 zsh zeal-git
 
 yes | ${PM} ${PM_INSTALL} ${PACKAGES}
 

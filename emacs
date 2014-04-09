@@ -1,37 +1,3 @@
-(require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(package-initialize)
-
-(if (not (package-installed-p `markdown-mode))
-    (package-install `markdown-mode))
-(if (not (package-installed-p `company))
-    (package-install `company))
-(if (not (package-installed-p `markdown-mode))
-    (package-install `markdown-mode))
-(if (not (package-installed-p `sr-speedbar))
-    (package-install `sr-speedbar))
-(if (not (package-installed-p `molokai))
-    (package-install `molokai))
-(if (not (package-installed-p `tabbar))
-    (package-install `tabbar))
-
-(setq-default tab-width 4)
-(setq-default indent-tabs-mode nil)
-
-(add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")
-(require `tabbar)
-(tabbar-mode t)
-(autoload 'company-mode "company" nil t)
-(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
-(require 'ecb)
-;;(require 'auto-complete)
-(require 'company nil t)
-(require 'company-clang)
-(require 'sr-speedbar)
-(setq company-idle-delay t)
-(company-mode)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -51,9 +17,49 @@
  )
 (set-cursor-color "White")
 
+(if window-system
+   (tool-bar-mode 0))
 (add-hook  'markdown-mode-hook 
     (lambda ( )
      (message "Test")
       (global-set-key (kbd "C-c p") 'markdown-preview)))
 
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
+
+(add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")
+(require `tabbar)
+(tabbar-mode t)
+(autoload 'company-mode "company" nil t)
+(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
+(require 'ecb)
+;;(require 'auto-complete)
+(require 'company nil t)
+(require 'company-clang)
+(require 'sr-speedbar)
+(setq company-idle-delay t)
+(company-mode)
+(global-set-key  (kbd "C-c d") 'zeal-at-point)
+
+
 ;;(package-menu-mark-upgrades)
+
+(require 'package)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(package-initialize)
+
+(if (not (package-installed-p `markdown-mode))
+    (package-install `markdown-mode))
+(if (not (package-installed-p `company))
+    (package-install `company))
+(if (not (package-installed-p `markdown-mode))
+    (package-install `markdown-mode))
+(if (not (package-installed-p `sr-speedbar))
+    (package-install `sr-speedbar))
+(if (not (package-installed-p `molokai-theme))
+    (package-install `molokai-theme))
+(if (not (package-installed-p `tabbar))
+    (package-install `tabbar))
+(if (not (package-installed-p `zeal-at-point))
+    (package-install `zeal-at-point))
