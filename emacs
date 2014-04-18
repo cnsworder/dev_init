@@ -8,7 +8,7 @@
  '(ecb-options-version "2.40")
  '(ecb-source-path (quote (("/" "/"))))
  '(ede-project-directories (quote ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder"))))
-(set-default-font "WenQuanYi Micro Hei")
+(set-default-font "文泉驿等宽正黑" 12)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
