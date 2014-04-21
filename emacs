@@ -21,11 +21,14 @@
    (tool-bar-mode 0))
 (add-hook  'markdown-mode-hook 
     (lambda ( )
-     (message "Test")
       (global-set-key (kbd "C-c p") 'markdown-preview)))
+(add-hook 'c-mode-hook
+    (lambda ()
+    ¦   (c-set-style "K&R")))
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
+(setq c-basic-offset 4)
 
 (add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")
 (require `tabbar)
