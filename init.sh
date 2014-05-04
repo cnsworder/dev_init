@@ -40,7 +40,15 @@ chsh `which zsh`
 #    echo "export EDITOR=vim" >> /etc/profile
 #fi
 
-ln -s ./crossword/emacs ~/.emacs 
-ln -s ./crossword/vimrc ~/.vimrc
+ln -s ./emacs ~/.emacs 
+ln -s ./vimrc ~/.vimrc
+
+if [ ! -d ~/.pip ]; then
+    mkdir ~/.pip
+elif [ -e ~/.pip/pip.conf ]; then
+    mv ~/.pip/pip.conf ~/.pip/pip.conf.old  
+fi
+
+ln -s ./pip.conf ~/.pip/pip.conf
 
 read endf -p "Init finish..."
