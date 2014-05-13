@@ -6,6 +6,7 @@
 
 ```
     git clone git@github.com:cnsworder/crossword  
+    cd crossword
     ./init.sh
  ```
    
