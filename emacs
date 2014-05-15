@@ -74,6 +74,7 @@
 
 (require 'evil)
 (evil-mode 1)
+(setq evil-default-state 'emacs)
 
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
