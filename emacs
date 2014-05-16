@@ -25,6 +25,8 @@
 (add-hook 'c-mode-hook
     (lambda ()
     ¦   (c-set-style "K&R")))
+(add-hook 'python-mode-hook
+    'anaconda-mode)
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
@@ -56,6 +58,8 @@
     (package-install 'evil))
 (if (not (package-installed-p 'smex))
     (package-install 'smex))
+(if (not (package-installed-p 'anaconda-mode))
+    (package-install 'anaconda-mode))
 
 (add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")
 (require `tabbar)
