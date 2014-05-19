@@ -1,26 +1,28 @@
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'The-NERD-tree'
-Bundle 'Tagbar'
-Bundle 'git://github.com/Lokaltog/vim-powerline.git'
-Bundle 'git://github.com/terryma/vim-multiple-cursors.git'
-"Bundle 'OmniCppComplete'
-Bundle 'a.vim'
-"Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'Yggdroot/indentLine'
-"Bundle 'minibufexpl.vim'
-Bundle 'clang-complete'
-"Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/syntastic'
-Bundle 'vim-airline'
-Bundle 'ctrlp.vim'
-Bundle 'molokai'
-Bundle 'Keithbsmiley/investigate.vim'
-"Bundle 'snipMate'
+Plugin 'gmarik/vundle'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'The-NERD-tree'
+Plugin 'Tagbar'
+Plugin 'git://github.com/Lokaltog/vim-powerline.git'
+Plugin 'git://github.com/terryma/vim-multiple-cursors.git'
+"Plugin 'OmniCppComplete'
+Plugin 'a.vim'
+"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
+"Plugin 'minibufexpl.vim'
+Plugin 'clang-complete'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-airline'
+Plugin 'ctrlp.vim'
+Plugin 'molokai'
+Plugin 'Keithbsmiley/investigate.vim'
+"Plugin 'snipMate'
+
+call vundle#end()
 
 syntax on
 colorscheme molokai
@@ -67,4 +69,4 @@ let g:airline#extension#tabline#enabled = 1
 "let g:ctrlp_cmd = 'CtrlPBuffer'
 nmap <C-f> :FufBuffer <cr>
 
-"BundleUpdate
+"PluginUpdate
