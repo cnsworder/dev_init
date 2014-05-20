@@ -153,6 +153,7 @@ do
          ;;
       ?)
          echo "Unkow option..."
+         exit -1
          ;;
     esac
 done
