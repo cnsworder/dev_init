@@ -7,8 +7,17 @@
 ```
     git clone git@github.com:cnsworder/crossword  
     cd crossword
-    ./init.sh
- ```
+    ./init.sh -a
+```
+
+### 选项
+
++ -e 配置emacs
++ -v 配置vim
++ -p 配置python
++ -k 安装软件包
++ -x 安装X11软件包
++ -a 所有都配置
    
 
 说明
