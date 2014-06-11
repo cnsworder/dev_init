@@ -76,7 +76,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-(set-default-font "monospace-12")
 ;;(setq cjk-font "文泉驿等宽正黑")
 
 ;;暗色主题下光标颜色设置一下
