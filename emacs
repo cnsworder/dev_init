@@ -37,12 +37,14 @@
 (load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
 (require 'ecb)
 (require 'sr-speedbar)
+(require 'eassist)
 ;;(require 'auto-complete)
 
 (require 'company nil t)
 (require 'company-clang)
 (setq company-idle-delay t)
 (company-mode)
+
 (global-set-key  (kbd "C-c d") 'zeal-at-point)
 
 (require 'evil)
@@ -64,7 +66,9 @@
  '(ecb-options-version "2.40")
  '(ecb-source-path (quote (("/" "/"))))
  '(ede-project-directories (quote ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder"))))
+
 (set-default-font "文泉驿等宽正黑" 12)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -72,6 +76,8 @@
  ;; If there is more than one, they won't work right.
  )
 
+(set-default-font "monospace-12")
+;;(setq cjk-font "文泉驿等宽正黑")
 
 ;;暗色主题下光标颜色设置一下
 (set-cursor-color "White")

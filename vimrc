@@ -31,10 +31,11 @@ if has("gui_running")
     set guioptions-=T    
 else
     set t_Co=256
-"    colorscheme molokai
+    colorscheme molokai
 endif
 
-set guifont=文泉驿等宽微米黑\ Bold\ 12
+"set guifont=文泉驿等宽微米黑\ 12
+set guifont=DejaVu\ Sans\ Mono\ 12
 
 set nobackup
 set tabstop=4
