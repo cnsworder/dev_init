@@ -20,6 +20,7 @@ Plugin 'vim-airline'
 Plugin 'ctrlp.vim'
 Plugin 'molokai'
 Plugin 'Keithbsmiley/investigate.vim'
+"Plugin 'FriedSock/smeargle'
 "Plugin 'snipMate'
 
 call vundle#end()
