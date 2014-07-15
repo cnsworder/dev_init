@@ -1,3 +1,5 @@
+filetype off
+
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
@@ -25,8 +27,13 @@ Plugin 'scrooloose/nerdcommenter'
 "Plugin 'FriedSock/smeargle'
 "Plugin 'snipMate'
 "Plugin 'OmniCppComplete'
+Plugin 'mbbill/undotree'
+Plugin 'vim-scripts/UltiSnips'
+"Plugin 'garbas/vim-snipmate'
 
 call vundle#end()
+
+filetype plugin indent on
 
 syntax on
 colorscheme molokai
@@ -82,5 +89,10 @@ let g:clang_user_options="-fexceptions -I/usr/include -I/usr/local/include"
 "let g:ctrlp_cmd = 'CtrlPBuffer'
 
 nmap <C-f> :FufBuffer <cr>
+nnoremap <F5> :UndotreeToggle <cr>
+nnoremap <F3> :NERDTreeToggle <cr>
+nnoremap <F4> :TagbarToggle <cr>
+nnoremap <F10> :PluginUpdate <cr>
+nnoremap <F2> :e <cr>
 
 "PluginUpdate
