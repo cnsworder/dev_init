@@ -38,6 +38,8 @@ filetype plugin indent on
 syntax on
 colorscheme molokai
 
+let mapleader=";"
+
 if has("gui_running")
     set guioptions-=T    
 else
@@ -94,5 +96,9 @@ nnoremap <F3> :NERDTreeToggle <cr>
 nnoremap <F4> :TagbarToggle <cr>
 nnoremap <F10> :PluginUpdate <cr>
 nnoremap <F2> :e <cr>
+nmap <silent> <leader>z :q <cr>
+nmap <silent> <leader>w :wq <cr>
 
+nmap <silent> <leader>a :A <cr>
+ 
 "PluginUpdate
