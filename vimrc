@@ -28,9 +28,12 @@ Plugin 'scrooloose/nerdcommenter'
 "Plugin 'snipMate'
 "Plugin 'OmniCppComplete'
 Plugin 'mbbill/undotree'
-Plugin 'vim-scripts/UltiSnips'
-"Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultiSnips'
+Plugin 'honza/vim-snippets'
 
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
 call vundle#end()
 
 filetype plugin indent on
@@ -86,19 +89,22 @@ let g:clang_close_preview=1
 let g:clang_user_library=1
 let g:clang_user_options="-fexceptions -I/usr/include -I/usr/local/include"
 
+
 "let g:syntastic_c_cflags_file=".clang_complete"
 "let g:airline#extension#tabline#enabled = 1
 "let g:ctrlp_cmd = 'CtrlPBuffer'
 
-nmap <C-f> :FufBuffer <cr>
+imap <C-f> <ESC>:FufBuffer <cr>
 nnoremap <F5> :UndotreeToggle <cr>
 nnoremap <F3> :NERDTreeToggle <cr>
 nnoremap <F4> :TagbarToggle <cr>
 nnoremap <F10> :PluginUpdate <cr>
-nnoremap <F2> :e <cr>
-nmap <silent> <leader>z :q <cr>
-nmap <silent> <leader>w :wq <cr>
 
+nmap <silent> <leader>f :FufBuffer <cr>
+nmap <silent> <leader>q :q <cr>
+nmap <silent> <leader>w :w <cr>
 nmap <silent> <leader>a :A <cr>
+
+"nerdcommment <leader>cc <leader>cu
  
 "PluginUpdate
