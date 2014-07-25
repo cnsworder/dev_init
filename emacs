@@ -26,6 +26,8 @@
     (package-install 'smex))
 (if (not (package-installed-p 'anaconda-mode))
     (package-install 'anaconda-mode))
+(if (not (package-installed-p 'yasnippet))
+    (package-install 'yasnippet))
 
 ;; 插件载入路径
 (add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")
@@ -53,6 +55,9 @@
 
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
+
+(require `yasnippet)
+(yas-global-mode)
 
 ;; 设置样式
 (custom-set-variables
