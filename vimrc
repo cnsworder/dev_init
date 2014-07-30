@@ -134,6 +134,7 @@ nmap <silent> <leader>f :FufBuffer <cr>
 nmap <silent> <leader>q :q <cr>
 nmap <silent> <leader>w :w <cr>
 nmap <silent> <leader>a :A <cr>
+nmap <silent> <leader>d :TaskList <cr>
 
 nmap <Leader> <Plug>(easymotion-prefix)
 nmap / <Plug>(easymotion-sn)
