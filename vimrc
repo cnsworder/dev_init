@@ -12,8 +12,6 @@ Plugin 'bling/vim-airline'
 "Plugin 'Lokaltog/vim-powerline.git'
 Plugin 'terryma/vim-multiple-cursors.git'
 Plugin 'a.vim'
-"Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'Yggdroot/indentLine'
 Plugin 'minibufexpl.vim'
 Plugin 'clang-complete'
 "Plugin 'Valloric/YouCompleteMe'
@@ -30,10 +28,16 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'mbbill/undotree'
 Plugin 'SirVer/ultiSnips'
 Plugin 'honza/vim-snippets'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'TaskList.vim'
+"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
+Plugin 'kien/rainbow_parentheses.vim'
 
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'tomtom/tlib_vim'
 "Plugin 'garbas/vim-snipmate'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -73,6 +77,32 @@ set autoindent
 "let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_sep = '<'
 "let g:airline#extensions#tabline#right_sep = '>'
+"
+
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
@@ -104,6 +134,12 @@ nmap <silent> <leader>f :FufBuffer <cr>
 nmap <silent> <leader>q :q <cr>
 nmap <silent> <leader>w :w <cr>
 nmap <silent> <leader>a :A <cr>
+
+nmap <Leader> <Plug>(easymotion-prefix)
+nmap / <Plug>(easymotion-sn)
+nmap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 "nerdcommment <leader>cc <leader>cu
  
