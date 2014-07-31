@@ -56,6 +56,9 @@
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
 
+(require 'ido)
+(ido-mode t)
+
 (require `yasnippet)
 (yas-global-mode)
 
