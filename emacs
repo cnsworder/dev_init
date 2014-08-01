@@ -1,5 +1,12 @@
-;;设置插件服务器
+;; file emacs
+;; author cnsworder, cnsworder@gmail.com
 
+;;(if (<= emacs-major-version 23)
+;;    
+;;    )
+
+
+;;设置插件服务器
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
@@ -64,6 +71,8 @@
 
 (require `yasnippet)
 (yas-global-mode)
+
+(cscope-minor-mode t)
 
 ;; 设置样式
 (custom-set-variables
