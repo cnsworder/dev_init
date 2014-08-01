@@ -1,33 +1,38 @@
 ;;设置插件服务器
-;;(package-menu-mark-upgrades)
+
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
-;;查找我用的包有没有安装
-(if (not (package-installed-p 'markdown-mode))
-    (package-install 'markdown-mode))
-(if (not (package-installed-p 'company))
-    (package-install 'company))
-(if (not (package-installed-p 'markdown-mode))
-    (package-install 'markdown-mode))
-(if (not (package-installed-p 'sr-speedbar))
-    (package-install 'sr-speedbar))
-(if (not (package-installed-p 'molokai-theme))
-    (package-install 'molokai-theme))
-(if (not (package-installed-p 'tabbar))
-    (package-install 'tabbar))
-(if (not (package-installed-p 'zeal-at-point))
-    (package-install 'zeal-at-point))
-(if (not (package-installed-p 'evil))
-    (package-install 'evil))
-(if (not (package-installed-p 'smex))
-    (package-install 'smex))
-(if (not (package-installed-p 'anaconda-mode))
-    (package-install 'anaconda-mode))
-(if (not (package-installed-p 'yasnippet))
-    (package-install 'yasnippet))
+(defun cn-set-package ()
+    "安装插件"
+    (interactive)
+    ;;(package-menu-mark-upgrades)
+
+    ;;查找我用的包有没有安装
+    (if (not (package-installed-p 'markdown-mode))
+        (package-install 'markdown-mode))
+    (if (not (package-installed-p 'company))
+        (package-install 'company))
+    (if (not (package-installed-p 'markdown-mode))
+        (package-install 'markdown-mode))
+    (if (not (package-installed-p 'sr-speedbar))
+        (package-install 'sr-speedbar))
+    (if (not (package-installed-p 'molokai-theme))
+        (package-install 'molokai-theme))
+    (if (not (package-installed-p 'tabbar))
+        (package-install 'tabbar))
+    (if (not (package-installed-p 'zeal-at-point))
+        (package-install 'zeal-at-point))
+    (if (not (package-installed-p 'evil))
+        (package-install 'evil))
+    (if (not (package-installed-p 'smex))
+        (package-install 'smex))
+    (if (not (package-installed-p 'anaconda-mode))
+        (package-install 'anaconda-mode))
+    (if (not (package-installed-p 'yasnippet))
+        (package-install 'yasnippet))）
 
 ;; 插件载入路径
 (add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")
@@ -46,8 +51,6 @@
 (require 'company-clang)
 (setq company-idle-delay t)
 (company-mode)
-
-(global-set-key  (kbd "C-c d") 'zeal-at-point)
 
 (require 'evil)
 (evil-mode 1)
@@ -102,17 +105,26 @@
     ¦   (c-set-style "K&R")))
 (add-hook 'python-mode-hook
     'anaconda-mode)
-
 ;;设置缩进
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 (setq c-basic-offset 4)
 
-;;避免输入法切换冲突
-(global-unset-key (kbd "C-SPC"))
 
-;;快捷键设置
-(global-set-key (kbd "<f3>") 'sr-speedbar-toggle)
-(global-set-key (kbd "<f4>") 'eshell)
-;;(global-set-key (kbd "<f5>") '(shell-command '"astyle --style=kr"))
-(global-set-key (kbd "<f2>") 'revert-buffer)
+(defun cn-set-key () 
+   "设置快捷键"
+   
+   (interactive)
+
+   ;;避免输入法切换冲突
+   (global-unset-key (kbd "C-SPC"))
+   
+   ;;快捷键设置
+   (global-set-key (kbd "<f3>") 'sr-speedbar-toggle)
+   (global-set-key (kbd "<f4>") 'eshell)
+   ;;(global-set-key (kbd "<f5>") '(shell-command '"astyle --style=kr"))
+   (global-set-key (kbd "<f2>") 'revert-buffer))
+   
+   (global-set-key  (kbd "C-c d") 'zeal-at-point)
+
+(cn-set-key)
