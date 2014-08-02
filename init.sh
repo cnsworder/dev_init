@@ -21,17 +21,17 @@ function init_package() {
         PM_INSTALL=-S
         OS=arch
         yes | pacman -Syu
-        elif [ -x /usr/bin/apt-get ];then
+    elif [ -x /usr/bin/apt-get ];then
         PM=apt-get
         PM_INSTALL=install
         OS=debian
         yes | apt-get update; apt-get upgrade
-        elif [ -x /usr/bin/yum ]; then
+    elif [ -x /usr/bin/yum ]; then
         PM=yum
         PM_INSTALL=install
         OS=redhat
         yes | yum update
-        elif [ -x /usr/bin/emerge ]; then
+    elif [ -x /usr/bin/emerge ]; then
         PM=emerge
         PM_INSTALL=
         OS=gentoo
@@ -49,7 +49,7 @@ function init_package() {
 
 function init_xpackage() {
     if [[ $# == 1 ]]; then
-       if [[ "$1" = "gui" ]]; then 
+       if [[ "$1" == "gui" ]]; then 
           echo "Install X Appliaction..."
           yes | ${PM} ${PM_INSTALL} ${XPACKAGES}
        fi
@@ -74,7 +74,8 @@ function init_shell() {
 
 function init_emacs() {
     echo "Configing emacs..."
-#    ln -s ./emacs ~/.emacs
+# TODO: 检查emacs版本，24以下安装ELPA
+    ln -s ./emacs ~/.emacs
 }
 
 
@@ -159,4 +160,3 @@ do
 done
 
 main
-
