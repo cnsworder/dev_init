@@ -1,9 +1,9 @@
 ;; file emacs
 ;; author cnsworder, cnsworder@gmail.com
 
-;;(if (<= emacs-major-version 23)
-;;    
-;;    )
+;; 23以前的版本需要elpa包
+(if (<= emacs-major-version 23)
+   (add-to-list 'load-path "./elpa"))
 
 
 ;;设置插件服务器
@@ -114,10 +114,13 @@
     ¦   (c-set-style "K&R")))
 (add-hook 'python-mode-hook
     'anaconda-mode)
+
 ;;设置缩进
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 (setq c-basic-offset 4)
+
+(global-linum-mode)
 
 
 (defun cn-set-key () 

@@ -15,6 +15,8 @@ INIT_PACKAGE=false
 INIT_XPACKAGE=false
 INIT_PYTHON=false
 
+THIS_PATH=$(realpath .)
+
 function init_package() {
     if [ -x /usr/bin/pacman ];then
         PM=${PM:=pacman}
@@ -59,7 +61,7 @@ function init_xpackage() {
 function init_vim() {
     echo "Configing vim..."
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
-    ln -s ./vimrc ~/.vimrc
+    ln -s ${THIS_PATH}/vimrc ~/.vimrc
     #if [[ `id -u` == 0 ]]; then
     #    echo "export EDITOR=vim" >> /etc/profile
     #fi
@@ -74,8 +76,14 @@ function init_shell() {
 
 function init_emacs() {
     echo "Configing emacs..."
-# TODO: 检查emacs版本，24以下安装ELPA
-    ln -s ./emacs ~/.emacs
+    MAJOR=emacs --version | head -1 | awk '{print $3}' | awk -F. '{print $1}'
+    
+    if (( ${MAJOR} < 24 )); then
+       echo "emacs version < 24, will install elpa..."
+       git clone https://github.com/technomancy/package.el elpa
+    fi
+    
+    ln -s ${THIS_PATH}/emacs ~/.emacs
 }
 
 
@@ -89,7 +97,7 @@ function init_python() {
         mv ~/.pip/pip.conf ~/.pip/pip.conf.old  
     fi
 
-    ln -s ./pip.conf ~/.pip/pip.conf
+    ln -s ${THIS_PATH}/pip.conf ~/.pip/pip.conf
 
     ${PIP} install ${PYTHON_PACKAGES}
 }
