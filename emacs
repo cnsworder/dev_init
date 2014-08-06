@@ -22,8 +22,8 @@
         (package-install 'markdown-mode))
     (if (not (package-installed-p 'company))
         (package-install 'company))
-    (if (not (package-installed-p 'markdown-mode))
-        (package-install 'markdown-mode))
+    (if (not (package-installed-p 'xcscope))
+        (package-install 'xcscope))
     (if (not (package-installed-p 'sr-speedbar))
         (package-install 'sr-speedbar))
     (if (not (package-installed-p 'molokai-theme))
@@ -38,8 +38,12 @@
         (package-install 'smex))
     (if (not (package-installed-p 'anaconda-mode))
         (package-install 'anaconda-mode))
+    (if (not (package-installed-p 'ecb))
+        (package-install 'ecb))
     (if (not (package-installed-p 'yasnippet))
         (package-install 'yasnippet)))
+
+(cn-set-package)
 
 ;; 插件载入路径
 (add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")
@@ -51,12 +55,12 @@
 (load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
 (require 'ecb)
 (require 'sr-speedbar)
-(require 'eassist)
+;;(require 'eassist)
 ;;(require 'auto-complete)
 
 (require 'company nil t)
 (require 'company-clang)
-(setq company-idle-delay t)
+;;(setq company-idle-delay t)
 (company-mode)
 
 (require 'evil)
@@ -87,7 +91,7 @@
  '(ecb-source-path (quote (("/" "/"))))
  '(ede-project-directories (quote ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder"))))
 
-(set-default-font "文泉驿等宽正黑" 12)
+  (set-default-font "文泉驿等宽正黑" 12)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
