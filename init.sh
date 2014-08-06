@@ -5,6 +5,7 @@
 # version: 1.1
 
 PACKAGES="vim emacs tmux python ctags cscope curl aria2 zsh"
+MANAGES="fabric salt-master"
 XPACKAGES=gvim
 PIP=pip
 PYTHON_PACKAGES=virtualenv
@@ -16,6 +17,8 @@ INIT_XPACKAGE=false
 INIT_PYTHON=false
 
 THIS_PATH=$(realpath .)
+
+IS_ROOT=$(id -u)
 
 function init_package() {
     if [ -x /usr/bin/pacman ];then
@@ -45,6 +48,9 @@ function init_package() {
 
     echo "Installing packages..."
 
+    if [[ "${IS_ROOT}" != "0" ]]; then
+        return
+    fi
     yes | ${PM} ${PM_INSTALL} ${PACKAGES}
 
 }
@@ -99,6 +105,9 @@ function init_python() {
 
     ln -s ${THIS_PATH}/pip.conf ~/.pip/pip.conf
 
+    if [[ "${IS_ROOT}" != "0" ]]; then
+        return
+    fi
     ${PIP} install ${PYTHON_PACKAGES}
 }
 
@@ -123,6 +132,10 @@ function proc() {
 
     if [ ${INIT_PYTHON} == "true" ]; then
         init_python
+    fi
+
+    if [ ${INIT_SHELL} == "true" ]; then
+        init_shell
     fi
 
     echo "Init finish..."
@@ -153,12 +166,18 @@ do
       x)
           INIT_XPACKAGE=true
           ;;
+      s)
+          INIT_SHELL=true
+          ;;
       a)
+          echo "all will configure..."
+
           INIT_VIM=true
           INIT_EMACS=true
           INIT_PYTHON=true
           INIT_PACKAGE=true
           INIT_XPACKAGE=true
+          INIT_SHELL=false
          ;;
       ?)
          echo "Unkow option..."

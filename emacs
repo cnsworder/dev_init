@@ -144,3 +144,4 @@
    (global-set-key  (kbd "C-c d") 'zeal-at-point)
 
 (cn-set-key)
+(setq inhibit-startup-message t)
