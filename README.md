@@ -17,15 +17,17 @@
 + -p 配置python
 + -k 安装软件包
 + -x 安装X11软件包
-+ -a 所有都配置
-   
++ -a 所有配置，不包括zsh
++ -s 安装配置zsh   
 
 说明
 -----
 
-  vim使用vundle进行包管理  
-  emacs使用elpa进行包管理  
-  配置说明:[cnsworder Blog] [1]   
+  + vim使用vundle进行包管理
+  + emacs使用elpa进行包管理  
+  + emacs第一次运行后可以把　`cn-set-package` 注释掉，就不会每次启动都检查是否安装了相应的包了
+  
+  + 配置说明:[cnsworder Blog] [1]   
   
 mail:[cnsworder@gmail.com](mailto:cnsowrder@gmail.com)
 

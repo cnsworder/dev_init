@@ -6,9 +6,9 @@
 
 PACKAGES="vim emacs tmux python ctags cscope curl aria2 zsh"
 MANAGES="fabric salt-master"
-XPACKAGES=gvim
-PIP=pip
-PYTHON_PACKAGES=virtualenv
+XPACKAGES="gvim"
+PIP="pip"
+PYTHON_PACKAGES="virtualenv"
 
 INIT_VIM=false
 INIT_EMACS=false
@@ -16,11 +16,8 @@ INIT_PACKAGE=false
 INIT_XPACKAGE=false
 INIT_PYTHON=false
 
-THIS_PATH=$(realpath .)
+function pre_package() {
 
-IS_ROOT=$(id -u)
-
-function init_package() {
     if [ -x /usr/bin/pacman ];then
         PM=${PM:=pacman}
         PM_INSTALL=-S
@@ -45,12 +42,28 @@ function init_package() {
 
     echo "OS: $OS"
     echo "Package Manager: $PM"
+}
 
+pre_package
+
+if ! which realpath > /dev/null ; then
+   echo "${PM} ${PM_INSTALL} realpath"
+   yes | ${PM} ${PM_INSTALL} realpath 
+fi
+
+THIS_PATH=$(realpath .)
+
+IS_ROOT=$(id -u)
+
+
+function init_package() {
+    
     echo "Installing packages..."
 
     if [[ "${IS_ROOT}" != "0" ]]; then
         return
     fi
+
     yes | ${PM} ${PM_INSTALL} ${PACKAGES}
 
 }
@@ -66,8 +79,17 @@ function init_xpackage() {
 
 function init_vim() {
     echo "Configing vim..."
+
+    if ! which vim > /dev/null; then
+        if [[ "${IS_ROOT}" != "0" ]]; then
+            return
+        fi
+        yes | ${PM} ${PM_INSTALL} vim
+    fi
+    
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
     ln -s ${THIS_PATH}/vimrc ~/.vimrc
+    vim +PluginInstall +qall
     #if [[ `id -u` == 0 ]]; then
     #    echo "export EDITOR=vim" >> /etc/profile
     #fi
@@ -75,6 +97,14 @@ function init_vim() {
 
 function init_shell() {
     echo "Configing Shell, set zsh to default shell..."
+    
+    if ! which zsh > /dev/null; then
+        if [[ "${IS_ROOT}" != "0" ]]; then
+            return
+        fi
+        yes | ${PM} ${PM_INSTALL} zsh
+    fi
+    
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
     chsh `which zsh`
@@ -82,6 +112,12 @@ function init_shell() {
 
 function init_emacs() {
     echo "Configing emacs..."
+    if ! which emacs > /dev/null; then
+        if [[ "${IS_ROOT}" != "0" ]]; then
+            return
+        fi
+        yes | ${PM} ${PM_INSTALL} emacs
+    fi
     MAJOR=emacs --version | head -1 | awk '{print $3}' | awk -F. '{print $1}'
     
     if (( ${MAJOR} < 24 )); then
@@ -97,17 +133,26 @@ function init_python() {
     # python
     echo "Update python environment..."
 
+    if ! which ${PIP} > /dev/null; then
+        if [[ "${IS_ROOT}" != "0" ]]; then
+            return
+        fi
+        yes | ${PM} ${PM_INSTALL} python-${PIP}
+    fi
+
     if [ ! -d ~/.pip ]; then
         mkdir ~/.pip
     elif [ -e ~/.pip/pip.conf ]; then
         mv ~/.pip/pip.conf ~/.pip/pip.conf.old  
     fi
 
-    ln -s ${THIS_PATH}/pip.conf ~/.pip/pip.conf
-
     if [[ "${IS_ROOT}" != "0" ]]; then
         return
     fi
+    
+    ln -s ${THIS_PATH}/pip.conf ~/.pip/pip.conf
+
+
     ${PIP} install ${PYTHON_PACKAGES}
 }
 
@@ -187,3 +232,4 @@ do
 done
 
 main
+
