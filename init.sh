@@ -114,27 +114,27 @@ function init_python() {
 function proc() {
     echo "Begin Configure..."
 
-    if [ ${INIT_VIM} == "true" ]; then
+    if [[ "${INIT_VIM}" == "true" ]]; then
         init_vim
     fi
     
-    if [ ${INIT_EMACS} == "true" ]; then
+    if [[ "${INIT_EMACS}" == "true" ]]; then
         init_emacs
     fi
 
-    if [ ${INIT_PACKAGE} == "true" ]; then
+    if [[ "${INIT_PACKAGE}" == "true" ]]; then
         init_package
     fi
 
-    if [ ${INIT_XPACKAGE} == "true" ]; then
+    if [[ "${INIT_XPACKAGE}" == "true" ]]; then
         init_xpackage
     fi
 
-    if [ ${INIT_PYTHON} == "true" ]; then
+    if [[ "${INIT_PYTHON}" == "true" ]]; then
         init_python
     fi
 
-    if [ ${INIT_SHELL} == "true" ]; then
+    if [[ "${INIT_SHELL}" == "true" ]]; then
         init_shell
     fi
 
