@@ -112,7 +112,7 @@ function init_emacs() {
     
     ln -s ${THIS_PATH}/emacs ~/.emacs
 
-    emacs -f cn-set-package
+    emacs -f cn-set-package -f kill-emacs
 }
 
 
