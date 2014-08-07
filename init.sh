@@ -95,21 +95,6 @@ function init_vim() {
     #fi
 }
 
-function init_shell() {
-    echo "Configing Shell, set zsh to default shell..."
-    
-    if ! which zsh > /dev/null; then
-        if [[ "${IS_ROOT}" != "0" ]]; then
-            return
-        fi
-        yes | ${PM} ${PM_INSTALL} zsh
-    fi
-    
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-    chsh `which zsh`
-}
-
 function init_emacs() {
     echo "Configing emacs..."
     if ! which emacs > /dev/null; then
@@ -126,6 +111,8 @@ function init_emacs() {
     fi
     
     ln -s ${THIS_PATH}/emacs ~/.emacs
+
+    emacs -f cn-set-package
 }
 
 
@@ -154,6 +141,21 @@ function init_python() {
 
 
     ${PIP} install ${PYTHON_PACKAGES}
+}
+
+function init_shell() {
+    echo "Configing Shell, set zsh to default shell..."
+    
+    if ! which zsh > /dev/null; then
+        if [[ "${IS_ROOT}" != "0" ]]; then
+            return
+        fi
+        yes | ${PM} ${PM_INSTALL} zsh
+    fi
+    
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+    chsh `which zsh`
 }
 
 function proc() {

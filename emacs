@@ -43,7 +43,7 @@
     (if (not (package-installed-p 'yasnippet))
         (package-install 'yasnippet)))
 
-(cn-set-package)
+;;(cn-set-package)
 
 ;; 插件载入路径
 (add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")

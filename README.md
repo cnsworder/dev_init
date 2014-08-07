@@ -25,7 +25,6 @@
 
   + vim使用vundle进行包管理
   + emacs使用elpa进行包管理  
-  + emacs第一次运行后可以把　`cn-set-package` 注释掉，就不会每次启动都检查是否安装了相应的包了
   
   + 配置说明:[cnsworder Blog] [1]   
   
