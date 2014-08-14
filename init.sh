@@ -4,7 +4,7 @@
 # date: 2014-02-14
 # version: 1.1
 
-PACKAGES="vim emacs tmux python ctags cscope curl aria2 zsh"
+PACKAGES="vim emacs tmux python ctags cscope curl aria2"
 MANAGES="fabric salt-master"
 XPACKAGES="gvim"
 PIP="pip"
