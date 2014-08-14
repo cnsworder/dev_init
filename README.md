@@ -5,8 +5,8 @@
 --------    
 
 ```
-    git clone git@github.com:cnsworder/crossword  
-    cd crossword
+    git clone git@github.com:cnsworder/dev_init  
+    cd dev_init
     ./init.sh -a
 ```
 
