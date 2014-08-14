@@ -103,7 +103,7 @@ function init_emacs() {
         fi
         yes | ${PM} ${PM_INSTALL} emacs
     fi
-    MAJOR=emacs --version | head -1 | awk '{print $3}' | awk -F. '{print $1}'
+    MAJOR=$(emacs --version | head -1 | awk '{print $3}' | awk -F. '{print $1}')
     
     if (( ${MAJOR} < 24 )); then
        echo "emacs version < 24, will install elpa..."
