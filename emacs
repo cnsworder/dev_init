@@ -41,12 +41,14 @@
     (if (not (package-installed-p 'ecb))
         (package-install 'ecb))
     (if (not (package-installed-p 'yasnippet))
-        (package-install 'yasnippet)))
+        (package-install 'yasnippet))
+    
+    (kill-emacs))
 
 ;;(cn-set-package)
 
 ;; 插件载入路径
-(add-to-list 'load-path "/home/cnsworder/.emacs.d/elpa/company-0.6.12/")
+(add-to-list 'load-path "~/.emacs.d/elpa/company-0.6.12/")
 
 ;;插件的设置
 (require `tabbar)
