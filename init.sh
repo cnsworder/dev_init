@@ -27,7 +27,7 @@ function pre_package() {
         PM=apt-get
         PM_INSTALL=install
         OS=debian
-        yes | apt-get update; apt-get upgrade
+        yes | apt-get update; yes | apt-get upgrade
     elif [ -x /usr/bin/yum ]; then
         PM=yum
         PM_INSTALL=install
