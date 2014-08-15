@@ -158,6 +158,30 @@ function init_shell() {
     chsh `which zsh`
 }
 
+function init_sshd() {
+   echo "Configure ssh server..."
+
+   if [[ "${IS_ROOT}" != "0" ]]; then
+       return
+   fi
+
+cat << EOF >> /etc/ssh/sshd_conf
+UseDNS no
+GatewayPorts yes
+ClientAliveInterval 60
+ClientAliveCountMax 10
+EOF
+
+    systemctl restart sshd || service ssh restart
+}
+
+function init_ssh() {
+    echo "Configure ssh ..."
+    
+    echo "ServerAliveInterval 60" >> ~/.ssh/config
+
+}
+
 function proc() {
     echo "Begin Configure..."
 
@@ -215,6 +239,14 @@ do
           ;;
       s)
           INIT_SHELL=true
+          ;;
+      t)
+          INIT_SSH=true
+          init_ssh
+          ;;
+      h)
+          INIT_SSHD=true
+          init_sshd
           ;;
       a)
           echo "all will configure..."
