@@ -88,8 +88,12 @@ function init_vim() {
     fi
     
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+    
     ln -s ${THIS_PATH}/vimrc ~/.vimrc
+    sed -i "s/\(colorscheme molokai\)/\"\1/g" vimrc
     vim +PluginInstall +qall
+    sed -i "s/\"\(colorscheme molokai\)/\1/g" vimrc
+    
     #if [[ `id -u` == 0 ]]; then
     #    echo "export EDITOR=vim" >> /etc/profile
     #fi
@@ -108,11 +112,13 @@ function init_emacs() {
     if (( ${MAJOR} < 24 )); then
        echo "emacs version < 24, will install elpa..."
        git clone https://github.com/technomancy/package.el elpa
+       #TODO: 经常出错emacs 24一下版本暂时不支持了
+       return
     fi
     
     ln -s ${THIS_PATH}/emacs ~/.emacs
 
-    emacs -f cn-set-package 
+    emacs -nw -f cn-set-package 
 }
 
 
