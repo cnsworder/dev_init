@@ -5,6 +5,7 @@
 # version: 1.1
 
 PACKAGES="vim emacs tmux python ctags cscope curl aria2"
+DEV_PACKAGES="gcc-c++"
 MANAGES="fabric salt-master"
 XPACKAGES="gvim"
 PIP="pip"
@@ -112,7 +113,7 @@ function init_emacs() {
     if (( ${MAJOR} < 24 )); then
        echo "emacs version < 24, will install elpa..."
        git clone https://github.com/technomancy/package.el elpa
-       #TODO: 经常出错emacs 24一下版本暂时不支持了
+       #TODO: 经常出错emacs 24以下版本暂时不支持了
        return
     fi
     
