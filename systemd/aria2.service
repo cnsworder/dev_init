@@ -1,0 +1,12 @@
+[Unit]
+Descript="Aria2"
+After=network.target
+
+[Service]
+Type=forking
+User=%u
+ExecStart=/usr/bin/aria2c  -x 10 -s 10 -j 10 -c --enable-rpc --rpc-allow-origin-all --rpc-listen-all --daemon --dir=/home/cnsworder/Downloads
+
+
+[Install]
+WantedBy=multi-user.target
