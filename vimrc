@@ -27,7 +27,11 @@ Plugin 'scrooloose/nerdcommenter'
 "Plugin 'snipMate'
 "Plugin 'OmniCppComplete'
 Plugin 'mbbill/undotree'
-Plugin 'SirVer/ultiSnips'
+
+if has("python")
+    Plugin 'SirVer/ultiSnips'
+endif
+
 Plugin 'honza/vim-snippets'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'TaskList.vim'
