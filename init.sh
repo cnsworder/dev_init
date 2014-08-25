@@ -175,8 +175,9 @@ function init_sshd() {
 cat << EOF >> /etc/ssh/sshd_conf
 UseDNS no
 GatewayPorts yes
+TCPKeepAlive yes
 ClientAliveInterval 60
-ClientAliveCountMax 10
+ClientAliveCountMax 99999
 EOF
 
     systemctl restart sshd || service ssh restart
