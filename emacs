@@ -93,7 +93,7 @@
  '(ecb-source-path (quote (("/" "/"))))
  '(ede-project-directories (quote ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder"))))
 
-  (set-default-font "文泉驿等宽正黑" 12)
+  (set-default-font "文泉驿等宽正黑-10")
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -141,9 +141,11 @@
    (global-set-key (kbd "<f3>") 'sr-speedbar-toggle)
    (global-set-key (kbd "<f4>") 'eshell)
    ;;(global-set-key (kbd "<f5>") '(shell-command '"astyle --style=kr"))
-   (global-set-key (kbd "<f2>") 'revert-buffer))
-   
+   (global-set-key (kbd "<f2>") 'revert-buffer)
+   (global-set-key (kbd "<f6>") 'linum-mode)
    (global-set-key  (kbd "C-c d") 'zeal-at-point)
+)
+   
 
 (cn-set-key)
 (setq inhibit-startup-message t)

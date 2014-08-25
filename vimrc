@@ -60,7 +60,7 @@ else
 endif
 
 "set guifont=文泉驿等宽微米黑\ 12
-set guifont=DejaVu\ Sans\ Mono\ 12
+set guifont=DejaVu\ Sans\ Mono\ 10
 
 set nobackup
 set tabstop=4
@@ -134,6 +134,7 @@ nnoremap <F5> :UndotreeToggle <cr>
 nnoremap <F3> :NERDTreeToggle <cr>
 nnoremap <F4> :TagbarToggle <cr>
 nnoremap <F10> :PluginUpdate <cr>
+nnoremap <leader>n :set number <cr>
 
 nmap <silent> <leader>f :FufBuffer <cr>
 nmap <silent> <leader>q :q <cr>
