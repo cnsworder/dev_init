@@ -5,7 +5,7 @@
 # version: 1.1
 
 PACKAGES="vim emacs tmux python ctags cscope curl aria2 tig ranger"
-DEV_PACKAGES="gcc-c++"
+DEV_PACKAGES="gcc-c++ clang"
 MANAGES="fabric salt-master"
 XPACKAGES="gvim"
 PIP="pip"
@@ -74,6 +74,17 @@ function init_package() {
 
     yes | ${PM} ${PM_INSTALL} ${PACKAGES}
 
+}
+
+function init_dev() {
+
+    if [[ "${IS_ROOT}" != "0" ]]; then
+        return
+    fi
+
+    update_package
+
+    yes | ${PM} ${PM_INSTALL} ${DEV_PACKAGES}
 }
 
 function init_xpackage() {
@@ -262,6 +273,10 @@ do
       h)
           INIT_SSHD=true
           init_sshd
+          ;;
+      d)
+          INIT_DEV=true
+          init_dev
           ;;
       a)
           echo "all will configure..."
