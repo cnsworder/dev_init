@@ -23,26 +23,31 @@ function pre_package() {
         PM=${PM:=pacman}
         PM_INSTALL=-S
         OS=arch
-        yes | pacman -Syu
+        PM_UPDATE=-Syu
     elif [ -x /usr/bin/apt-get ];then
         PM=apt-get
         PM_INSTALL=install
+        PM_UPDATE=upgrade
         OS=debian
-        yes | apt-get update; yes | apt-get upgrade
+        yes | apt-get update
     elif [ -x /usr/bin/yum ]; then
         PM=yum
         PM_INSTALL=install
+        PM_UPDATE=update
         OS=redhat
-        yes | yum update
     elif [ -x /usr/bin/emerge ]; then
         PM=emerge
         PM_INSTALL=
+        PM_UPDATE=world
         OS=gentoo
-        emerge world
     fi
 
     echo "OS: $OS"
     echo "Package Manager: $PM"
+}
+
+function update_package() {
+    yes | ${PM} ${PM_UPDATE}
 }
 
 pre_package
@@ -64,6 +69,8 @@ function init_package() {
     if [[ "${IS_ROOT}" != "0" ]]; then
         return
     fi
+
+    update_package
 
     yes | ${PM} ${PM_INSTALL} ${PACKAGES}
 
