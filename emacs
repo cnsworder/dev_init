@@ -143,7 +143,7 @@
    ;;(global-set-key (kbd "<f5>") '(shell-command '"astyle --style=kr"))
    (global-set-key (kbd "<f2>") 'revert-buffer)
    (global-set-key (kbd "<f6>") 'linum-mode)
-   (global-set-key (kdb "<f7>") 'whitespace-mode)
+   (global-set-key (kbd "<f7>") 'whitespace-mode)
    (global-set-key  (kbd "C-c d") 'zeal-at-point)
 )
    
