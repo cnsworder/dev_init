@@ -136,10 +136,8 @@ nnoremap <F5> :UndotreeToggle <cr>
 nnoremap <F3> :NERDTreeToggle <cr>
 nnoremap <F4> :TagbarToggle <cr>
 nnoremap <F10> :PluginUpdate <cr>
-nnoremap <leader>n :set number <cr>
-nnoremap <leader>N :set nonumber <cr>
-nnoremap <leader>l :set list <cr>
-nnoremap <leader>L :set nolist <cr>
+nnoremap <leader>n :set number! <cr>
+nnoremap <leader>l :set list! <cr>
 
 nmap <silent> <leader>f :FufBuffer <cr>
 nmap <silent> <leader>q :q <cr>
