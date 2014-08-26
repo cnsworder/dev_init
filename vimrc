@@ -129,12 +129,17 @@ let g:clang_user_options="-fexceptions -I/usr/include -I/usr/local/include"
 "let g:airline#extension#tabline#enabled = 1
 "let g:ctrlp_cmd = 'CtrlPBuffer'
 
+set listchars=tab:→→,eol:◀,trail:·,nbsp:▢
+
 imap <C-f> <ESC>:FufBuffer <cr>
 nnoremap <F5> :UndotreeToggle <cr>
 nnoremap <F3> :NERDTreeToggle <cr>
 nnoremap <F4> :TagbarToggle <cr>
 nnoremap <F10> :PluginUpdate <cr>
 nnoremap <leader>n :set number <cr>
+nnoremap <leader>N :set nonumber <cr>
+nnoremap <leader>l :set list <cr>
+nnoremap <leader>L :set nolist <cr>
 
 nmap <silent> <leader>f :FufBuffer <cr>
 nmap <silent> <leader>q :q <cr>
