@@ -141,7 +141,9 @@ nnoremap <leader>l :set list! <cr>
 
 nmap <silent> <leader>f :FufBuffer <cr>
 nmap <silent> <leader>q :q <cr>
+nmap <silent> <leader>qq :q! <cr>
 nmap <silent> <leader>w :w <cr>
+nmap <silent> <leader>wq :wq <cr>
 nmap <silent> <leader>a :A <cr>
 nmap <silent> <leader>d :TaskList <cr>
 
