@@ -41,7 +41,9 @@
 
 ;;插件的设置
 (require `tabbar)
+(setq tabbar-buffer-groups-function nil)
 (tabbar-mode t)
+
 (autoload 'company-mode "company" nil t)
 (load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
 (require 'ecb)
