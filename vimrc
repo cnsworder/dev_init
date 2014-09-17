@@ -118,12 +118,14 @@ set laststatus=2
 "let g:Powerline_symbols = 'unicode'
 
 let g:clang_complete_copen=1
-let g:clang_periodic_quickfix=0
+let g:clang_periodic_quickfix=1
 let g:clang_sinppets=1
 let g:clang_close_preview=1
 let g:clang_user_library=1
-let g:clang_user_options="-fexceptions -I/usr/include -I/usr/local/include"
+let g:clang_user_options=" -stdlib=libc++ -std=c++11 -Wall -fexceptions -I/usr/include -I/usr/local/include -I/usr/include/c++/4.9.1 -I/usr/include/c++/4.9.1/x86_64-unknown-linux-gnu"
 
+let g:syntastic_check_on_open = 1
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -Wall'
 
 "let g:syntastic_c_cflags_file=".clang_complete"
 "let g:airline#extension#tabline#enabled = 1

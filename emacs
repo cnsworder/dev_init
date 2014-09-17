@@ -48,6 +48,8 @@
 (load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
 (require 'ecb)
 (require 'sr-speedbar)
+(setq speedbar-show-unknown-files t)
+(setq speedbar-use-images nil)
 ;;(require 'eassist)
 ;;(require 'auto-complete)
 
