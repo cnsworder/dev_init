@@ -10,6 +10,7 @@
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://orgmode.org/elpa/"))
 (package-initialize)
 
 (defun cn-set-package ()
