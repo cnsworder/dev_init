@@ -10,7 +10,7 @@
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("melpa" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
 (package-initialize)
 
 (defun cn-set-package ()
@@ -32,6 +32,7 @@
         (package-install 'helm)
         (package-install 'ecb)
         (package-install 'yasnippet)
+        (package-install 'git-gutter)
     
     (kill-emacs))
 
@@ -69,8 +70,12 @@
 (require 'ido)
 (ido-mode t)
 
-(require `yasnippet)
+(require 'yasnippet)
 (yas-global-mode)
+
+(require 'git-gutter)
+(global-git-gutter-mode t)
+(git-gutter:linum-setup)
 
 (cscope-minor-mode t)
 

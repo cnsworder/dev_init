@@ -38,6 +38,7 @@ Plugin 'TaskList.vim'
 "Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Yggdroot/indentLine'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'airblade/vim-gitgutter'
 
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'tomtom/tlib_vim'
@@ -114,6 +115,7 @@ let g:miniBufExplMapWindowNavArrows = 1
 
 "let t_Co=256
 set laststatus=2
+set number
 "set encoding=utf-8
 "let g:Powerline_symbols = 'unicode'
 
