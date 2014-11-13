@@ -1,10 +1,7 @@
 ;; file emacs
 ;; author cnsworder, cnsworder@gmail.com
 
-;; 23以前的版本需要elpa包
-(if (<= emacs-major-version 23)
-   (add-to-list 'load-path "./elpa"))
-
+;;{{VERSION}}
 
 ;;设置插件服务器
 (require 'package)

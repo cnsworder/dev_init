@@ -29,7 +29,7 @@ function pre_package() {
         PM_INSTALL=install
         PM_UPDATE=upgrade
         OS=debian
-        yes | apt-get update
+#        yes | apt-get update
     elif [ -x /usr/bin/yum ]; then
         PM=yum
         PM_INSTALL=install
@@ -131,6 +131,8 @@ function init_emacs() {
     if (( ${MAJOR} < 24 )); then
        echo "emacs version < 24, will install elpa..."
        git clone https://github.com/technomancy/package.el elpa
+       ELPA="$(pwd)/elpa"
+       sed -i "s,;;{{VERSION}},(if (<= emacs-major-version 23)\n    (add-to-list \'load-path \"${ELPA}\")),g" emacs 
        #TODO: 经常出错emacs 24以下版本暂时不支持了
        return
     fi
