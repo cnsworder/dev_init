@@ -44,11 +44,12 @@
 (tabbar-mode t)
 
 (autoload 'company-mode "company" nil t)
-(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
+(require 'cedet)
+;;(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
 (require 'ecb)
-(require 'sr-speedbar)
-(setq speedbar-show-unknown-files t)
-(setq speedbar-use-images nil)
+;;(require 'sr-speedbar)
+;;(setq speedbar-show-unknown-files t)
+;;(setq speedbar-use-images nil)
 ;;(require 'eassist)
 ;;(require 'auto-complete)
 
