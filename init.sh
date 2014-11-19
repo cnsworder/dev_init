@@ -4,7 +4,7 @@
 # date: 2014-02-14
 # version: 1.1
 
-PACKAGES="vim emacs tmux python ctags cscope curl aria2 tig ranger"
+PACKAGES="vim emacs tmux python ctags cscope global curl aria2 tig ranger"
 DEV_PACKAGES="gcc-c++ clang"
 MANAGES="fabric salt-master"
 XPACKAGES="gvim"
@@ -137,7 +137,7 @@ function init_emacs() {
        return
     fi
     
-    ln -s ${THIS_PATH}/emacs ~/.emacs
+    ln -s ${THIS_PATH}/emacs.el ~/.emacs
 
     emacs -nw -f cn-set-package 
 }

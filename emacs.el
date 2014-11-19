@@ -30,6 +30,7 @@
         (package-install 'ecb)
         (package-install 'yasnippet)
         (package-install 'git-gutter)
+        (package-install 'ggtags)
     
     (kill-emacs))
 
@@ -76,6 +77,7 @@
 (git-gutter:linum-setup)
 
 (cscope-minor-mode t)
+(ggtags-mode 1)
 
 ;; 设置样式
 (custom-set-variables

@@ -32,6 +32,7 @@ if has("python")
     Plugin 'SirVer/ultiSnips'
 endif
 
+Plugin 'gtags.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'TaskList.vim'
