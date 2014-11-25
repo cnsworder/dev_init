@@ -4,10 +4,10 @@
 # date: 2014-02-14
 # version: 1.1
 
-PACKAGES="vim emacs tmux python ctags cscope global curl aria2 tig ranger"
+PACKAGES="vim emacs tmux python ctags cscope global curl aria2 tig ranger urxvt"
 DEV_PACKAGES="gcc-c++ clang"
 MANAGES="fabric salt-master"
-XPACKAGES="gvim"
+XPACKAGES="gvim awesome"
 PIP="pip"
 PYTHON_PACKAGES="virtualenv"
 
@@ -183,6 +183,8 @@ function init_shell() {
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
     chsh `which zsh`
+    
+    ln -s Xdefaults ~/.Xdefaults
 }
 
 function init_sshd() {
