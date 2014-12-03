@@ -52,7 +52,7 @@ filetype plugin indent on
 syntax on
 colorscheme molokai
 
-let mapleader=";"
+let mapleader="`"
 
 if has("gui_running")
     set guioptions-=T    
@@ -125,7 +125,7 @@ let g:clang_periodic_quickfix=1
 let g:clang_sinppets=1
 let g:clang_close_preview=1
 let g:clang_user_library=1
-let g:clang_user_options=" -stdlib=libc++ -std=c++14 -Wall -fexceptions -I/usr/include -I/usr/local/include -I/usr/include/c++/4.9.1 -I/usr/include/c++/4.9.1/x86_64-unknown-linux-gnu"
+let g:clang_user_options=" -stdlib=libc++ -std=c++14 -Wall -fexceptions -I/usr/include -I/usr/local/include -I/usr/include/c++/4.9.2 -I/usr/include/c++/4.9.2/x86_64-unknown-linux-gnu"
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++14 -Wall'

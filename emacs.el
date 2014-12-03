@@ -18,6 +18,7 @@
     ;;查找我用的包有没有安装
         (package-install 'markdown-mode)
         (package-install 'company)
+        (package-install 'company-c-headers)
         (package-install 'xcscope)
         (package-install 'sr-speedbar)
         (package-install 'molokai-theme)
@@ -37,14 +38,14 @@
 ;;(cn-set-package)
 
 ;; 插件载入路径
-(add-to-list 'load-path "~/.emacs.d/elpa/company-0.6.12/")
+;;(add-to-list 'load-path "~/.emacs.d/elpa/company-20040824.95/")
+;;(autoload 'company-mode "company" nil t)
 
 ;;插件的设置
 (require `tabbar)
 (setq tabbar-buffer-groups-function nil)
 (tabbar-mode t)
 
-(autoload 'company-mode "company" nil t)
 (require 'cedet)
 ;;(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
 (require 'ecb)
@@ -54,17 +55,29 @@
 ;;(require 'eassist)
 ;;(require 'auto-complete)
 
-(require 'company nil t)
-(require 'company-clang)
+(require 'company)
+;;(require 'company-clang)
+;;(require 'company-gtags)
 ;;(setq company-idle-delay t)
-(company-mode)
+;;(company-mode t)
+(add-hook 'after-init-hook 'global-company-mode)
+(add-to-list 'company-backends 'company-c-headers)
+(add-to-list 'company-backends 'company-clang)
+(add-to-list 'company-backends 'company-gtags)
+;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
 
 (require 'evil)
 (evil-mode 1)
 (setq evil-default-state 'emacs)
 
-(require 'smex)
-(global-set-key (kbd "M-x") 'smex)
+
+(require 'helm-config)
+(helm-mode 1)
+(global-set-key (kbd "M-x") 'helm-M-x)
+
+;; helm 替换
+;;(require 'smex)
+;;(global-set-key (kbd "M-x") 'smex)
 
 (require 'ido)
 (ido-mode t)
@@ -85,12 +98,20 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(company-c-headers-path-system
+   (quote
+    ("/usr/include/" "/usr/local/include/" "/usr/include/c++/4.9.2/")))
  '(custom-enabled-themes (quote (molokai)))
- '(custom-safe-themes (quote ("0e121ff9bef6937edad8dfcff7d88ac9219b5b4f1570fd1702e546a80dba0832" default)))
+ '(custom-safe-themes
+   (quote
+    ("0e121ff9bef6937edad8dfcff7d88ac9219b5b4f1570fd1702e546a80dba0832" default)))
  '(ecb-options-version "2.40")
  '(ecb-source-path (quote (("/" "/"))))
- '(ede-project-directories (quote ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder"))))
+ '(ede-project-directories
+   (quote
+    ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder"))))
 
   (set-default-font "文泉驿等宽正黑-10")
 
@@ -124,6 +145,7 @@
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 (setq c-basic-offset 4)
+(setq c-default-style "K&R")
 
 (global-linum-mode)
 
