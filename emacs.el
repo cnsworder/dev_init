@@ -74,13 +74,13 @@
 (require 'helm-config)
 (helm-mode 1)
 (global-set-key (kbd "M-x") 'helm-M-x)
-
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 ;; helm 替换
 ;;(require 'smex)
 ;;(global-set-key (kbd "M-x") 'smex)
 
-(require 'ido)
-(ido-mode t)
+;;(require 'ido)
+;;(ido-mode t)
 
 (require 'yasnippet)
 (yas-global-mode)
