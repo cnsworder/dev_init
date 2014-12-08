@@ -92,6 +92,7 @@ function init_xpackage() {
        if [[ "$1" == "gui" ]]; then 
           echo "Install X Appliaction..."
           yes | ${PM} ${PM_INSTALL} ${XPACKAGES}
+          ln -s ${THIS_PATH}/config/awesome/rc.lua ~/.config/rc.lua
        fi
     fi
 }
