@@ -40,6 +40,8 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
+theme.font = "sans 10"
+
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator" or "urxvt" or "xterm"
 editor = os.getenv("EDITOR") or "vim" or "emacs"

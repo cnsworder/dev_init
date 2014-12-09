@@ -3,10 +3,10 @@ Rxvt*background: Black
 Rxvt*foreground: White
 Rxvt*colorBD: yellow
 Rxvt*colorUL:  green
-Rxvt.font: xft:DejaVu Sans Mono:size=10
+Rxvt.font: xft:Source Code Pro:size=10
 Rxvt.transparent: true
 Rxvt.borderless: false
 Rxvt.shading: 30
 Rxvt.scrollBar_right: true
 Rxvt.scrollstyle: plain
-
+Rxvt.visualBell: true

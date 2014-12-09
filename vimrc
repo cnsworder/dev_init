@@ -52,7 +52,7 @@ filetype plugin indent on
 syntax on
 colorscheme molokai
 
-let mapleader="`"
+let mapleader=";"
 
 if has("gui_running")
     set guioptions-=T    
@@ -62,7 +62,8 @@ else
 endif
 
 "set guifont=文泉驿等宽微米黑\ 12
-set guifont=DejaVu\ Sans\ Mono\ 10
+"set guifont=DejaVu\ Sans\ Mono\ 10
+set guifont=Source\ Code\ Pro\ 10
 
 set nobackup
 set tabstop=4
