@@ -171,3 +171,4 @@
 
 (cn-set-key)
 (setq inhibit-startup-message t)
+(setq x-select-enable-clipboard t)

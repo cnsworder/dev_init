@@ -165,7 +165,7 @@ function init_python() {
         return
     fi
     
-    ln -s ${THIS_PATH}/pip.conf ~/.pip/pip.conf
+    ln -s ${THIS_PATH}/pip/pip.conf ~/.pip/pip.conf
 
 
     ${PIP} install ${PYTHON_PACKAGES}
