@@ -9,7 +9,6 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'The-NERD-tree'
 Plugin 'Tagbar'
-Plugin 'bling/vim-airline'
 "Plugin 'Lokaltog/vim-powerline.git'
 Plugin 'terryma/vim-multiple-cursors.git'
 Plugin 'a.vim'
@@ -18,7 +17,6 @@ Plugin 'clang-complete'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlp.vim'
-Plugin 'molokai'
 Plugin 'Keithbsmiley/investigate.vim'
 Plugin 'mattn/gist-vim'
 Plugin 'tpope/vim-fugitive'
@@ -41,6 +39,10 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'bling/vim-airline'
+Plugin 'molokai'
+Plugin 'tango.vim'
+
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'tomtom/tlib_vim'
 "Plugin 'garbas/vim-snipmate'
@@ -58,7 +60,7 @@ if has("gui_running")
     set guioptions-=T    
 else
     set t_Co=256
-    colorscheme molokai
+    colorscheme tango
 endif
 
 "set guifont=文泉驿等宽微米黑\ 12
