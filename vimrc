@@ -120,6 +120,9 @@ let g:miniBufExplMapWindowNavArrows = 1
 "let t_Co=256
 set laststatus=2
 set number
+set cscopeprg=gtags-cscope
+"cscope add GTAGS
+
 "set encoding=utf-8
 "let g:Powerline_symbols = 'unicode'
 
