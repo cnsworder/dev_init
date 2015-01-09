@@ -16,26 +16,25 @@
     ;;(package-menu-mark-upgrades)
 
     ;;查找我用的包有没有安装
-        (package-install 'markdown-mode)
-        (package-install 'company)
-        (package-install 'company-c-headers)
-        (package-install 'xcscope)
-        (package-install 'sr-speedbar)
-        (package-install 'molokai-theme)
-        (package-install 'tabbar)
-        (package-install 'zeal-at-point)
-        (package-install 'evil)
-        (package-install 'smex)
-        (package-install 'anaconda-mode)
-        (package-install 'helm)
-        (package-install 'ecb)
-        (package-install 'yasnippet)
-        (package-install 'git-gutter)
-        (package-install 'ggtags)
-        (package-install 'smartparens)
+    (package-install 'markdown-mode)
+    (package-install 'company)
+    (package-install 'company-c-headers)
+    (package-install 'xcscope)
+    (package-install 'sr-speedbar)
+    (package-install 'molokai-theme)
+    (package-install 'tabbar)
+    (package-install 'zeal-at-point)
+    (package-install 'evil)
+    (package-install 'smex)
+    (package-install 'anaconda-mode)
+    (package-install 'helm)
+    (package-install 'ecb)
+    (package-install 'yasnippet)
+    (package-install 'git-gutter)
+    (package-install 'ggtags)
+    (package-install 'smartparens)
     
     (kill-emacs))
-
 ;;(cn-set-package)
 
 ;; 插件载入路径
@@ -61,11 +60,16 @@
 ;;(require 'company-gtags)
 ;;(setq company-idle-delay t)
 ;;(company-mode t)
+;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
+(setq company-idle-delay nil)
+(setq company-show-numbers t)
+(setq company-require-match nil)
+
 (add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends 'company-c-headers)
 (add-to-list 'company-backends 'company-clang)
 (add-to-list 'company-backends 'company-gtags)
-;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
+(global-set-key (kbd "C-c C-c") 'company-complete)
 
 (require 'smartparens-config)
 (smartparens-global-mode t)
@@ -73,7 +77,6 @@
 (require 'evil)
 (evil-mode 1)
 (setq evil-default-state 'emacs)
-
 
 (require 'helm-config)
 (helm-mode 1)
@@ -175,5 +178,5 @@
 
 (cn-set-key)
 (setq inhibit-startup-message t)
-(setq x-select-enable-clipboard t)
+;;(setq x-select-enable-clipboard t)
 (defalias 'yes-or-no-p 'y-or-n-p)

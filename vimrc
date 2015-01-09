@@ -69,6 +69,9 @@ endif
 set guifont=Source\ Code\ Pro\ 10
 
 set nobackup
+set cursorline
+"set cursorcolumn
+set hlsearch
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
