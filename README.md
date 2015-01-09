@@ -50,3 +50,29 @@
 mail:[cnsworder@gmail.com](mailto:cnsowrder@gmail.com)
 
 [1]: http://blog.csdn.net/cnsword  "Blog"
+
+vim使用说明
+-------------------
+
++ `mapleader=;`
++ `F3` 文件浏览
++ `F2` 刷新文件
++ `F4` Tagbar
++ `F5` UndoTree
++ `F10` 更新插件
++ `n` 显示行号
++ `l` 显示不可见字符
++ `<leader>f` FufBuffer
+
+emacs使用说明
+-----------------
+
++ `F2` 刷新文件
++ `F3` 文件浏览
++ `F4` `eshell`
++ `F6` 显示行号
++ `Ｍ-x` `helm-M-x`
++ `C-x C-b` `helm-buffer-list`
++ `C-c C-c` 智能补全
++ `TAB` 片段补全
++ `M-TAB` `heml`补全
