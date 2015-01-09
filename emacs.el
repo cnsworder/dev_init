@@ -32,6 +32,7 @@
         (package-install 'yasnippet)
         (package-install 'git-gutter)
         (package-install 'ggtags)
+        (package-install 'smartparens)
     
     (kill-emacs))
 
@@ -65,6 +66,9 @@
 (add-to-list 'company-backends 'company-clang)
 (add-to-list 'company-backends 'company-gtags)
 ;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
+
+(require 'smartparens-config)
+(smartparens-global-mode t)
 
 (require 'evil)
 (evil-mode 1)
@@ -172,3 +176,4 @@
 (cn-set-key)
 (setq inhibit-startup-message t)
 (setq x-select-enable-clipboard t)
+(defalias 'yes-or-no-p 'y-or-n-p)

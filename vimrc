@@ -37,6 +37,7 @@ Plugin 'TaskList.vim'
 "Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Yggdroot/indentLine'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'surround.vim'
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'bling/vim-airline'
