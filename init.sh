@@ -250,7 +250,7 @@ function main() {
     echo "#####################################"
 }
 
-while getopts "vepkxa" arg
+while getopts "vepkxsthda" arg
 do
    case ${arg} in
       v)
@@ -301,4 +301,3 @@ do
 done
 
 main
-
