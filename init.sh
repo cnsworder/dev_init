@@ -111,8 +111,10 @@ function init_vim() {
     
     ln -s ${THIS_PATH}/vimrc ~/.vimrc
     sed -i "s/\(colorscheme molokai\)/\"\1/g" vimrc
+    sed -i "s/\(colorscheme tango\)/\"\1/g" vimrc
     vim +PluginInstall +qall
     sed -i "s/\"\(colorscheme molokai\)/\1/g" vimrc
+    sed -i "s/\"\(colorscheme tango\)/\1/g" vimrc
     
     #if [[ `id -u` == 0 ]]; then
     #    echo "export EDITOR=vim" >> /etc/profile
