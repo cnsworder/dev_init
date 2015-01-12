@@ -69,7 +69,7 @@
 (add-to-list 'company-backends 'company-c-headers)
 (add-to-list 'company-backends 'company-clang)
 (add-to-list 'company-backends 'company-gtags)
-(global-set-key (kbd "C-c C-c") 'company-complete)
+(global-set-key (kbd "C-c o") 'company-complete)
 
 (require 'smartparens-config)
 (smartparens-global-mode t)
