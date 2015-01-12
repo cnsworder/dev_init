@@ -79,4 +79,4 @@ emacs使用说明
 
 - - - -
 
-**感谢 @linsongze 测试反馈**
++ 感谢 @linsongze 的测试反馈
