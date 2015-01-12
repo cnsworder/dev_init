@@ -73,6 +73,10 @@ emacs使用说明
 + `F6` 显示行号
 + `Ｍ-x` `helm-M-x`
 + `C-x C-b` `helm-buffer-list`
-+ `C-c C-c` 智能补全
++ `C-c C-o` 智能补全
 + `TAB` 片段补全
 + `M-TAB` `heml`补全
+
+- - - -
+
+**感谢 @linsongze 测试反馈**
