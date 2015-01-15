@@ -33,6 +33,7 @@
     (package-install 'git-gutter)
     (package-install 'ggtags)
     (package-install 'smartparens)
+    (package-install 'chinese-pyim)
     
     (kill-emacs))
 ;;(cn-set-package)
@@ -60,7 +61,7 @@
 ;;(require 'company-gtags)
 ;;(setq company-idle-delay t)
 ;;(company-mode t)
-;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
+;;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
 (setq company-idle-delay nil)
 (setq company-show-numbers t)
 (setq company-require-match nil)
@@ -99,6 +100,9 @@
 (cscope-minor-mode t)
 (ggtags-mode 1)
 
+(require 'chinese-pyim)
+(setq default-input-method "chinese-pyim")
+
 ;; 设置样式
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -118,7 +122,10 @@
  '(ecb-source-path (quote (("/" "/"))))
  '(ede-project-directories
    (quote
-    ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder"))))
+    ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder")))
+ '(pyim-dicts
+   (quote
+    ((:name "py" :file "/home/cnsworder/.emacs.d/pyim-bigdict.txt" :coding utf-8-unix)))))
 
   (set-default-font "文泉驿等宽正黑-10")
 
