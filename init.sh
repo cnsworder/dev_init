@@ -5,7 +5,7 @@
 # version: 1.1
 
 PACKAGES="vim emacs tmux python ctags cscope global curl aria2 tig ranger urxvt"
-DEV_PACKAGES="gcc-c++ clang"
+DEV_PACKAGES="gcc-c++ clang zeal"
 MANAGES="fabric salt-master"
 XPACKAGES="gvim awesome"
 PIP="pip"

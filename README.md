@@ -63,6 +63,7 @@ vim使用说明
 + `n` 显示行号
 + `l` 显示不可见字符
 + `<leader>f` FufBuffer
++ `<leader>z` zeal
 
 emacs使用说明
 -----------------
@@ -76,6 +77,8 @@ emacs使用说明
 + `C-c C-o` 智能补全
 + `TAB` 片段补全
 + `M-TAB` `heml`补全
++ `C-c d` zeal
++ [更新插件](http://blog.csdn.net/cnsword/article/details/42918215)
 
 - - - -
 
