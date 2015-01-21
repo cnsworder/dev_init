@@ -1,5 +1,5 @@
-;; file emacs
-;; author cnsworder, cnsworder@gmail.com
+;;; file emacs
+;;; author cnsworder, cnsworder@gmail.com
 
 ;;{{VERSION}}
 
@@ -32,6 +32,7 @@
     (package-install 'yasnippet)
     (package-install 'git-gutter)
     (package-install 'ggtags)
+    (package-install 'flycheck)
     (package-install 'smartparens)
     (package-install 'chinese-pyim)
     
@@ -81,7 +82,7 @@
 
 (require 'helm-config)
 (helm-mode 1)
-(global-set-key (kbd "M-x") 'helm-M-x)
+;;(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 ;; helm 替换
 ;;(require 'smex)
@@ -99,6 +100,9 @@
 
 (cscope-minor-mode t)
 (ggtags-mode 1)
+
+(require 'flycheck)
+(global-flycheck-mode t)
 
 (require 'chinese-pyim)
 (setq default-input-method "chinese-pyim")
