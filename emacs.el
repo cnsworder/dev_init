@@ -16,24 +16,43 @@
     ;;(package-menu-mark-upgrades)
 
     ;;查找我用的包有没有安装
+    ;;markdown
     (package-install 'markdown-mode)
-    (package-install 'company)
-    (package-install 'company-c-headers)
-    (package-install 'xcscope)
-    (package-install 'sr-speedbar)
-    (package-install 'molokai-theme)
-    (package-install 'tabbar)
-    (package-install 'zeal-at-point)
-    (package-install 'evil)
-    (package-install 'smex)
+    ;;python
     (package-install 'anaconda-mode)
+
+    ;;molokai 配色
+    (package-install 'molokai-theme)
+    ;;文件列表
+    (package-install 'sr-speedbar)
+    ;;标签页
+    (package-install 'tabbar)
+
+    ;;快速操作    
     (package-install 'helm)
     (package-install 'ecb)
+    (package-install 'smex)
+    ;;vim 模式
+    (package-install 'evil)
+
+    ;;代码片段补全
     (package-install 'yasnippet)
-    (package-install 'git-gutter)
+    ;;智能提示
+    (package-install 'company)
+    (package-install 'company-c-headers)
+    ;;代码帮助
+    (package-install 'zeal-at-point)
+    ;;代码跳转
+    (package-install 'xcscope)
     (package-install 'ggtags)
+    ;;代码检查
     (package-install 'flycheck)
+    ;;git
+    (package-install 'git-gutter)
+    ;;自动添加匹配括号
     (package-install 'smartparens)
+
+    ;;中文输入法
     (package-install 'chinese-pyim)
     
     (kill-emacs))
@@ -104,6 +123,11 @@
 (require 'flycheck)
 (global-flycheck-mode t)
 
+(require 'highlight-parentheses)
+(global-highlight-parentheses-mode t)
+
+(global-hl-line-mode t)
+
 (require 'chinese-pyim)
 (setq default-input-method "chinese-pyim")
 
@@ -153,11 +177,17 @@
 (add-hook  'markdown-mode-hook 
     (lambda ( )
       (global-set-key (kbd "C-c p") 'markdown-preview)))
+
 (add-hook 'c-mode-hook
     (lambda ()
-    ¦   (c-set-style "K&R")))
+      ¦   (c-set-style "K&R")))
+
 (add-hook 'python-mode-hook
-    'anaconda-mode)
+          'anaconda-mode)
+
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (setq flycheck-clang-language-standard "c++11")))
 
 ;;设置缩进
 (setq-default tab-width 4)
@@ -186,7 +216,7 @@
    (global-set-key  (kbd "C-c d") 'zeal-at-point)
 )
    
-
+;;自定义配置
 (cn-set-key)
 (setq inhibit-startup-message t)
 ;;(setq x-select-enable-clipboard t)
