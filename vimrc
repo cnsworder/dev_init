@@ -4,44 +4,71 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
+"包管理
 Plugin 'gmarik/vundle'
 Plugin 'L9'
-Plugin 'FuzzyFinder'
+"目录树
 Plugin 'The-NERD-tree'
-Plugin 'Tagbar'
+"快速搜索
+Plugin 'FuzzyFinder'
+Plugin 'ctrlp.vim'
+"状态栏
+Plugin 'bling/vim-airline'
 "Plugin 'Lokaltog/vim-powerline.git'
+"多光标
 Plugin 'terryma/vim-multiple-cursors.git'
+
+"头文件和源文件快速跳转
 Plugin 'a.vim'
+"标签页
 Plugin 'minibufexpl.vim'
+"代码提示
 Plugin 'clang-complete'
 "Plugin 'Valloric/YouCompleteMe'
+"代码检查
 Plugin 'scrooloose/syntastic'
-Plugin 'ctrlp.vim'
-"Plugin 'Keithbsmiley/investigate.vim'
-Plugin 'KabbAmine/zeavim.vim'
+"git
 Plugin 'mattn/gist-vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+"代码注释
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'FriedSock/smeargle'
-"Plugin 'snipMate'
-"Plugin 'OmniCppComplete'
-Plugin 'mbbill/undotree'
 
+"代码导航
+Plugin 'Tagbar'
+"代码段提示
+Plugin 'honza/vim-snippets'
 if has("python")
     Plugin 'SirVer/ultiSnips'
 endif
 
+"代码导航
 Plugin 'gtags.vim'
-Plugin 'honza/vim-snippets'
+
+"帮助文档
+"Plugin 'Keithbsmiley/investigate.vim'
+Plugin 'KabbAmine/zeavim.vim'
+
+"Plugin 'FriedSock/smeargle'
+"Plugin 'snipMate'
+"Plugin 'OmniCppComplete'
+
+"搜索定位
 Plugin 'Lokaltog/vim-easymotion'
+"任务列表
 Plugin 'TaskList.vim'
 "Plugin 'nathanaelkane/vim-indent-guides'
+"撤销树
+Plugin 'mbbill/undotree'
+"缩进提示
 Plugin 'Yggdroot/indentLine'
+"括号高亮
 Plugin 'kien/rainbow_parentheses.vim'
+"括号补全
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'surround.vim'
-Plugin 'airblade/vim-gitgutter'
 
-Plugin 'bling/vim-airline'
+"主题配色
 Plugin 'molokai'
 Plugin 'tango.vim'
 
