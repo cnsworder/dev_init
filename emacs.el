@@ -47,6 +47,9 @@
     (package-install 'ggtags)
     ;;代码检查
     (package-install 'flycheck)
+    (package-install 'flycheck-google-cpplint)
+    ;;google c style
+    (package-install 'google-c-style)
     ;;git
     (package-install 'git-gutter)
     ;;自动添加匹配括号
@@ -95,6 +98,7 @@
 (require 'smartparens-config)
 (smartparens-global-mode t)
 
+
 (require 'evil)
 (evil-mode 1)
 (setq evil-default-state 'emacs)
@@ -122,6 +126,12 @@
 
 (require 'flycheck)
 (global-flycheck-mode t)
+
+(require 'google-c-style)
+
+(require 'flycheck-google-cpplint)
+(flycheck-add-next-checker 'c/c++-clang
+                           'c/c++-googlelint 'append)
 
 (require 'highlight-parentheses)
 (global-highlight-parentheses-mode t)
@@ -178,9 +188,8 @@
     (lambda ( )
       (global-set-key (kbd "C-c p") 'markdown-preview)))
 
-(add-hook 'c-mode-hook
-    (lambda ()
-      ¦   (c-set-style "K&R")))
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 (add-hook 'python-mode-hook
           'anaconda-mode)

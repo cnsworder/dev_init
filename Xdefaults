@@ -1,4 +1,5 @@
 Xft.dpi:96
+Rxvt.depth: 32
 Rxvt*background: Black
 Rxvt*foreground: White
 Rxvt*colorBD: yellow
@@ -6,7 +7,7 @@ Rxvt*colorUL:  green
 Rxvt.font: xft:Source Code Pro:size=10
 Rxvt.transparent: true
 Rxvt.borderless: false
-Rxvt.shading: 30
+Rxvt.shading: 5
 Rxvt.scrollBar_right: true
 Rxvt.scrollstyle: plain
 Rxvt.visualBell: true

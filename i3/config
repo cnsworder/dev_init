@@ -28,7 +28,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec urxvt  #terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -150,20 +150,37 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+c exec i3lock
+#锁屏
+bindsym $mod+c exec i3lock -i ~/.i3/theme.png
 
+#默认边框
+new_window 1pixel
+
+#切换边框
+bindsym $mod+t border normal 
+bindsym $mod+y border 1pixel
+bindsym $mod+u border none
+
+#切换工作区
+bindsym $mod+Tab workspace next
+
+bindsym $mod+n move scratchpad
+bindsym $mod+m scratchpad show
+
+#自动启动应用
 exec_always fcitx
 exec_always zeal
+exec_always feh --bg-scale ~/.i3/theme.png
 
 exec nm-applet
 exec stardict
 
+#将应用自动移动到工作区
 assign [class="(?i)google"] 3
 assign [class="(?i)emacs"] 2
 assign [class="(?i)zeal"] 5
 assign [class="(?i)stardict"] 5
 
-new_window none
 
 #for_window [class=""] bordr 1pixel
 
@@ -177,14 +194,14 @@ client.urgent           #2f343a #900000 #ffffff #900000
 focus_follows_mouse no
 
 # workspace_auto_back_and_forth <yes|no>
-workspace_auto_back_and_forth no
+workspace_auto_back_and_forth yes
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status --config ~/.i3/status.conf
         position top
-        mode hide
+        mode dock
         tray_output primary
         workspace_buttons yes
 
