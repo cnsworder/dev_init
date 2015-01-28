@@ -23,8 +23,8 @@ Plugin 'a.vim'
 "标签页
 Plugin 'minibufexpl.vim'
 "代码提示
-Plugin 'clang-complete'
-"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'clang-complete'
+Plugin 'Valloric/YouCompleteMe'
 "代码检查
 Plugin 'scrooloose/syntastic'
 "git
@@ -99,7 +99,7 @@ set guifont=Source\ Code\ Pro\ 10
 set nobackup
 set cursorline
 "set cursorcolumn
-set hlsearch
+"set hlsearch
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -157,6 +157,14 @@ set cscopeprg=gtags-cscope
 
 "set encoding=utf-8
 "let g:Powerline_symbols = 'unicode'
+
+let g:ycm_global_ycm_extra_conf="~/.vim/.ycm_extra_conf.py"
+let g:ycm_filetype_blacklist = {
+            \ 'tagbar' : 1,
+            \ 'text' : 1,
+            \ 'qf' : 1,
+            \ 'gitcommit' : 1,
+            \ }
 
 let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=1

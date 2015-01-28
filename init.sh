@@ -115,6 +115,18 @@ function init_vim() {
     vim +PluginInstall +qall
     sed -i "s/\"\(colorscheme molokai\)/\1/g" vimrc
     sed -i "s/\"\(colorscheme tango\)/\1/g" vimrc
+
+    cd ~/.vim/bundle/YouCompleteMe;\
+        ./install.sh --clang-completer;\
+        cp third_party/ycmd/cpp/ycm/.ycm_extra_conf.py ~/.vim/ \
+        cd -
+
+#    cd ~/.vim/ycm_build;\
+#        cd ycm_build;\
+#        cmake ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/;\
+#        make;\
+#        cd -
+
     
     #if [[ `id -u` == 0 ]]; then
     #    echo "export EDITOR=vim" >> /etc/profile
