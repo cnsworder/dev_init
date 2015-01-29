@@ -152,6 +152,7 @@ let g:miniBufExplMapWindowNavArrows = 1
 "let t_Co=256
 set laststatus=2
 set number
+set nowrap
 set cscopeprg=gtags-cscope
 "cscope add GTAGS
 
@@ -189,6 +190,7 @@ nnoremap <F4> :TagbarToggle <cr>
 nnoremap <F10> :PluginUpdate <cr>
 nnoremap <leader>n :set number! <cr>
 nnoremap <leader>l :set list! <cr>
+nnoremap <leader>b :set wrap!<cr>
 
 nmap <silent> <leader>f :FufBuffer <cr>
 nmap <silent> <leader>q :q <cr>

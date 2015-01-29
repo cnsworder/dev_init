@@ -16,10 +16,6 @@
     ;;(package-menu-mark-upgrades)
 
     ;;查找我用的包有没有安装
-    ;;markdown
-    (package-install 'markdown-mode)
-    ;;python
-    (package-install 'anaconda-mode)
 
     ;;molokai 配色
     (package-install 'molokai-theme)
@@ -54,7 +50,14 @@
     (package-install 'git-gutter)
     ;;自动添加匹配括号
     (package-install 'smartparens)
+    ;;高亮括号
+    (package-install 'highlight-parentheses)
 
+    ;;python
+    (package-install 'anaconda-mode)
+    ;;markdown
+    (package-install 'markdown-mode)
+    
     ;;中文输入法
     (package-install 'chinese-pyim)
     
@@ -63,21 +66,55 @@
 
 ;; 插件载入路径
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/company-20040824.95/")
-;;(autoload 'company-mode "company" nil t)
 
 ;;插件的设置
-(require `tabbar)
+(require 'tabbar)
 (setq tabbar-buffer-groups-function nil)
 (tabbar-mode t)
 
-(require 'cedet)
-;;(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
-(require 'ecb)
 ;;(require 'sr-speedbar)
 ;;(setq speedbar-show-unknown-files t)
 ;;(setq speedbar-use-images nil)
-;;(require 'eassist)
-;;(require 'auto-complete)
+
+
+;;evil 配置
+(require 'evil)
+(evil-mode 1)
+(setq evil-default-state 'emacs)
+
+;;helm配置
+(require 'helm-config)
+(helm-mode 1)
+(setq helm-quick-update t)
+(setq helm-M-x-requires-pattern nil)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+
+;; helm 替换smex和ido
+;;(require 'smex)
+;;(global-set-key (kbd "M-x") 'smex)
+;;(require 'ido)
+;;(ido-mode t)
+
+;;开发相关配置
+(require 'yasnippet)
+(yas-global-mode)
+
+(require 'git-gutter)
+(global-git-gutter-mode t)
+(git-gutter:linum-setup)
+
+(cscope-minor-mode t)
+(ggtags-mode 1)
+
+(require 'flycheck)
+(global-flycheck-mode t)
+
+(require 'google-c-style)
+
+(require 'flycheck-google-cpplint)
+(flycheck-add-next-checker 'c/c++-clang
+                           'c/c++-googlelint 'append)
 
 (require 'company)
 ;;(require 'company-clang)
@@ -98,45 +135,16 @@
 (require 'smartparens-config)
 (smartparens-global-mode t)
 
-
-(require 'evil)
-(evil-mode 1)
-(setq evil-default-state 'emacs)
-
-(require 'helm-config)
-(helm-mode 1)
-;;(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-;; helm 替换
-;;(require 'smex)
-;;(global-set-key (kbd "M-x") 'smex)
-
-;;(require 'ido)
-;;(ido-mode t)
-
-(require 'yasnippet)
-(yas-global-mode)
-
-(require 'git-gutter)
-(global-git-gutter-mode t)
-(git-gutter:linum-setup)
-
-(cscope-minor-mode t)
-(ggtags-mode 1)
-
-(require 'flycheck)
-(global-flycheck-mode t)
-
-(require 'google-c-style)
-
-(require 'flycheck-google-cpplint)
-(flycheck-add-next-checker 'c/c++-clang
-                           'c/c++-googlelint 'append)
-
 (require 'highlight-parentheses)
 (global-highlight-parentheses-mode t)
 
 (global-hl-line-mode t)
+
+;;(require 'cedet)
+;;(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
+;;(require 'ecb)
+;;(require 'eassist)
+;;(require 'auto-complete)
 
 (require 'chinese-pyim)
 (setq default-input-method "chinese-pyim")
@@ -156,8 +164,6 @@
  '(custom-safe-themes
    (quote
     ("0e121ff9bef6937edad8dfcff7d88ac9219b5b4f1570fd1702e546a80dba0832" default)))
- '(ecb-options-version "2.40")
- '(ecb-source-path (quote (("/" "/"))))
  '(ede-project-directories
    (quote
     ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder")))
@@ -184,9 +190,9 @@
    (tool-bar-mode 0))
 
 ;;不同模式下的是指
-(add-hook  'markdown-mode-hook 
-    (lambda ( )
-      (global-set-key (kbd "C-c p") 'markdown-preview)))
+;;(add-hook  'markdown-mode-hook 
+;;    (lambda ()
+;;      (global-set-key (kbd "C-c p") 'markdown-preview)))
 
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
@@ -222,8 +228,8 @@
    (global-set-key (kbd "<f2>") 'revert-buffer)
    (global-set-key (kbd "<f6>") 'linum-mode)
    (global-set-key (kbd "<f7>") 'whitespace-mode)
-   (global-set-key  (kbd "C-c d") 'zeal-at-point)
-)
+   (global-set-key (kbd "C-c d") 'zeal-at-point)
+   (global-set-key (kbd "C-c b") 'refill-mode))
    
 ;;自定义配置
 (cn-set-key)
