@@ -230,6 +230,7 @@
    (global-set-key (kbd "<f7>") 'whitespace-mode)
    (global-set-key (kbd "C-c d") 'zeal-at-point)
    (global-set-key (kbd "C-c b") 'refill-mode))
+   (global-set-key (kbd "C-c c") 'c++-mode)
    
 ;;自定义配置
 (cn-set-key)

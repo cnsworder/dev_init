@@ -1,0 +1,14 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: title
+# key: title
+# binding: direct-keybinding
+# --
+
+/**************************************************************
+ * @file ${1:`(file-name-nondirectory (buffer-file-name))`}
+ * @author cnsworder <cnsworder@gmail.com>
+ * @date ${2:`(time-stamp-string)`}
+ * $3
+ **************************************************************/
+
+$0
