@@ -153,6 +153,7 @@ function init_emacs() {
     fi
     
     ln -s ${THIS_PATH}/emacs.el ~/.emacs
+    ln -s ${THIS_PATH}/emacs.d/snippets ~/.emacs.d/snippets
 
     emacs -nw -f cn-set-package 
 }

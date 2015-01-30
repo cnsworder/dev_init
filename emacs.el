@@ -122,7 +122,7 @@
 ;;(setq company-idle-delay t)
 ;;(company-mode t)
 ;;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
-(setq company-idle-delay nil)
+(setq company-idle-delay 2)
 (setq company-show-numbers t)
 (setq company-require-match nil)
 
