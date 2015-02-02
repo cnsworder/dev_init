@@ -7,7 +7,7 @@
 /**************************************************************
  * @file ${1:`(file-name-nondirectory (buffer-file-name))`}
  * @author cnsworder <cnsworder@gmail.com>
- * @date ${2:`(time-stamp-string)`}
+ * @date ${2:`(current-time-string)`}
  * $3
  **************************************************************/
 

@@ -57,11 +57,11 @@ Plugin 'KabbAmine/zeavim.vim'
 Plugin 'Lokaltog/vim-easymotion'
 "任务列表
 Plugin 'TaskList.vim'
-"Plugin 'nathanaelkane/vim-indent-guides'
 "撤销树
 Plugin 'mbbill/undotree'
 "缩进提示
 Plugin 'Yggdroot/indentLine'
+"Plugin 'nathanaelkane/vim-indent-guides'
 "括号高亮
 Plugin 'kien/rainbow_parentheses.vim'
 "括号补全
@@ -106,7 +106,7 @@ set shiftwidth=4
 set expandtab
 set autoindent
 "set list
-"let g:indent_guides_auto_colors=0
+"let g:indent_guides_auto_colors=1
 "let g:indent_guides_start_level=2
 "let g:indent_guides_guide_size=1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
@@ -177,6 +177,9 @@ let g:clang_user_options=" -stdlib=libc++ -std=c++14 -Wall -fexceptions -I/usr/i
 let g:syntastic_check_on_open = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++14 -Wall'
 
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+
 "let g:syntastic_c_cflags_file=".clang_complete"
 "let g:airline#extension#tabline#enabled = 1
 "let g:ctrlp_cmd = 'CtrlPBuffer'
@@ -200,6 +203,7 @@ nmap <silent> <leader>wq :wq <cr>
 nmap <silent> <leader>qa :qall<cr>
 nmap <silent> <leader>a :A <cr>
 nmap <silent> <leader>d :TaskList <cr>
+nmap <silent> <leader>i :IndentLinesToggle<cr>
 
 nmap <Leader> <Plug>(easymotion-prefix)
 nmap / <Plug>(easymotion-sn)
