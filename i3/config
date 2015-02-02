@@ -188,8 +188,8 @@ exec ~/hdmi.sh
 #将应用自动移动到工作区
 assign [class="(?i)google"] 3
 assign [class="(?i)emacs"] 2
-assign [class="(?i)zeal"] 5
-assign [class="(?i)stardict"] 5
+#assign [class="(?i)zeal"] 5
+#assign [class="(?i)stardict"] 5
 
 
 #for_window [class=""] bordr 1pixel
