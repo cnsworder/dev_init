@@ -69,7 +69,7 @@
 
 ;;插件的设置
 (require 'tabbar)
-(setq tabbar-buffer-groups-function nil)
+;;(setq tabbar-buffer-groups-function nil)
 (tabbar-mode t)
 
 ;;(require 'sr-speedbar)
@@ -199,21 +199,29 @@
 
 (add-hook 'python-mode-hook
           'anaconda-mode)
+(add-hook 'python-mode-hook
+          'hs-minor-mode t)
+
+(add-hook 'c-mode-common-hook
+          'hs-minor-mode)
 
 (add-hook 'c++-mode-hook
           (lambda ()
-            (setq flycheck-clang-language-standard "c++11")))
+            (setq flycheck-clang-language-standard "c++11")
+            (hs-minor-mode t)))
 
 ;;设置缩进
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-(setq c-basic-offset 4)
 (setq c-default-style "K&R")
-
+(setq c-basic-offset 4)
+;;开启折叠
+;;(hs-minor-mode t)
+;;显示行号
 (global-linum-mode)
 
 
-(defun cn-set-key () 
+(defun key-set () 
    "设置快捷键"
    
    (interactive)
@@ -234,7 +242,7 @@
    (global-set-key (kbd "C-c i") 'helm-imenu)
    
 ;;自定义配置
-(cn-set-key)
+(key-set)
 (setq inhibit-startup-message t)
 ;;(setq x-select-enable-clipboard t)
 (defalias 'yes-or-no-p 'y-or-n-p)
