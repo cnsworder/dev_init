@@ -1,6 +1,7 @@
 set nocompatible
 filetype off
-set backupdir=/tmp,~/tmp,.
+set backupdir=/tmp
+set directory=/tmp
 
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
