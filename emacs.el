@@ -10,9 +10,11 @@
 (add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
 (package-initialize)
 
-(defun cn-set-package ()
+(defun install-custom-package ()
     "安装插件"
     (interactive)
+
+    (package-list-packages)
     ;;(package-menu-mark-upgrades)
 
     ;;查找我用的包有没有安装
@@ -62,7 +64,7 @@
     (package-install 'chinese-pyim)
     
     (kill-emacs))
-;;(cn-set-package)
+;;(install-custom-package)
 
 ;; 插件载入路径
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/company-20040824.95/")

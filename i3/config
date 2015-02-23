@@ -29,6 +29,7 @@ floating_modifier $mod
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec urxvt  #terminator
+bindsym $mod+Shift+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -179,6 +180,8 @@ bindsym $mod+m scratchpad show
 exec_always fcitx
 exec_always zeal
 exec_always feh --bg-scale ~/.i3/theme.png
+exec_always synapse
+exec_always conky
 
 exec nm-applet
 exec stardict

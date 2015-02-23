@@ -109,6 +109,10 @@ function init_vim() {
     
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
     
+    if [ -e ~/.vimrc ];then
+        mv ~/.vimrc ~/.vimrc.bak
+        echo "backup ~/.vimrc to ~/.vimrc.bak"
+    fi
     ln -s ${THIS_PATH}/vimrc ~/.vimrc
     sed -i "s/\(colorscheme molokai\)/\"\1/g" vimrc
     sed -i "s/\(colorscheme tango\)/\"\1/g" vimrc
@@ -151,11 +155,20 @@ function init_emacs() {
        #TODO: 经常出错emacs 24以下版本暂时不支持了
        return
     fi
-    
+   
+    if [ -e ~/.emacs ];then
+        mv ~/.emacs ~/.emacs.bak
+        echo "backup ~/.emacs to ~/.emacs.bak"
+    fi
     ln -s ${THIS_PATH}/emacs.el ~/.emacs
+
+    if [ -e ~/.emacs.d/snippets ];then
+        mv ~/.emacs.d/snippets ~/.emacs.d/snippets.bak
+        echo "backup ~/.emacs.d/snippets to ~/.emacs.d/snippets.bak"
+    fi
     ln -s ${THIS_PATH}/emacs.d/snippets ~/.emacs.d/snippets
 
-    emacs -nw -f cn-set-package 
+    emacs -nw -f install-custom-package 
 }
 
 
