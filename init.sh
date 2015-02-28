@@ -7,7 +7,7 @@
 PACKAGES="vim emacs tmux python ctags cscope global curl aria2 tig ranger urxvt"
 DEV_PACKAGES="gcc-c++ clang zeal"
 MANAGES="fabric salt-master"
-XPACKAGES="gvim awesome"
+XPACKAGES="gvim awesome terminology"
 PIP="pip"
 PYTHON_PACKAGES="virtualenv"
 
