@@ -26,6 +26,9 @@ font pango:Source Han San CN 12
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# 默认分割方式
+#defualt_orientation vertical
+
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec terminology  #terminator
@@ -151,6 +154,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#全屏弹出窗口
+#popup_during_fullscreen smart
+
 #锁屏
 bindsym $mod+c exec i3lock -i ~/.i3/theme.png
 
@@ -198,6 +204,10 @@ assign [class="(?i)emacs"] 2
 
 #for_window [class=""] bordr 1pixel
 
+for_window [class="(?i)zeal"] floating enable; move absolute position center
+
+#bindsym $mod+a [title="vim"] focus
+
 # class color           border  backgr. text    indicator
 client.focused          #4c7899 #285577 #ffffff #2e9ef4
 client.focused_inactive #333333 #5f676a #ffffff #484e50
@@ -208,11 +218,19 @@ client.urgent           #2f343a #900000 #ffffff #900000
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        id bar-0
+
+        #output LVDS-0
+
         status_command i3status --config ~/.i3/status.conf
+        #i3bar_command i3bar
+        #status_command export PYTHONPATH=~/.powerline;python2 ~/.powerline/powerline/bindings/i3/powerline-i3.py
+
         position top
         mode dock
         tray_output primary
         workspace_buttons yes
+        #binding_mode_indicator yes
 
         colors {
             background #000000
