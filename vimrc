@@ -1,5 +1,7 @@
 set nocompatible
 filetype off
+syntax off
+
 set backupdir=/tmp
 set directory=/tmp
 
@@ -176,7 +178,7 @@ let g:clang_close_preview=1
 let g:clang_user_library=1
 let g:clang_user_options=" -stdlib=libc++ -std=c++14 -Wall -fexceptions -I/usr/include -I/usr/local/include -I/usr/include/c++/4.9.2 -I/usr/include/c++/4.9.2/x86_64-unknown-linux-gnu"
 
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_cpp_compiler_options = ' -std=c++14 -Wall'
 
 let g:ycm_key_list_select_completion=[]
