@@ -187,27 +187,29 @@ bindsym $mod+n move scratchpad
 bindsym $mod+m scratchpad show
 
 #自动启动应用
-exec_always fcitx
-exec_always zeal
 exec_always feh --bg-scale ~/.i3/theme.png
 exec_always synapse
+exec_always fcitx
 exec_always conky
+#exec_always zeal
 
 exec nm-applet
-exec stardict
+exec dolphin
+#exec stardict
 
 exec ~/hdmi.sh
 
 #将应用自动移动到工作区
 assign [class="(?i)google"] 3
 assign [class="(?i)emacs"] 2
+assign [class="(?i)dolphin"] 9
 #assign [class="(?i)zeal"] 5
 #assign [class="(?i)stardict"] 5
 
 
 #for_window [class=""] bordr 1pixel
 
-for_window [class="(?i)zeal"] floating enable; move absolute position center
+for_window [class="(?i)zeal"] floating enable
 
 #bindsym $mod+a [title="vim"] focus
 

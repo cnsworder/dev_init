@@ -37,6 +37,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 "代码注释
 Plugin 'scrooloose/nerdcommenter'
+"golang
+Plugin 'fatih/vim-go'
 
 "代码导航
 Plugin 'Tagbar'

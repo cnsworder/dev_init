@@ -1,5 +1,10 @@
+;;; package -- 
+;;; Commentary: 
 ;;; file emacs
 ;;; author cnsworder, cnsworder@gmail.com
+
+
+;;; Code:
 
 ;;{{VERSION}}
 
@@ -11,6 +16,7 @@
 (package-initialize)
 
 (defun install-custom-package ()
+
     "安装插件"
     (interactive)
 
@@ -161,7 +167,7 @@
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(company-c-headers-path-system
    (quote
-    ("/usr/include/" "/usr/local/include/" "/usr/include/c++/4.9.2/")))
+    ("/usr/include/" "/usr/local/include/" "/usr/include/c++/4.9.2/" "." ".." "../..")))
  '(custom-enabled-themes (quote (molokai)))
  '(custom-safe-themes
    (quote
@@ -249,3 +255,6 @@
 ;;(setq x-select-enable-clipboard t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq backup-directory-alist '(("." . "/tmp")))
+
+(provide 'emacs)
+;;; emacs.el ends here
