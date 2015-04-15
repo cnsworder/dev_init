@@ -1,0 +1,19 @@
+#
+# /etc/hosts: static lookup table for host names
+#
+#<ip-address>	<hostname.domain.org>	<hostname>
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+
+
+# mirrors
+
+115.28.122.210 mirrors.aliyun.com
+112.124.140.210 mirrors.aliyun.com
+202.38.97.230 ftp.sjtu.edu.cn
+123.58.173.106 mirrors.163.com
+10.143.34.200 mirrors.aliyuncs.com
+119.188.36.70 mirrors.sohu.com
+
+
+# End of file
