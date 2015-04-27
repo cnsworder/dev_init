@@ -68,6 +68,9 @@
     
     ;;中文输入法
     (package-install 'chinese-pyim)
+
+    ;;彩虹猫
+    (package-install 'nyan-mode)
     
     (kill-emacs))
 ;;(install-custom-package)
@@ -156,6 +159,8 @@
 
 (require 'chinese-pyim)
 (setq default-input-method "chinese-pyim")
+
+(nyan-mode t)
 
 ;; 设置样式
 (custom-set-variables
