@@ -40,6 +40,11 @@ function pre_package() {
         PM_INSTALL=
         PM_UPDATE=world
         OS=gentoo
+    elif which brew; then
+        PM=brew
+        PM_INSTALL=install
+        PM_UPDATE=update
+        OS="Mac OS X"
     fi
 
     echo "OS: $OS"
