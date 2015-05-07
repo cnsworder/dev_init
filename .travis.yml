@@ -1,1 +1,5 @@
 language: bash
+befor_install: echo "pre_install"
+install: echo "install"
+after_success: echo "post_install"
+script: echo "script"

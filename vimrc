@@ -15,7 +15,7 @@ Plugin 'L9'
 Plugin 'The-NERD-tree'
 "快速搜索
 Plugin 'FuzzyFinder'
-Plugin 'ctrlp.vim'
+"Plugin 'ctrlp.vim'
 "状态栏
 Plugin 'bling/vim-airline'
 "Plugin 'Lokaltog/vim-powerline.git'
@@ -25,7 +25,7 @@ Plugin 'terryma/vim-multiple-cursors.git'
 "头文件和源文件快速跳转
 Plugin 'a.vim'
 "标签页
-Plugin 'minibufexpl.vim'
+"Plugin 'minibufexpl.vim'
 "代码提示
 "Plugin 'clang-complete'
 Plugin 'Valloric/YouCompleteMe'
@@ -201,7 +201,8 @@ nnoremap <leader>n :set number! <cr>
 nnoremap <leader>l :set list! <cr>
 nnoremap <leader>b :set wrap!<cr>
 
-nmap <silent> <leader>f :FufBuffer <cr>
+nmap <silent> <leader>b :FufBuffer <cr>
+nmap <silent> <leader>f :FufFile <cr>
 nmap <silent> <leader>q :q <cr>
 nmap <silent> <leader>qq :q! <cr>
 nmap <silent> <leader>w :w <cr>
