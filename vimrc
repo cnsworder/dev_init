@@ -25,42 +25,9 @@ Plugin 'bling/vim-airline'
 "多光标
 Plugin 'terryma/vim-multiple-cursors.git'
 
-"头文件和源文件快速跳转
-Plugin 'a.vim'
-"标签页
-"Plugin 'minibufexpl.vim'
-"代码提示
-"Plugin 'clang-complete'
-Plugin 'Valloric/YouCompleteMe'
-"代码检查
-Plugin 'scrooloose/syntastic'
-"git
-Plugin 'mattn/gist-vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-"代码注释
-Plugin 'scrooloose/nerdcommenter'
-"golang
-Plugin 'fatih/vim-go'
-
-"代码导航
-Plugin 'Tagbar'
-"代码段提示
-Plugin 'honza/vim-snippets'
-if has("python")
-    Plugin 'SirVer/ultiSnips'
-endif
-
-"代码导航
-Plugin 'gtags.vim'
-
-"帮助文档
-"Plugin 'Keithbsmiley/investigate.vim'
-Plugin 'KabbAmine/zeavim.vim'
-
-"Plugin 'FriedSock/smeargle'
-"Plugin 'snipMate'
-"Plugin 'OmniCppComplete'
+"主题配色
+Plugin 'molokai'
+"Plugin 'tango.vim'
 
 "搜索定位
 Plugin 'Lokaltog/vim-easymotion'
@@ -77,9 +44,45 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'surround.vim'
 
-"主题配色
-Plugin 'molokai'
-Plugin 'tango.vim'
+"头文件和源文件快速跳转
+Plugin 'a.vim'
+"代码检查
+Plugin 'scrooloose/syntastic'
+"git
+Plugin 'mattn/gist-vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+"代码注释
+Plugin 'scrooloose/nerdcommenter'
+"golang
+Plugin 'fatih/vim-go'
+
+"代码导航
+Plugin 'Tagbar'
+
+"global导航
+Plugin 'gtags.vim'
+
+"帮助文档
+"Plugin 'Keithbsmiley/investigate.vim'
+Plugin 'KabbAmine/zeavim.vim'
+
+"代码段提示
+Plugin 'honza/vim-snippets'
+if has("python")
+    Plugin 'SirVer/ultiSnips'
+endif
+
+"标签页
+"Plugin 'minibufexpl.vim'
+"代码提示
+"Plugin 'clang-complete'
+Plugin 'Valloric/YouCompleteMe'
+
+"Plugin 'FriedSock/smeargle'
+"Plugin 'snipMate'
+"Plugin 'OmniCppComplete'
+
 
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'tomtom/tlib_vim'
@@ -98,7 +101,7 @@ if has("gui_running")
     set guioptions-=T    
 else
     set t_Co=256
-    colorscheme tango
+"    colorscheme tango
 endif
 
 "set guifont=文泉驿等宽微米黑\ 12
