@@ -76,8 +76,11 @@ endif
 "标签页
 "Plugin 'minibufexpl.vim'
 "代码提示
-"Plugin 'clang-complete'
-Plugin 'Valloric/YouCompleteMe'
+if v:version < 703 
+    Plugin 'clang-complete'
+else
+    Plugin 'Valloric/YouCompleteMe'
+endif
 
 "Plugin 'FriedSock/smeargle'
 "Plugin 'snipMate'
