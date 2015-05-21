@@ -57,12 +57,21 @@ function update_package() {
 
 pre_package
 
+HAVE_REAL_PATH=true
+
 if ! which realpath > /dev/null ; then
    echo "${PM} ${PM_INSTALL} realpath"
    yes | ${PM} ${PM_INSTALL} realpath 
+   if (( $? != 0 )); then
+        HAVE_REAL_PATh=false
+   fi
 fi
 
-THIS_PATH=$(realpath .)
+if ${HAVE_REAL_PATH} ; then
+    THIS_PATH=$(realpath .)
+else
+    THIS_PATH=`pwd`
+fi
 
 IS_ROOT=$(id -u)
 

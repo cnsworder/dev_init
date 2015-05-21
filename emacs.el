@@ -257,7 +257,7 @@
 ;;自定义配置
 (key-set)
 (setq inhibit-startup-message t)
-;;(setq x-select-enable-clipboard t)
+(setq x-select-enable-clipboard t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq backup-directory-alist '(("." . "/tmp")))
 

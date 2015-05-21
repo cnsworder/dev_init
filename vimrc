@@ -2,6 +2,7 @@ set nocompatible
 set fileencoding=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gb18030,gb2312,gbk
+set clipboard=unnamed
 filetype off
 syntax off
 
