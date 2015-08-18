@@ -11,3 +11,5 @@ Rxvt.shading: 5
 Rxvt.scrollBar_right: true
 Rxvt.scrollstyle: plain
 Rxvt.visualBell: true
+
+Xcursor.theme: breeze_cursors

@@ -74,6 +74,11 @@ if has("python")
     Plugin 'SirVer/ultiSnips'
 endif
 
+"代码格式化
+if has("python")
+    Plugin 'Chiel92/vim-autoformat'
+endif
+
 "标签页
 "Plugin 'minibufexpl.vim'
 "代码提示
