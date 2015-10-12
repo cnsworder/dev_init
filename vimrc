@@ -102,6 +102,7 @@ call vundle#end()
 filetype plugin indent on
 
 syntax on
+set foldmethod=syntax
 colorscheme molokai
 
 let mapleader=";"
