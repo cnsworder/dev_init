@@ -67,6 +67,7 @@ Plugin 'gtags.vim'
 "帮助文档
 "Plugin 'Keithbsmiley/investigate.vim'
 Plugin 'KabbAmine/zeavim.vim'
+Plugin 'DoxygenToolkit.vim'
 
 "代码段提示
 Plugin 'honza/vim-snippets'
@@ -101,9 +102,6 @@ call vundle#end()
 
 filetype plugin indent on
 
-syntax on
-set foldmethod=syntax
-colorscheme molokai
 
 let mapleader=";"
 
@@ -236,4 +234,8 @@ map  N <Plug>(easymotion-prev)
 
 "nerdcommment <leader>cc <leader>cu
  
+set foldmethod=syntax
+syntax on
+colorscheme molokai
+
 "PluginUpdate

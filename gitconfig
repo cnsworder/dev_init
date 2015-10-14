@@ -1,0 +1,16 @@
+[user]
+	name = cnsworder
+	email = cnsworder@gmail.com
+[core]
+	editor = vim
+	differ = vimdiff
+[color]
+	ui = auto
+[http]
+	sslVerify = false
+[alias]
+    st = status
+    lg = log
+    co = checkout
+    br = branch
+    ci = commit
