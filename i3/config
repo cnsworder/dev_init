@@ -226,31 +226,33 @@ client.urgent           #2f343a #900000 #ffffff #900000
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        id bar-0
+exec lxqt-panel
 
-        #output LVDS-0
-        
-        i3bar_command lxqt-panel
-
-        #status_command i3status --config ~/.i3/status.conf
-        #i3bar_command i3bar
-        #status_command export PYTHONPATH=~/.powerline;python2 ~/.powerline/powerline/bindings/i3/powerline-i3.py
-
-        position top
-        mode dock
-        tray_output primary
-        workspace_buttons yes
-        #binding_mode_indicator yes
-
-        colors {
-            background #000000
-            statusline #ffffff
-            separator #666666
-
-            focused_workspace  #4c7899 #285577 #ffffff
-            active_workspace   #333333 #5f676a #ffffff
-            inactive_workspace #333333 #222222 #888888
-            urgent_workspace   #2f343a #900000 #ffffff
-        }
-}
+#bar {
+#        id bar-0
+#
+#        #output LVDS-0
+#        
+#        i3bar_command lxqt-panel
+#
+#        #status_command i3status --config ~/.i3/status.conf
+#        #i3bar_command i3bar
+#        #status_command export PYTHONPATH=~/.powerline;python2 ~/.powerline/powerline/bindings/i3/powerline-i3.py
+#
+#        position top
+#        mode dock
+#        tray_output primary
+#        workspace_buttons yes
+#        #binding_mode_indicator yes
+#
+#        colors {
+#            background #000000
+#            statusline #ffffff
+#            separator #666666
+#
+#            focused_workspace  #4c7899 #285577 #ffffff
+#            active_workspace   #333333 #5f676a #ffffff
+#            inactive_workspace #333333 #222222 #888888
+#            urgent_workspace   #2f343a #900000 #ffffff
+#        }
+#}
