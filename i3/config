@@ -230,8 +230,10 @@ bar {
         id bar-0
 
         #output LVDS-0
+        
+        i3bar_command lxqt-panel
 
-        status_command i3status --config ~/.i3/status.conf
+        #status_command i3status --config ~/.i3/status.conf
         #i3bar_command i3bar
         #status_command export PYTHONPATH=~/.powerline;python2 ~/.powerline/powerline/bindings/i3/powerline-i3.py
 
