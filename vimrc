@@ -15,6 +15,7 @@ call vundle#begin()
 "包管理
 Plugin 'gmarik/vundle'
 Plugin 'L9'
+"Plugin 'junegunn/vim-plug'
 "目录树
 Plugin 'The-NERD-tree'
 "快速搜索
@@ -103,7 +104,6 @@ call vundle#end()
 filetype plugin indent on
 
 
-let mapleader=";"
 
 if has("gui_running")
     set guioptions-=T    
@@ -206,6 +206,8 @@ let g:ycm_key_list_previous_completion=[]
 
 set listchars=tab:→→,eol:◀,trail:·,nbsp:▢
 
+let mapleader=";"
+
 imap <C-f> <ESC>:FufBuffer <cr>
 nnoremap <F5> :UndotreeToggle <cr>
 nnoremap <F3> :NERDTreeToggle <cr>
@@ -231,10 +233,14 @@ nmap / <Plug>(easymotion-sn)
 nmap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+map <leader>zz :set foldenable<cr>
+map <leader>zn :set nofoldenable<cr>
 
 "nerdcommment <leader>cc <leader>cu
  
-set foldmethod=syntax
+"set foldmethod=syntax
+set foldmethod=indent
+set nofoldenable
 syntax on
 colorscheme molokai
 
