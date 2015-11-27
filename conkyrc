@@ -93,4 +93,4 @@ ${color lightblue} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
 ${color lightblue} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
 $hr
 ${color}
-${image ~/Image/d.png -p 50,-10 -s 286x149}
+#${image ~/Image/d.png -p 50,-10 -s 286x149}

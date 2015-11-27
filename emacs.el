@@ -173,10 +173,10 @@
  '(company-c-headers-path-system
    (quote
     ("/usr/include/" "/usr/local/include/" "/usr/include/c++/4.9.2/" "." ".." "../..")))
- '(custom-enabled-themes (quote (molokai)))
+ '(custom-enabled-themes (quote (monokai)))
  '(custom-safe-themes
    (quote
-    ("0e121ff9bef6937edad8dfcff7d88ac9219b5b4f1570fd1702e546a80dba0832" default)))
+    ("196cc00960232cfc7e74f4e95a94a5977cb16fd28ba7282195338f68c84058ec" default)))
  '(ede-project-directories
    (quote
     ("/home/cnsworder/workspace/haoop" "/home/cnsworder/workspace" "/home/cnsworder")))
@@ -184,7 +184,7 @@
    (quote
     ((:name "py" :file "/home/cnsworder/.emacs.d/pyim-bigdict.txt" :coding utf-8-unix)))))
 
-  (set-default-font "文泉驿等宽正黑-10")
+  (set-default-font "Source Code Pro-10")
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

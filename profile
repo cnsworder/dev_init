@@ -2,6 +2,8 @@
 # cnsworder profile
 #
 
+DIR=$(cd "$(dirname $0)" && pwd)
+
 #IM envrionment
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -17,11 +19,19 @@ if [[ "$TERM" == "linux" ]]; then
 fi
 
 if [[ "${DISPLAY}" != "" ]]; then
-    xhost +
+    xhost + &> /dev/null
 fi
 
 
 #export XDG_CURRENT_DESKTOP=KDE
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
-source alias.conf
+source ${DIR}/alias.conf
+
+if [ ! -d /tmp/chrome ]; then
+    mkdir /tmp/chrome
+    if [ -d ~/.cache/chromium ]; then
+        rm -rf ~/.cache/chromium
+    fi
+    ln -s /tmp/chrome ~/.cache/chromium
+fi
