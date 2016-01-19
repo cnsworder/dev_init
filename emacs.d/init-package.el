@@ -80,6 +80,7 @@
     ;;彩虹猫
     (package-install 'nyan-mode)
     
-    (kill-emacs))
+    (kill-emacs)
+)
 
 (provide 'init-package)

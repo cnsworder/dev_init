@@ -20,4 +20,4 @@
 )
 (key-set)
 
-(provide 'key-set)
+(provide 'keyset)
