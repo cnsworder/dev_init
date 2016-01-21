@@ -9,17 +9,22 @@
 ;;{{VERSION}}
 
 ;; 插件载入路径
-;(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path ".") 
 ;;设置插件服务器
-(require 'init-package)
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(require 'init-utils)
 
-(require 'init-env)
-(require 'init-helm)
-(require 'init-dev)
-(require 'init-hook)
-(require 'keyset)
-(require 'init-theme)
-(require 'init-custom)
-
+(provide 'init)
 ;;; init.el ends here
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(wakatime-api-key ""))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

@@ -1,3 +1,5 @@
+;;; packates init-theme
+;;; Codes
 
 (require 'tabbar)
 ;;(setq tabbar-buffer-groups-function nil)
@@ -14,6 +16,8 @@
 
 (nyan-mode t)
 
+(require 'dracula-theme)
+;;(require 'molokai-theme)
 ;;暗色主题下光标颜色设置一下
 (set-cursor-color "White")
 
@@ -28,4 +32,9 @@
 
 (setq inhibit-startup-message t)
 
+;; 字体配置
+(set-default-font "Source Code Pro 14")
+
 (provide 'init-theme)
+
+;;; init-theme.el ends here

@@ -50,4 +50,6 @@
 (setq c-default-style "K&R")
 (setq c-basic-offset 4)
 
+(global-wakatime-mode)
+
 (provide 'init-dev)
