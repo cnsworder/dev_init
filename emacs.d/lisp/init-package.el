@@ -15,6 +15,15 @@
 (add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
 (package-initialize)
 
+(defvar *install-packages*
+  '(tabvar 
+     dracula-theme))
+
+;;(mapc #'(lambda (package) 
+;;          (unless (package-install-p package)
+;;           (package-install package))
+;;          *install-packages*))
+
 (defun install-custom-package ()
 
     "安装插件"
@@ -27,10 +36,13 @@
 
     ;;molokai 配色
     (package-install 'molokai-theme)
+    (package-install 'dracula-theme)
     ;;文件列表
     (package-install 'sr-speedbar)
     ;;标签页
     (package-install 'tabbar)
+    ;;自动保存
+    (package-install 'super-save')
 
     ;;快速操作    
     (package-install 'helm)
@@ -75,7 +87,7 @@
     (package-install 'markdown-mode)
     
     ;;中文输入法
-    (package-install 'chinese-pyim)
+    ;;(package-install 'chinese-pyim)
 
     ;;彩虹猫
     (package-install 'nyan-mode)
