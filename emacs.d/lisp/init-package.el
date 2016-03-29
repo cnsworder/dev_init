@@ -42,10 +42,12 @@
     ;;标签页
     (package-install 'tabbar)
     ;;自动保存
-    (package-install 'super-save')
+    (package-install 'super-save)
 
     ;;快速操作    
     (package-install 'helm)
+    (package-install 'swiper)
+    (package-install 'counsel)
     (package-install 'ecb)
     (package-install 'smex)
     ;;vim 模式

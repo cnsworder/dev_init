@@ -1,3 +1,6 @@
+
+;;; Code
+
 (defun key-set () 
    "设置快捷键"
    
@@ -17,7 +20,10 @@
    (global-set-key (kbd "C-c b") 'refill-mode)
    (global-set-key (kbd "C-c c") 'c++-mode)
    (global-set-key (kbd "C-c i") 'helm-imenu)
-)
+   (global-set-key (kbd "C-s") 'swiper)
+   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+   )
+
 (key-set)
 
 (provide 'keyset)

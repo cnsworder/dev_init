@@ -14,4 +14,9 @@
 (setq x-select-enable-clipboard t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(ivy-mode t)
+(setq ivy-use-virtual-buffers t)
+
+(recentf-mode t)
+
 (provide 'init-custom)
