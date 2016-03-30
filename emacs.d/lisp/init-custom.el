@@ -18,5 +18,6 @@
 (setq ivy-use-virtual-buffers t)
 
 (recentf-mode t)
+(setq-default make-backup-files nil)
 
 (provide 'init-custom)

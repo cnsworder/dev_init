@@ -1,9 +1,10 @@
 ;;; packates init-theme
 ;;; Codes
 
-(require 'tabbar)
+;; 不要tab页了没用
+;;(require 'tabbar)
 ;;(setq tabbar-buffer-groups-function nil)
-(tabbar-mode t)
+;;(tabbar-mode t)
 
 ;;(require 'sr-speedbar)
 ;;(setq speedbar-show-unknown-files t)
@@ -20,6 +21,7 @@
 ;;(require 'molokai-theme)
 ;;暗色主题下光标颜色设置一下
 (set-cursor-color "White")
+(setq-default cursor-type 'bar)
 
 ;;去掉工具栏
 (if window-system

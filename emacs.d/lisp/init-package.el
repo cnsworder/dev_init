@@ -15,9 +15,26 @@
 (add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
 (package-initialize)
 
-(defvar *install-packages*
-  '(tabvar 
-     dracula-theme))
+(require 'cl)
+
+(defvar *install-packages* '(
+                             tabvar
+                             dracula-theme
+                             )
+  "Default package")
+
+(defun cross/packages-installed-p ()
+
+  (loop for pkg in *install-packages*
+        when (not (package-installed-p pkg)) do (return nil)
+        finally (return t)))
+
+;;(unless (cross/packages-installed-p)
+;;  (message "%s" "Refreshing package database...")
+;;  (package-refresh-contents)
+;;  (dolist (pkg *install-packages*)
+;;    (when (not (package-installed-p pkg))
+;;      (package-install pkg))))
 
 ;;(mapc #'(lambda (package) 
 ;;          (unless (package-install-p package)
