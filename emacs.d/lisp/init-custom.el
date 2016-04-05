@@ -20,4 +20,8 @@
 (recentf-mode t)
 (setq-default make-backup-files nil)
 
+(super-save-mode t)
+(setq super-save-auto-save-when-idle t)
+(setq auto-save-default nil)
+
 (provide 'init-custom)
