@@ -17,8 +17,8 @@
 (require 'init-helm)
 (require 'init-dev)
 (require 'init-hook)
-(require 'keyset)
 (require 'init-theme)
+(require 'keyset)
 (require 'init-custom)
 
 (provide 'init-utils)

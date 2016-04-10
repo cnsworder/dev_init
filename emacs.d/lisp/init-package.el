@@ -19,6 +19,7 @@
 
 (defvar *install-packages* '(
                              tabvar
+                             popwin
                              dracula-theme
                              )
   "Default package")
@@ -60,7 +61,9 @@
     (package-install 'tabbar)
     ;;自动保存
     (package-install 'super-save)
-
+    ;;窗口操作
+    (package-install 'popwin)
+    
     ;;快速操作    
     (package-install 'helm)
     (package-install 'swiper)

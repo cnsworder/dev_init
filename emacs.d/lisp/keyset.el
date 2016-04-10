@@ -21,6 +21,9 @@
    (global-set-key (kbd "C-c c") 'c++-mode)
    (global-set-key (kbd "C-c i") 'helm-imenu)
    (global-set-key (kbd "C-s") 'swiper)
+   (global-set-key (kbd "C-c r") 'ivy-resume)
+   (global-set-key (kbd "C-x C-r") 'recentf-open-files)
+   (global-set-key (kbd "C-c g") 'counsel-git)
    (global-set-key (kbd "C-x C-f") 'counsel-find-file)
    )
 

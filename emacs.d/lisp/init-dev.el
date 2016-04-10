@@ -8,7 +8,8 @@
 (git-gutter:linum-setup)
 
 (cscope-minor-mode t)
-(ggtags-mode 1)
+(ggtags-mode t)
+;;(ggtags-global-mode t)
 
 (require 'flycheck)
 (global-flycheck-mode t)
@@ -19,21 +20,22 @@
 (flycheck-add-next-checker 'c/c++-clang
                            'c/c++-googlelint 'append)
 
-(require 'company)
+;;(require 'company)
 ;;(require 'company-clang)
 ;;(require 'company-gtags)
 ;;(setq company-idle-delay t)
 ;;(company-mode t)
 ;;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
-(setq company-idle-delay 2)
+(global-company-mode t)
+(setq company-idle-delay 0.08)
 (setq company-show-numbers t)
 (setq company-require-match nil)
 
-(add-hook 'after-init-hook 'global-company-mode)
+;;(add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends 'company-c-headers)
 (add-to-list 'company-backends 'company-clang)
 (add-to-list 'company-backends 'company-gtags)
-(global-set-key (kbd "C-c o") 'company-complete)
+;;(global-set-key (kbd "C-c o") 'company-complete)
 
 (elpy-enable)
 (elpy-use-ipython)
