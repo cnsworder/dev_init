@@ -15,7 +15,7 @@
 (add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
 (package-initialize)
 
-(require 'cl)
+(require 'cl-lib)
 
 (defvar *install-packages* '(
                              tabvar
