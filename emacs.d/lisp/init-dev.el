@@ -28,14 +28,21 @@
 ;;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
 (global-company-mode t)
 (setq company-idle-delay 0.08)
+(setq company-minimum-prefix-length 1)
 (setq company-show-numbers t)
 (setq company-require-match nil)
 
 ;;(add-hook 'after-init-hook 'global-company-mode)
-(add-to-list 'company-backends 'company-c-headers)
-(add-to-list 'company-backends 'company-clang)
-(add-to-list 'company-backends 'company-gtags)
-;;(global-set-key (kbd "C-c o") 'company-complete)
+(add-to-list 'company-backends '(
+                                 company-cmake
+                                 company-keywords
+                                 company-files
+                                 company-gtags
+                                 company-clang
+                                 company-yasnippet
+                                 company-c-headers
+                                 company-abbrev))
+(global-set-key (kbd "C-c o") 'company-complete)
 
 (elpy-enable)
 (elpy-use-ipython)

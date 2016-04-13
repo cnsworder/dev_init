@@ -13,6 +13,8 @@
 
 (add-hook 'c-mode-common-hook
           'hs-minor-mode)
+(add-hook 'c-mode-hook
+          'c++-mode)
 
 (add-hook 'c++-mode-hook
           (lambda ()
