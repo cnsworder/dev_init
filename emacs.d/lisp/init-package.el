@@ -63,6 +63,8 @@
     (package-install 'super-save)
     ;;窗口操作
     (package-install 'popwin)
+    ;;打开当前文件目录
+    (package-install 'direx)
     
     ;;快速操作    
     (package-install 'helm)

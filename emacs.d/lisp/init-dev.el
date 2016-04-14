@@ -41,7 +41,10 @@
                                  company-clang
                                  company-yasnippet
                                  company-c-headers
-                                 company-abbrev))
+                                 company-abbrev
+                                 company-eclim
+                                 company-elisp
+                                 company-dabbrev))
 (global-set-key (kbd "C-c o") 'company-complete)
 
 (elpy-enable)

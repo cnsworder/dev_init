@@ -21,5 +21,10 @@
 (require 'keyset)
 (require 'init-custom)
 
+(defun hack-emacs ()
+  "config file"
+  (interactive)
+  (find-file "~/.emacs.d/lisp/"))
+
 (provide 'init-utils)
 ;;; init.el ends here
