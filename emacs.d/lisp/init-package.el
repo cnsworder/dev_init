@@ -67,7 +67,7 @@
     (package-install 'direx)
     ;;undo
     (package-install 'undo-tree)
-    
+
     ;;快速操作    
     (package-install 'helm)
     (package-install 'swiper)

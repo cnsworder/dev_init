@@ -20,6 +20,8 @@
 (recentf-mode t)
 (setq-default make-backup-files nil)
 
+(global-undo-tree-mode t)
+
 (global-auto-revert-mode t)
 
 (super-save-mode t)
