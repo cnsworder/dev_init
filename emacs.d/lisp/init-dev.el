@@ -62,10 +62,13 @@
 (setq c-default-style "K&R")
 (setq c-basic-offset 4)
 
-(setq auto-mode-alist
-      (append
-        '(("\\.html\\'" . web-mode)
-          ("\\.js\\'" . js2-mode))))
+;;(setq auto-mode-alist
+;;      (append
+;;        '(("\\.html\\'" . web-mode)
+;;          ("\\.js\\'" . js2-mode))))
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
 (global-wakatime-mode)
 
