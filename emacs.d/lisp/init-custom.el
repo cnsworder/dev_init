@@ -1,8 +1,8 @@
 
 ;;evil 配置
-(require 'evil)
-(evil-mode 1)
-(setq evil-default-state 'emacs)
+;;(require 'evil)
+;;(evil-mode 1)
+;;(setq evil-default-state 'emacs)
 
 ;;搜索配置
 (require 'avy)

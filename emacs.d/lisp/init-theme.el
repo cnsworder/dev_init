@@ -15,7 +15,7 @@
 
 (global-hl-line-mode t)
 
-(nyan-mode t)
+;;(nyan-mode t)
 
 (require 'popwin)
 (popwin-mode t)
@@ -33,7 +33,8 @@
 ;;开启折叠
 ;;(hs-minor-mode t)
 ;;显示行号
-(global-linum-mode)
+(global-linum-mode t)
+(column-number-mode t)
 
 (setq inhibit-startup-message t)
 

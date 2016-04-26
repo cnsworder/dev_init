@@ -58,13 +58,15 @@
     ;;文件列表
     (package-install 'sr-speedbar)
     ;;标签页
-    (package-install 'tabbar)
+    ;;(package-install 'tabbar)
     ;;自动保存
     (package-install 'super-save)
     ;;窗口操作
     (package-install 'popwin)
     ;;打开当前文件目录
     (package-install 'direx)
+    ;;undo
+    (package-install 'undo-tree)
     
     ;;快速操作    
     (package-install 'helm)
@@ -73,7 +75,7 @@
     (package-install 'ecb)
     (package-install 'smex)
     ;;vim 模式
-    (package-install 'evil)
+    ;;(package-install 'evil)
 
     ;;代码片段补全
     (package-install 'yasnippet)
@@ -109,12 +111,19 @@
     (package-install 'elpy)
     ;;markdown
     (package-install 'markdown-mode)
+    ;;web
+    (package-install 'web-mode)
+    ;;js
+    (package-install 'js2-mode)
+
+    ;;多光标
+    (package-install 'iedit)
     
     ;;中文输入法
     ;;(package-install 'chinese-pyim)
 
     ;;彩虹猫
-    (package-install 'nyan-mode)
+    ;;(package-install 'nyan-mode)
     
     (kill-emacs)
 )

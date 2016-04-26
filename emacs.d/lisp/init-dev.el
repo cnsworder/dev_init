@@ -62,6 +62,11 @@
 (setq c-default-style "K&R")
 (setq c-basic-offset 4)
 
+(setq auto-mode-alist
+      (append
+        '(("\\.html\\'" . web-mode)
+          ("\\.js\\'" . js2-mode))))
+
 (global-wakatime-mode)
 
 (provide 'init-dev)
