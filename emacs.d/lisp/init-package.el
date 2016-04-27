@@ -105,6 +105,7 @@
     ;;搜索
     (package-install 'avy)
     (package-install 'ace-jump-mode)
+    (package-install 'helm-ag)
 
     ;;python
     (package-install 'anaconda-mode)

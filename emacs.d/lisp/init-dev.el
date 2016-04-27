@@ -70,6 +70,6 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
-(global-wakatime-mode)
+;;(global-wakatime-mode)
 
 (provide 'init-dev)
