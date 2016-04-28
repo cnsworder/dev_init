@@ -20,8 +20,10 @@
 (require 'popwin)
 (popwin-mode t)
 
-(require 'dracula-theme)
-;;(require 'molokai-theme)
+(if window-system
+    (require 'dracula-theme)
+  (require 'molokai-theme))
+
 ;;暗色主题下光标颜色设置一下
 (set-cursor-color "White")
 (setq-default cursor-type 'bar)
