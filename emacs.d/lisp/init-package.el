@@ -96,6 +96,7 @@
     (package-install 'ggtags)
     ;;代码检查
     (package-install 'flycheck)
+    (package-install 'flycheck-ycmd)
     (package-install 'flycheck-google-cpplint)
     ;;google c style
     (package-install 'google-c-style)

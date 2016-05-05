@@ -13,6 +13,7 @@
 
 (require 'flycheck)
 (global-flycheck-mode t)
+(flycheck-ycmd-setup)
 
 (require 'google-c-style)
 
