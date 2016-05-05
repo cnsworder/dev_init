@@ -20,5 +20,4 @@
           (lambda ()
             (setq flycheck-clang-language-standard "c++11")
             (hs-minor-mode t)))
-
 (provide 'init-hook)

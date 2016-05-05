@@ -12,7 +12,9 @@
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
+;; 网络
+;;(add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages"))
 (package-initialize)
 
 (require 'cl-lib)
@@ -21,6 +23,8 @@
                              tabvar
                              popwin
                              dracula-theme
+                             company
+                             company-ycmd
                              )
   "Default package")
 
@@ -81,6 +85,7 @@
     (package-install 'yasnippet)
     ;;智能提示
     (package-install 'company)
+    (package-install 'company-ycmd)
     (package-install 'company-c-headers)
     ;;代码帮助
     (if (eq system-type 'darwin)

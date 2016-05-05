@@ -47,6 +47,20 @@
                                  company-dabbrev))
 (global-set-key (kbd "C-c o") 'company-complete)
 
+(setq ycmd-bin (list
+                "python"
+                (expand-file-name "~/.vim/bundle/youCompleteMe/third_party/ycmd/ycmd")))
+
+(setq-default ycmd-server-command
+              ycmd-bin)              
+(setq-default ycmd-global-config
+              (expand-file-name
+               "~/.vim/bundle/youCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
+
+(global-ycmd-mode)
+;;(add-hook 'c++-mode-hook 'ycmd-mode)
+(company-ycmd-setup)
+
 (elpy-enable)
 (elpy-use-ipython)
 
