@@ -17,6 +17,8 @@
 (ivy-mode t)
 (setq ivy-use-virtual-buffers t)
 
+(which-key-mode)
+
 (recentf-mode t)
 (setq-default make-backup-files nil)
 

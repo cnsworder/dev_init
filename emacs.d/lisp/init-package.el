@@ -25,6 +25,7 @@
                              dracula-theme
                              company
                              company-ycmd
+                             which-key
                              )
   "Default package")
 
@@ -80,6 +81,8 @@
     (package-install 'smex)
     ;;vim 模式
     ;;(package-install 'evil)
+    ;; 按键提示
+    (package-install 'which-key)
 
     ;;代码片段补全
     (package-install 'yasnippet)
