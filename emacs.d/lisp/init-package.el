@@ -10,11 +10,13 @@
 
 ;;设置插件服务器
 (require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-;; 网络
+;;(add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
+;;(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 ;;(add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
+
 (add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+
 (package-initialize)
 
 (require 'cl-lib)
@@ -68,6 +70,8 @@
     (package-install 'super-save)
     ;;窗口操作
     (package-install 'popwin)
+    ;; 目录增强
+    (package-install 'dired+)
     ;;打开当前文件目录
     (package-install 'direx)
     ;;undo
