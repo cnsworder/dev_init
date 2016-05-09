@@ -17,8 +17,7 @@
    (global-set-key (kbd "C-c r") 'ivy-resume)
    (global-set-key (kbd "C-c i") 'counsel-imenu)
    (global-set-key (kbd "C-c g") 'counsel-git)
-   (global-set-key (kbd "C-c k") 'counsel-ag)
-   (global-set-key (kbd "C-c g") 'counsel-git)
+   (global-set-key (kbd "C-c a") 'counsel-ag)
    (global-set-key (kbd "C-c v") 'counsel-describe-variable)
    (global-set-key (kbd "C-c f") 'counsel-describe-function)   
 

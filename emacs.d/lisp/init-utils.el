@@ -14,7 +14,7 @@
 (require 'init-package)
 
 (require 'init-env)
-(require 'init-helm)
+;;(require 'init-helm)
 (require 'init-dev)
 (require 'init-hook)
 (require 'init-theme)

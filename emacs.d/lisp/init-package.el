@@ -74,11 +74,11 @@
     (package-install 'undo-tree)
 
     ;;快速操作    
-    (package-install 'helm)
+    ;;(package-install 'helm)
     (package-install 'swiper)
     (package-install 'counsel)
-    (package-install 'ecb)
-    (package-install 'smex)
+    ;;(package-install 'ecb)
+    ;;(package-install 'smex)
     ;;vim 模式
     ;;(package-install 'evil)
     ;; 按键提示
@@ -114,7 +114,7 @@
     ;;搜索
     (package-install 'avy)
     (package-install 'ace-jump-mode)
-    (package-install 'helm-ag)
+    ;;(package-install 'helm-ag)
 
     ;;python
     (package-install 'anaconda-mode)
