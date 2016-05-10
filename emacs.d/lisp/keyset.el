@@ -26,7 +26,8 @@
    (global-set-key (kbd "C-c g") 'counsel-git)
    (global-set-key (kbd "C-c a") 'counsel-ag)
    (global-set-key (kbd "C-c v") 'counsel-describe-variable)
-   (global-set-key (kbd "C-c f") 'counsel-describe-function)   
+   (global-set-key (kbd "C-c f") 'counsel-describe-function)
+   (global-set-key (kbd "C-c e") 'hippie-expand)
 
    (global-set-key (kbd "<f3>") 'sr-speedbar-toggle)
    (global-set-key (kbd "<f4>") 'eshell)

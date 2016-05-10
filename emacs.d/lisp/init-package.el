@@ -12,9 +12,12 @@
 ;;(add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
 ;;(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 ;;(add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
-
-(add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(setq package-archives 
+      '(("gnu-cn" . "http://elpa.codefalling.com/gnu/")
+        ("org-cn" . "http://elpa.codefalling.com/org/")
+        ("melpa-cn" . "http://elpa.codefalling.com/melpa/")))
+;;(add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages/"))
+;;(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
 (package-initialize)
 
@@ -93,6 +96,7 @@
     (package-install 'company)
     (package-install 'company-ycmd)
     (package-install 'company-c-headers)
+
     ;;代码帮助
     (if (eq system-type 'darwin)
       (package-install 'dash-at-point)
