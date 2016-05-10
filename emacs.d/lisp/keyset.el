@@ -7,9 +7,11 @@
    (interactive)
 
    ;; meta键调整
-   (setq mac-command-modifier 'meta)
-   (setq mac-control-modifier 'control)
-   (setq mac-option-modifier 'alt)
+   (if (eq system-type 'darwin)
+       (progn
+        (setq mac-command-modifier 'meta)
+        (setq mac-control-modifier 'control)
+        (setq mac-option-modifier 'alt)))
    
    ;;避免输入法切换冲突
    (global-unset-key (kbd "C-SPC"))
