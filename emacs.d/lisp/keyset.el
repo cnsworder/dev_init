@@ -42,6 +42,7 @@
    
    (global-set-key (kbd "C-c c") 'c++-mode)
    (global-set-key (kbd "C-x C-r") 'recentf-open-files)
+   (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory)
    )
 
 (key-set)
