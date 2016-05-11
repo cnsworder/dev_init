@@ -46,6 +46,7 @@
                                  company-eclim
                                  company-elisp
                                  company-dabbrev))
+
 (global-set-key (kbd "C-c o") 'company-complete)
 
 (setq ycmd-bin (list

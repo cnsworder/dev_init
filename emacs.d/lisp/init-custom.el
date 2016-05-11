@@ -18,6 +18,7 @@
 (setq ivy-use-virtual-buffers t)
 
 (which-key-mode)
+(window-numbering-mode t)
 
 (recentf-mode t)
 (setq-default make-backup-files nil)

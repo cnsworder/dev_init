@@ -72,6 +72,8 @@
     (package-install 'super-save)
     ;;窗口操作
     (package-install 'popwin)
+    ;; 窗口跳转
+    (package-install 'window-numbering)
     ;; 目录增强
     (package-install 'dired+)
     ;;打开当前文件目录
