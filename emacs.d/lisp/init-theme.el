@@ -38,6 +38,9 @@
 (global-linum-mode t)
 (column-number-mode t)
 
+;;(require 'spaceline-config)
+;;(spaceline-spacemacs-theme)
+
 (setq inhibit-startup-message t)
 
 ;; 字体配置

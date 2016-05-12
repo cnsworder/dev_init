@@ -64,6 +64,8 @@
     ;;molokai 配色
     (package-install 'molokai-theme)
     (package-install 'dracula-theme)
+    ;; powerline
+    (package-install 'spaceline)
     ;;文件列表
     (package-install 'sr-speedbar)
     ;;标签页
