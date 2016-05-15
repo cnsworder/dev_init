@@ -51,13 +51,13 @@
 
 (setq ycmd-bin (list
                 "python"
-                (expand-file-name "~/.vim/bundle/youCompleteMe/third_party/ycmd/ycmd")))
+                (expand-file-name "~/dev/ycmd/ycmd")))
 
 (setq-default ycmd-server-command
-              ycmd-bin)              
+              ycmd-bin)
 (setq-default ycmd-global-config
               (expand-file-name
-               "~/.vim/bundle/youCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
+               "~/dev/ycmd/cpp/ycm/.ycm_extra_conf.py"))
 
 (global-ycmd-mode)
 ;;(add-hook 'c++-mode-hook 'ycmd-mode)
