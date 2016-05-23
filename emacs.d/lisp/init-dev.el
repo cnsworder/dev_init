@@ -1,3 +1,6 @@
+;;; package --- init-dev
+;;; Commentary:
+;;; Code:
 
 ;;开发相关配置
 (require 'yasnippet)
@@ -49,12 +52,13 @@
 
 (global-set-key (kbd "C-c o") 'company-complete)
 
-(setq ycmd-bin (list
-                "python"
-                (expand-file-name "~/dev/ycmd/ycmd")))
+;; (setq ycmd-bin (list
+;;                 "python"
+;;                (expand-file-name "~/dev/ycmd/ycmd")))
+;; (setq-default ycmd-server-command ycmd-bin)
+ (setq-default ycmd-server-command
+              `("python" ,(expand-file-name "~/dev/ycmd/ycmd")))
 
-(setq-default ycmd-server-command
-              ycmd-bin)
 (setq-default ycmd-global-config
               (expand-file-name
                "~/dev/ycmd/cpp/ycm/.ycm_extra_conf.py"))
