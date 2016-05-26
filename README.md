@@ -14,6 +14,7 @@
 ## 语言支持
 
 c/c++:
+
     + ggtags
     + flycheck
     + google-c-style
@@ -21,13 +22,16 @@ c/c++:
     + company-c-headers
 
 python:
+
     + elpy
     + anacoda-mode
 
 web:
+
     + web-mode
 
 javascript:
+
     + js2-mode
 
 -----
