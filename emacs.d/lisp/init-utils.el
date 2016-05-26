@@ -1,6 +1,5 @@
-;;; package -- 
-;;; Commentary: 
-;;; file emacs
+;;; package -- s
+;;; Commentary:
 ;;; author cnsworder, cnsworder@gmail.com
 
 
@@ -16,7 +15,6 @@
 (require 'init-env)
 ;;(require 'init-helm)
 (require 'init-dev)
-(require 'init-hook)
 (require 'init-theme)
 (require 'keyset)
 (require 'init-custom)
@@ -27,4 +25,4 @@
   (find-file "~/.emacs.d/lisp/"))
 
 (provide 'init-utils)
-;;; init.el ends here
+;;; init-utils.el ends here

@@ -2,9 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
-;;开发相关配置
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
+
 (require 'yasnippet)
-(yas-global-mode)
+(yas-glo(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)bal-mode)
 
 (require 'git-gutter)
 (global-git-gutter-mode t)
@@ -17,12 +20,6 @@
 (require 'flycheck)
 (global-flycheck-mode t)
 (flycheck-ycmd-setup)
-
-(require 'google-c-style)
-
-(require 'flycheck-google-cpplint)
-(flycheck-add-next-checker 'c/c++-clang
-                           'c/c++-googlelint 'append)
 
 ;;(require 'company)
 ;;(require 'company-clang)
@@ -38,13 +35,10 @@
 
 ;;(add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends '(
-                                 company-cmake
                                  company-keywords
                                  company-files
                                  company-gtags
-                                 company-clang
                                  company-yasnippet
-                                 company-c-headers
                                  company-abbrev
                                  company-eclim
                                  company-elisp
@@ -67,8 +61,11 @@
 ;;(add-hook 'c++-mode-hook 'ycmd-mode)
 (company-ycmd-setup)
 
-(elpy-enable)
-(elpy-use-ipython)
+(add-hook 'python-mode-hook
+          ((lambda ()
+             (interactive "")
+           (elpy-enable)
+           (elpy-use-ipython))))
 
 ;;(require 'cedet)
 ;;(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
@@ -76,11 +73,7 @@
 ;;(require 'eassist)
 ;;(require 'auto-complete)
 
-;;设置缩进
-(setq-default tab-width 4)
-(setq-default indent-tabs-mode nil)
-(setq c-default-style "K&R")
-(setq c-basic-offset 4)
+
 
 ;;(setq auto-mode-alist
 ;;      (append
@@ -90,6 +83,47 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
-;;(global-wakatime-mode)
+
+;; (add-hook  'markdown-mode-hook
+;;    (lambda ()
+;;      (global-set-key (kbd "C-c p") 'markdown-preview)))
+;;
+
+(defun *init-python* ()
+
+  "Init python."
+  
+  (interactive )
+  (anaconda-mode t)
+  (hs-minor-mode t)
+  )
+
+(add-hook 'python-mode-hook
+          '*init-python*)
+
+(add-hook 'c-mode-common-hook
+          '((lambda ()
+             (interactive "")
+             (require 'google-c-style)
+             (require 'flycheck-google-cpplint)
+             (flycheck-add-next-checker 'c/c++-clang
+                                        'c/c++-googlelint '(append ))
+             (google-set-c-style)
+             (google-make-newline-indent)
+             (setq c-default-style "K&R")
+             (setq c-basic-offset 4)
+             (add-to-list 'company-backends '(
+                                              company-clang
+                                              company-c-headers
+                                              company-cmake)))))
+
+(add-hook 'c-mode-hook
+          'c++-mode)
+
+(add-hook 'c++-mode-hook
+          '(lambda ()
+            (setq flycheck-clang-language-standard "c++11")))
 
 (provide 'init-dev)
+
+;;; init-dev.el ends here
