@@ -6,8 +6,9 @@
 (setq-default indent-tabs-mode nil)
 
 (require 'yasnippet)
-(yas-glo(setq-default tab-width 4)
-(setq-default indent-tabs-mode nil)bal-mode)
+(yas-global-mode t)
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
 
 (require 'git-gutter)
 (global-git-gutter-mode t)
