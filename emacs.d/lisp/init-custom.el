@@ -1,3 +1,6 @@
+;;; Pacakage -- init-custom
+;;; Commentary:
+;;; Code:
 
 ;;evil 配置
 ;;(require 'evil)
@@ -32,3 +35,5 @@
 (setq auto-save-default nil)
 
 (provide 'init-custom)
+
+;;; init-custom.el ends here
