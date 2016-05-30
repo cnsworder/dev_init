@@ -62,6 +62,10 @@
 ;;(add-hook 'c++-mode-hook 'ycmd-mode)
 (company-ycmd-setup)
 
+(require 'company-go)
+(add-hook 'go-mode-hook
+          (add-to-list 'company-backends 'company-go))
+
 (add-hook 'python-mode-hook
           ((lambda ()
              (interactive "")
@@ -103,7 +107,7 @@
           '*init-python*)
 
 (add-hook 'c-mode-common-hook
-          '((lambda ()
+          (lambda ()
              (interactive "")
              (require 'google-c-style)
              (require 'flycheck-google-cpplint)
@@ -113,10 +117,9 @@
              (google-make-newline-indent)
              (setq c-default-style "K&R")
              (setq c-basic-offset 4)
-             (add-to-list 'company-backends '(
-                                              company-clang
+             (add-to-list 'company-backends '(company-clang
                                               company-c-headers
-                                              company-cmake)))))
+                                              company-cmake))))
 
 (add-hook 'c-mode-hook
           'c++-mode)

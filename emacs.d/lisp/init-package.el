@@ -136,7 +136,10 @@
     (package-install 'web-mode)
     ;;js
     (package-install 'js2-mode)
-
+    ;;go
+    (package-install 'go-mode)
+    (package-install 'company-go)
+    
     ;;多光标
     (package-install 'iedit)
     
