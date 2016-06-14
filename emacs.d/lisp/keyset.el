@@ -34,6 +34,12 @@
    (global-set-key (kbd "C-h v") 'counsel-describe-variable)
    (global-set-key (kbd "C-h f") 'counsel-describe-function)
 
+   ;; git 相关
+   (global-set-key (kbd "C-c C-g c") 'magit-commit)
+   (global-set-key (kbd "C-c C-g p") 'magit-push)
+   (global-set-key (kbd "C-c C-g f") 'magit-pull)
+   (global-set-key (kbd "C-c C-g s") 'magit-status)
+   (global-set-key (kbd "C-c C-g d") 'magit-diff)
 
    (global-set-key (kbd "<f3>") 'sr-speedbar-toggle)
    (global-set-key (kbd "<f4>") 'eshell)
