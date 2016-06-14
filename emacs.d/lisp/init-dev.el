@@ -62,14 +62,14 @@
 ;;(add-hook 'c++-mode-hook 'ycmd-mode)
 (company-ycmd-setup)
 
-(add-hook 'emacs-lisp-hook
-          (lambda()
-          (setq (make-local-variable 'company-backends)
-                '(company-elisp
-                  company-yasnippet
-                  company-eclim
-                  company-abbrev
-                  company-dabbrev))))
+;; (add-hook 'emacs-lisp-hook
+;;          (lambda()
+;;          (setq (make-local-variable 'company-backends)
+;;                '(company-elisp
+;;                  company-yasnippet
+;;                  company-eclim
+;;                  company-abbrev
+;;                  company-dabbrev))))
 
 (require 'company-go)
 (add-hook 'go-mode-hook
