@@ -87,6 +87,8 @@
     ;;(package-install 'helm)
     (package-install 'swiper)
     (package-install 'counsel)
+    (if (eq system-type 'darwin)
+        (package-install 'counsel-osx-app))
     ;;(package-install 'ecb)
     ;;(package-install 'smex)
     ;;vim 模式

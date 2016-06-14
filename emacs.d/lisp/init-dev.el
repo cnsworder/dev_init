@@ -52,7 +52,7 @@
 ;;                (expand-file-name "~/dev/ycmd/ycmd")))
 ;; (setq-default ycmd-server-command ycmd-bin)
  (setq-default ycmd-server-command
-              `("python" ,(expand-file-name "~/dev/ycmd/ycmd")))
+              `("python" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
 
 (setq-default ycmd-global-config
               (expand-file-name
@@ -61,6 +61,15 @@
 (global-ycmd-mode)
 ;;(add-hook 'c++-mode-hook 'ycmd-mode)
 (company-ycmd-setup)
+
+(add-hook 'emacs-lisp-hook
+          (lambda()
+          (setq (make-local-variable 'company-backends)
+                '(company-elisp
+                  company-yasnippet
+                  company-eclim
+                  company-abbrev
+                  company-dabbrev))))
 
 (require 'company-go)
 (add-hook 'go-mode-hook
