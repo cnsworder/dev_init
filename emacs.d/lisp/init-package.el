@@ -123,7 +123,9 @@
     (package-install 'smartparens)
     ;;高亮括号
     (package-install 'highlight-parentheses)
-
+    ;; 扩展选择区域
+    (package-install 'expand-region)
+    
     ;;搜索
     (package-install 'avy)
     (package-install 'ace-jump-mode)

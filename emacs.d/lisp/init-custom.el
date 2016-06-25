@@ -7,6 +7,9 @@
 ;;(evil-mode 1)
 ;;(setq evil-default-state 'emacs)
 
+;; 扩展选择区域
+(require 'expand-region)
+
 ;;搜索配置
 (require 'avy)
 (require 'ace-jump-mode)

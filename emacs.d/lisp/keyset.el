@@ -30,6 +30,7 @@
    (global-set-key (kbd "C-c b") 'counsel-bookmark)
 
    (global-set-key (kbd "C-c m") 'bookmark-set)
+   (global-set-key (kbd "C-c v") 'er/expand-region)
 
    (global-set-key (kbd "C-h v") 'counsel-describe-variable)
    (global-set-key (kbd "C-h f") 'counsel-describe-function)
