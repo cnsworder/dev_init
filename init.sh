@@ -4,7 +4,7 @@
 # date: 2014-02-14
 # version: 1.1
 
-PACKAGES="stow vim emacs tmux python ctags cscope global curl aria2 tig ranger urxvt"
+PACKAGES="stow vim emacs tmux python ctags cscope global curl aria2 tig ranger termite urxvt"
 DEV_PACKAGES="gcc-c++ clang zeal"
 MANAGES="fabric salt-master"
 XPACKAGES="gvim awesome terminology"
