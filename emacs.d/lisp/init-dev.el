@@ -14,6 +14,9 @@
 (global-git-gutter-mode t)
 (git-gutter:linum-setup)
 
+(require 'projectile)
+(projectile-global-mode)
+
 (cscope-minor-mode t)
 (ggtags-mode t)
 ;;(ggtags-global-mode t)
