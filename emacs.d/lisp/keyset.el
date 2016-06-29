@@ -22,15 +22,15 @@
    (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
    (global-set-key (kbd "C-s") 'swiper)
-   (global-set-key (kbd "C-c r") 'ivy-resume)
-   (global-set-key (kbd "C-c i") 'counsel-imenu)
-   (global-set-key (kbd "C-c g g") 'counsel-git)
-   (global-set-key (kbd "C-c a") 'counsel-ag)
-   (global-set-key (kbd "C-c e") 'hippie-expand)
-   (global-set-key (kbd "C-c b") 'counsel-bookmark)
+   (global-set-key (kbd "C-c C-r") 'ivy-resume)
+   (global-set-key (kbd "C-c C-i") 'counsel-imenu)
+   (global-set-key (kbd "C-c C-g") 'counsel-git)
+   (global-set-key (kbd "C-c C-a") 'counsel-ag)
+   (global-set-key (kbd "C-c C-e") 'hippie-expand)
+   (global-set-key (kbd "C-c C-b") 'counsel-bookmark)
 
-   (global-set-key (kbd "C-c m") 'bookmark-set)
-   (global-set-key (kbd "C-c v") 'er/expand-region)
+   (global-set-key (kbd "C-c C-m") 'bookmark-set)
+   (global-set-key (kbd "C-c C-v") 'er/expand-region)
 
    (global-set-key (kbd "C-h v") 'counsel-describe-variable)
    (global-set-key (kbd "C-h f") 'counsel-describe-function)
@@ -57,9 +57,11 @@
        (global-set-key (kbd "C-c d") 'dash-at-point)
        (global-set-key (kbd "C-c d") 'zeal-at-point))
    ;;(global-set-key (kbd "C-c b") 'refill-mode)
-   (global-set-key (kbd "C-c l") 'toggle-truncate-lines)
+   (global-set-key (kbd "C-c C-l") 'toggle-truncate-lines)
+
+   (global-set-key (kbd "C-c e e") 'emmet-mode)
    
-   (global-set-key (kbd "C-c c") 'c++-mode)
+   (global-set-key (kbd "C-c C-c") 'c++-mode)
    (global-set-key (kbd "C-x C-r") 'recentf-open-files)
    (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory)
    )
