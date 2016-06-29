@@ -37,6 +37,12 @@
 (setq super-save-auto-save-when-idle t)
 (setq auto-save-default nil)
 
+(when neo-persist-show
+  (add-hook 'popwin:before-popup-hook
+            (lambda() (setq neo-persist-show nil)))
+  (add-hook 'popwin:after-popup-hook
+            (lambda () (setq neo-persist-show t))))
+
 (provide 'init-custom)
 
 ;;; init-custom.el ends here

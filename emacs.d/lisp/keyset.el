@@ -24,7 +24,7 @@
    (global-set-key (kbd "C-s") 'swiper)
    (global-set-key (kbd "C-c r") 'ivy-resume)
    (global-set-key (kbd "C-c i") 'counsel-imenu)
-   (global-set-key (kbd "C-c g") 'counsel-git)
+   (global-set-key (kbd "C-c g g") 'counsel-git)
    (global-set-key (kbd "C-c a") 'counsel-ag)
    (global-set-key (kbd "C-c e") 'hippie-expand)
    (global-set-key (kbd "C-c b") 'counsel-bookmark)
@@ -36,13 +36,18 @@
    (global-set-key (kbd "C-h f") 'counsel-describe-function)
 
    ;; git 相关
-   (global-set-key (kbd "C-c C-g c") 'magit-commit)
-   (global-set-key (kbd "C-c C-g p") 'magit-push)
-   (global-set-key (kbd "C-c C-g f") 'magit-pull)
-   (global-set-key (kbd "C-c C-g s") 'magit-status)
-   (global-set-key (kbd "C-c C-g d") 'magit-diff)
+   (global-set-key (kbd "C-c g c") 'magit-commit)
+   (global-set-key (kbd "C-c g p") 'magit-push)
+   (global-set-key (kbd "C-c g f") 'magit-pull)
+   (global-set-key (kbd "C-c g s") 'magit-status)
+   (global-set-key (kbd "C-c g d") 'magit-diff)
 
-   (global-set-key (kbd "<f3>") 'sr-speedbar-toggle)
+   ;; projectile
+   (global-set-key (kbd "C-c p f") 'counsel-projectile-find-file)
+   (global-set-key (kbd "C-c p a") 'projectile-ag)
+   (global-set-key (kbd "C-c p p") 'projectile-switch-project)
+
+   (global-set-key (kbd "<f3>") 'neotree-toggle)
    (global-set-key (kbd "<f4>") 'eshell)
    ;;(global-set-key (kbd "<f5>") '(shell-command '"astyle --style=kr"))
    (global-set-key (kbd "<f2>") 'revert-buffer)

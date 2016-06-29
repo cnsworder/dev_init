@@ -67,7 +67,7 @@
     ;; powerline
     (package-install 'spaceline)
     ;;文件列表
-    (package-install 'sr-speedbar)
+    (package-install 'neotree)
     ;;标签页
     ;;(package-install 'tabbar)
     ;;自动保存
@@ -101,6 +101,7 @@
     ;;智能提示
     (package-install 'company)
     (package-install 'company-ycmd)
+    (package-install 'company-web)
     (package-install 'company-c-headers)
 
     ;;代码帮助
@@ -128,6 +129,7 @@
     
     ;;搜索
     (package-install 'avy)
+    (package-install 'ag)
     (package-install 'ace-jump-mode)
     ;;(package-install 'helm-ag)
 
@@ -138,6 +140,7 @@
     (package-install 'markdown-mode)
     ;;web
     (package-install 'web-mode)
+    (package-install 'emmet-mode)
     ;;js
     (package-install 'js2-mode)
     ;;go
