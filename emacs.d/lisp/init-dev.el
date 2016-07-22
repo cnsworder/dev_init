@@ -10,6 +10,12 @@
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
+(require 'editorconfig)
+(editorconfig-mode t)
+
+;; 缩进线
+(indent-guide-global-mode)
+
 (require 'git-gutter)
 (global-git-gutter-mode t)
 (git-gutter:linum-setup)
@@ -78,12 +84,6 @@
 (add-hook 'go-mode-hook
           (add-to-list 'company-backends 'company-go))
 
-(add-hook 'python-mode-hook
-          ((lambda ()
-             (interactive "")
-           (elpy-enable)
-           (elpy-use-ipython))))
-
 ;;(require 'cedet)
 ;;(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
 ;;(require 'ecb)
@@ -110,17 +110,39 @@
 (defun *init-python* ()
 
   "Init python."
-  
+
   (interactive )
   (anaconda-mode t)
   (hs-minor-mode t)
-  )
+  (elpy-mode t)
+  (elpy-enable)
+  (elpy-use-ipython)
+  (setq company-backends '(elpy-company-backend
+                           company-ycmd
+                           (company-keywords
+                            company-files
+                            company-gtags
+                            company-yasnippet
+                            company-abbrev
+                            company-dabbrev)
+                           company-bbdb
+                           company-nxml
+                           company-css
+                           company-files
+                           (company-dabbrev-code
+                            company-gtags
+                            company-etags
+                            company-keywords)
+                           company-oddmuse
+                           company-dabbrev)))
 
 (add-hook 'python-mode-hook
-          '*init-python*)
+          '(lambda ()
+            (interactive "")
+            (*init-python*)))
 
 (add-hook 'c-mode-common-hook
-          (lambda ()
+          '(lambda ()
              (interactive "")
              (require 'google-c-style)
              (require 'flycheck-google-cpplint)

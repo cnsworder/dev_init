@@ -1,5 +1,5 @@
-;;; package -- 
-;;; Commentary: 
+;;; package --
+;;; Commentary:
 ;;; file emacs
 ;;; author cnsworder, cnsworder@gmail.com
 
@@ -12,7 +12,7 @@
 ;;(add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
 ;;(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 ;;(add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
-(setq package-archives 
+(setq package-archives
       '(("gnu-cn" . "http://elpa.codefalling.com/gnu/")
         ("org-cn" . "http://elpa.codefalling.com/org/")
         ("melpa-cn" . "http://elpa.codefalling.com/melpa/")))
@@ -30,6 +30,7 @@
                              company
                              company-ycmd
                              which-key
+                             editorconfig
                              )
   "Default package")
 
@@ -46,7 +47,7 @@
 ;;    (when (not (package-installed-p pkg))
 ;;      (package-install pkg))))
 
-;;(mapc #'(lambda (package) 
+;;(mapc #'(lambda (package)
 ;;          (unless (package-install-p package)
 ;;           (package-install package))
 ;;          *install-packages*))
@@ -82,8 +83,10 @@
     (package-install 'direx)
     ;;undo
     (package-install 'undo-tree)
+    ;; editorconfig
+    (package-install 'editorconfig)
 
-    ;;快速操作    
+    ;;快速操作
     ;;(package-install 'helm)
     (package-install 'swiper)
     (package-install 'counsel)
@@ -120,13 +123,16 @@
     ;;git
     (package-install 'magit)
     (package-install 'git-gutter)
-    ;;自动添加匹配括号
+
+    ;; 自动添加匹配括号
     (package-install 'smartparens)
-    ;;高亮括号
+    ;; 高亮括号
     (package-install 'highlight-parentheses)
+    ;; 缩进线
+    (package-install 'indent-guide)
     ;; 扩展选择区域
     (package-install 'expand-region)
-    
+
     ;;搜索
     (package-install 'avy)
     (package-install 'ag)
@@ -146,16 +152,16 @@
     ;;go
     (package-install 'go-mode)
     (package-install 'company-go)
-    
+
     ;;多光标
     (package-install 'iedit)
-    
+
     ;;中文输入法
     ;;(package-install 'chinese-pyim)
 
     ;;彩虹猫
     ;;(package-install 'nyan-mode)
-    
+
     (kill-emacs)
 )
 
