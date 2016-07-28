@@ -4,10 +4,10 @@
 # date: 2014-02-14
 # version: 1.1
 
-PACKAGES="stow vim emacs tmux python ctags cscope global curl aria2 tig ranger termite urxvt"
+PACKAGES="stow vim emacs tmux python ctags cscope global curl aria2 tig ranger"
 DEV_PACKAGES="gcc-c++ clang zeal"
-MANAGES="fabric salt-master"
-XPACKAGES="gvim awesome terminology"
+MANAGES="fabric ansible"
+XPACKAGES="gvim i3 termite"
 PIP="pip"
 PYTHON_PACKAGES="virtualenv"
 
@@ -61,7 +61,7 @@ HAVE_REAL_PATH=true
 
 if ! which realpath > /dev/null ; then
    echo "${PM} ${PM_INSTALL} realpath"
-   yes | ${PM} ${PM_INSTALL} realpath 
+   yes | ${PM} ${PM_INSTALL} realpath
    if (( $? != 0 )); then
         HAVE_REAL_PATh=false
    fi
@@ -77,7 +77,7 @@ IS_ROOT=$(id -u)
 
 
 function init_package() {
-    
+
     echo "Installing packages..."
 
     if [[ "${IS_ROOT}" != "0" ]]; then
@@ -103,7 +103,7 @@ function init_dev() {
 
 function init_xpackage() {
     if [[ $# == 1 ]]; then
-       if [[ "$1" == "gui" ]]; then 
+       if [[ "$1" == "gui" ]]; then
           echo "Install X Appliaction..."
           yes | ${PM} ${PM_INSTALL} ${XPACKAGES}
           ln -s ${THIS_PATH}/config/awesome/rc.lua ~/.config/rc.lua
@@ -120,9 +120,9 @@ function init_vim() {
         fi
         yes | ${PM} ${PM_INSTALL} vim
     fi
-    
+
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
-    
+
     if [ -e ~/.vimrc ];then
         mv ~/.vimrc ~/.vimrc.bak
         echo "backup ~/.vimrc to ~/.vimrc.bak"
@@ -145,7 +145,7 @@ function init_vim() {
 #        make;\
 #        cd -
 
-    
+
     #if [[ `id -u` == 0 ]]; then
     #    echo "export EDITOR=vim" >> /etc/profile
     #fi
@@ -160,16 +160,16 @@ function init_emacs() {
         yes | ${PM} ${PM_INSTALL} emacs
     fi
     MAJOR=$(emacs --version | head -1 | awk '{print $3}' | awk -F. '{print $1}')
-    
+
     if (( ${MAJOR} < 24 )); then
        echo "emacs version < 24, will install elpa..."
        git clone https://github.com/technomancy/package.el elpa
        ELPA="$(pwd)/elpa"
-       sed -i "s,;;{{VERSION}},(if (<= emacs-major-version 23)\n    (add-to-list \'load-path \"${ELPA}\")),g" emacs 
+       sed -i "s,;;{{VERSION}},(if (<= emacs-major-version 23)\n    (add-to-list \'load-path \"${ELPA}\")),g" emacs
        #TODO: 经常出错emacs 24以下版本暂时不支持了
        return
     fi
-   
+
     if [ -e ~/.emacs ];then
         mv ~/.emacs ~/.emacs.bak
         echo "backup ~/.emacs to ~/.emacs.bak"
@@ -182,7 +182,7 @@ function init_emacs() {
     fi
     ln -s ${THIS_PATH}/emacs.d/snippets ~/.emacs.d/snippets
 
-    emacs -nw -f install-custom-package 
+    emacs -nw -f install-custom-package
 }
 
 
@@ -200,13 +200,13 @@ function init_python() {
     if [ ! -d ~/.pip ]; then
         mkdir ~/.pip
     elif [ -e ~/.pip/pip.conf ]; then
-        mv ~/.pip/pip.conf ~/.pip/pip.conf.old  
+        mv ~/.pip/pip.conf ~/.pip/pip.conf.old
     fi
 
     if [[ "${IS_ROOT}" != "0" ]]; then
         return
     fi
-    
+
     ln -s ${THIS_PATH}/pip/pip.conf ~/.pip/pip.conf
 
 
@@ -215,18 +215,18 @@ function init_python() {
 
 function init_shell() {
     echo "Configing Shell, set zsh to default shell..."
-    
+
     if ! which zsh > /dev/null; then
         if [[ "${IS_ROOT}" != "0" ]]; then
             return
         fi
         yes | ${PM} ${PM_INSTALL} zsh
     fi
-    
+
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
     chsh `which zsh`
-    
+
     ln -s Xdefaults ~/.Xdefaults
 }
 
@@ -250,7 +250,7 @@ EOF
 
 function init_ssh() {
     echo "Configure ssh ..."
-    
+
     echo "ServerAliveInterval 60" >> ~/.ssh/config
 
 }
@@ -261,7 +261,7 @@ function proc() {
     if [[ "${INIT_VIM}" == "true" ]]; then
         init_vim
     fi
-    
+
     if [[ "${INIT_EMACS}" == "true" ]]; then
         init_emacs
     fi

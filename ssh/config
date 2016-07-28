@@ -1,0 +1,12 @@
+ServerAliveInterval 60
+ServerAliveCountMax 12
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+
+Host aliyun
+    HostName 1.2.3.5
+    Port 22
+    User root
+    ForwardX11 yes
+    ServerAliveInterval 60
+    IdentityFile .ssh/id_rsa
