@@ -7,7 +7,7 @@
 ```
     git clone git@github.com:cnsworder/dev_init  
     cd dev_init
-    ./init.sh -a
+    ./setup.sh -a
 ```
 
 ### 选项
@@ -55,31 +55,61 @@ vim使用说明
 -------------------
 
 + `mapleader=;`
-+ `F3` 文件浏览
-+ `F2` 刷新文件
-+ `F4` Tagbar
-+ `F5` UndoTree
-+ `F10` 更新插件
-+ `n` 显示行号
-+ `l` 显示不可见字符
-+ `<leader>f` FufBuffer
-+ `<leader>z` zeal
++ `<leader>u` 显示隐藏撤销树
++ `<leader>nn` 显示隐藏文件浏览
++ `<leader>tt` 显示隐藏tag
++ `<leader>uu` 更新插件
++ `<leader>n` 显示行号 
++ `<leader>l` 显示符号
++ `<leader>b` 自动换行
+
++ `<leader>q` 退出 
++ `<leader>qq` 强制退出
++ `<leader>w` 保存文件
++ `<leader>wq` 保存并退出
++ `<leader>qa` 全部退出
++ `<leader>d` 显示缩进列表
++ `<leader>i` 显示缩进线 
 
 emacs使用说明
 -----------------
 
-+ `F2` 刷新文件
-+ `F3` 文件浏览
-+ `F4` `eshell`
-+ `F6` 显示行号
-+ `Ｍ-x` `helm-M-x`
-+ `C-x C-b` `helm-buffer-list`
-+ `C-c C-o` 智能补全
-+ `TAB` 片段补全
-+ `M-TAB` `heml`补全
-+ `C-c d` zeal
++ `M-x` 指令
++ `C-x C-b` buffer列表 
++ `C-x C-f` 打开文件
++ `C-s` 搜索
++ `C-c C-i` imenu
++ `C-c C-g` git查找
++ `C-c C-a` ag查找
++ `C-c C-e` hippie
++ `C-c C-b` bookmark查找
++ `C-c C-m` 设置bookmark
++ `C-c C-v` 扩展选择区域
++ `C-h v` 变量帮助
++ `C-h f` 函数帮助
++ `C-c g c") git提交
++ `C-c g p") git推送
++ `C-c g f") git拉取
++ `C-c g s") git状态
++ `C-c g d") git比较
++ `C-c p f` 项目文件查找
++ `C-c p a` 项目ag查找
++ `C-c p p` 切换项目
++ `C-c C-p` 插件管理
++ `C-c f` 文件树
++ `C-c s` eshell
++ `C-c l` 行号
++ `C-c e` 'emmet扩展
++ `C-x C-r` 'recentf-open-files)
++ `C-x C-j` 打开当前目录 
+
+
+
+
 + [更新插件](http://blog.csdn.net/cnsword/article/details/42918215)
 
 - - - -
 
 + 感谢 @linsongze 的测试反馈
++ 2016-08-01 更新
++ `C-x C-j` 打开当前目录 

@@ -72,10 +72,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 "代码注释
 Plugin 'scrooloose/nerdcommenter'
-"golang
-Plugin 'fatih/vim-go'
-"python
-Plugin 'vim-flake8'
 "web
 Plugin 'mattn/emmet-vim'
 
@@ -88,22 +84,10 @@ Plugin 'gtags.vim'
 "帮助文档
 Plugin 'DoxygenToolkit.vim'
 
-if has("mac")
-    Plugin 'rizzatti/dash.vim'
-else
-    Plugin 'KabbAmine/zeavim.vim'
-endif
-
-
 "代码段提示
 Plugin 'honza/vim-snippets'
 if has("python")
     Plugin 'SirVer/ultiSnips'
-endif
-
-"代码格式化
-if has("python")
-    Plugin 'Chiel92/vim-autoformat'
 endif
 
 
