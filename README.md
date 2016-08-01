@@ -87,19 +87,18 @@ emacs使用说明
 + `C-c C-v` 扩展选择区域
 + `C-h v` 变量帮助
 + `C-h f` 函数帮助
-+ `C-c g c") git提交
-+ `C-c g p") git推送
-+ `C-c g f") git拉取
-+ `C-c g s") git状态
-+ `C-c g d") git比较
++ `C-c g c` git提交
++ `C-c g p` git推送
++ `C-c g f` git拉取
++ `C-c g s` git状态
++ `C-c g d` git比较
 + `C-c p f` 项目文件查找
 + `C-c p a` 项目ag查找
 + `C-c p p` 切换项目
 + `C-c C-p` 插件管理
 + `C-c f` 文件树
 + `C-c s` eshell
-+ `C-c l` 行号
-+ `C-c e` 'emmet扩展
++ `C-c e` emmet扩展
 + `C-x C-r` 'recentf-open-files)
 + `C-x C-j` 打开当前目录 
 
@@ -112,4 +111,3 @@ emacs使用说明
 
 + 感谢 @linsongze 的测试反馈
 + 2016-08-01 更新
-+ `C-x C-j` 打开当前目录 
