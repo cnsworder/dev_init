@@ -62,29 +62,31 @@
 
     ;;查找我用的包有没有安装
 
-    ;;molokai 配色
+    ;; molokai 配色
     (package-install 'molokai-theme)
     (package-install 'dracula-theme)
     ;; powerline
     (package-install 'spaceline)
-    ;;文件列表
+    ;; 文件列表
     (package-install 'neotree)
-    ;;标签页
+    ;; 标签页
     ;;(package-install 'tabbar)
-    ;;自动保存
+    ;; 自动保存
     (package-install 'super-save)
-    ;;窗口操作
+    ;; 窗口操作
     (package-install 'popwin)
     ;; 窗口跳转
     (package-install 'window-numbering)
     ;; 目录增强
     (package-install 'dired+)
-    ;;打开当前文件目录
+    ;; 打开当前文件目录
     (package-install 'direx)
-    ;;undo
+    ;; undo
     (package-install 'undo-tree)
     ;; editorconfig
     (package-install 'editorconfig)
+    ;; exec form path
+    (package-install 'exec-path-from-shell)
 
     ;;快速操作
     ;;(package-install 'helm)
@@ -94,20 +96,20 @@
         (package-install 'counsel-osx-app))
     ;;(package-install 'ecb)
     ;;(package-install 'smex)
-    ;;vim 模式
+    ;; vim 模式
     ;;(package-install 'evil)
     ;; 按键提示
     (package-install 'which-key)
 
-    ;;代码片段补全
+    ;; 代码片段补全
     (package-install 'yasnippet)
-    ;;智能提示
+    ;; 智能提示
     (package-install 'company)
     (package-install 'company-ycmd)
     (package-install 'company-web)
     (package-install 'company-c-headers)
 
-    ;;代码帮助
+    ;; 代码帮助
     (if (eq system-type 'darwin)
       (package-install 'dash-at-point)
       (package-install 'zeal-at-point))

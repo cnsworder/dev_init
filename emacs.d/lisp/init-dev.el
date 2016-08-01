@@ -10,8 +10,13 @@
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
+;; editorconfig
 (require 'editorconfig)
 (editorconfig-mode t)
+
+;; $PATH
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
 
 ;; 缩进线
 (indent-guide-global-mode)
@@ -20,8 +25,8 @@
 (global-git-gutter-mode t)
 (git-gutter:linum-setup)
 
-(require 'projectile)
-(projectile-global-mode)
+;; (require 'projectile)
+;; (projectile-global-mode)
 
 (cscope-minor-mode t)
 (ggtags-mode t)
@@ -44,15 +49,15 @@
 (setq company-require-match nil)
 
 ;;(add-hook 'after-init-hook 'global-company-mode)
-(add-to-list 'company-backends '(
-                                 company-keywords
-                                 company-files
-                                 company-gtags
-                                 company-yasnippet
-                                 company-abbrev
-                                 company-eclim
-                                 company-elisp
-                                 company-dabbrev))
+(add-to-list 'company-backends '(company-keywords
+                                     company-files
+                                     company-abbrev
+                                     company-yasnippet
+                                     company-dabbrev
+                                    company-gtags
+                                        company-etags
+                                    company-eclim
+                                    company-elisp))
 
 (global-set-key (kbd "C-c o") 'company-complete)
 
@@ -122,6 +127,7 @@
                            (company-keywords
                             company-files
                             company-gtags
+                            company-etags
                             company-yasnippet
                             company-abbrev
                             company-dabbrev)
@@ -137,12 +143,12 @@
                            company-dabbrev)))
 
 (add-hook 'python-mode-hook
-          '(lambda ()
+          (lambda ()
             (interactive "")
             (*init-python*)))
 
 (add-hook 'c-mode-common-hook
-          '(lambda ()
+          (lambda ()
              (interactive "")
              (require 'google-c-style)
              (require 'flycheck-google-cpplint)
@@ -160,7 +166,7 @@
           'c++-mode)
 
 (add-hook 'c++-mode-hook
-          '(lambda ()
+          (lambda ()
             (setq flycheck-clang-language-standard "c++11")))
 
 (provide 'init-dev)
