@@ -28,27 +28,18 @@
 ;; (require 'projectile)
 ;; (projectile-global-mode)
 
-(cscope-minor-mode t)
 (ggtags-mode t)
 ;;(ggtags-global-mode t)
 
 (require 'flycheck)
 (global-flycheck-mode t)
-(flycheck-ycmd-setup)
 
-;;(require 'company)
-;;(require 'company-clang)
-;;(require 'company-gtags)
-;;(setq company-idle-delay t)
-;;(company-mode t)
-;;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
 (global-company-mode t)
 (setq company-idle-delay 0.08)
 (setq company-minimum-prefix-length 1)
 (setq company-show-numbers t)
 (setq company-require-match nil)
 
-;;(add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends '(company-keywords
                                      company-files
                                      company-abbrev
@@ -61,56 +52,11 @@
 
 (global-set-key (kbd "C-c o") 'company-complete)
 
-;; (setq ycmd-bin (list
-;;                 "python"
-;;                (expand-file-name "~/dev/ycmd/ycmd")))
-;; (setq-default ycmd-server-command ycmd-bin)
- (setq-default ycmd-server-command
-              `("python" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
-
-(setq-default ycmd-global-config
-              (expand-file-name
-               "~/dev/ycmd/cpp/ycm/.ycm_extra_conf.py"))
-
-(global-ycmd-mode)
-;;(add-hook 'c++-mode-hook 'ycmd-mode)
-(company-ycmd-setup)
-
-;; (add-hook 'emacs-lisp-hook
-;;          (lambda()
-;;          (setq (make-local-variable 'company-backends)
-;;                '(company-elisp
-;;                  company-yasnippet
-;;                  company-eclim
-;;                  company-abbrev
-;;                  company-dabbrev))))
-
-(require 'company-go)
-(add-hook 'go-mode-hook
-          (add-to-list 'company-backends 'company-go))
-
-;;(require 'cedet)
-;;(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
-;;(require 'ecb)
-;;(require 'eassist)
-;;(require 'auto-complete)
-
-
-
-;;(setq auto-mode-alist
-;;      (append
-;;        '(("\\.html\\'" . web-mode)
-;;          ("\\.js\\'" . js2-mode))))
-
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
 (emmet-mode t)
 
-;; (add-hook  'markdown-mode-hook
-;;    (lambda ()
-;;      (global-set-key (kbd "C-c p") 'markdown-preview)))
-;;
 
 (defun *init-python* ()
 
@@ -146,21 +92,6 @@
           (lambda ()
             (interactive "")
             (*init-python*)))
-
-(add-hook 'c-mode-common-hook
-          (lambda ()
-             (interactive "")
-             (require 'google-c-style)
-             (require 'flycheck-google-cpplint)
-             (flycheck-add-next-checker 'c/c++-clang
-                                        'c/c++-googlelint '(append ))
-             (google-set-c-style)
-             (google-make-newline-indent)
-             (setq c-default-style "K&R")
-             (setq c-basic-offset 4)
-             (add-to-list 'company-backends '(company-clang
-                                              company-c-headers
-                                              company-cmake))))
 
 (add-hook 'c-mode-hook
           'c++-mode)

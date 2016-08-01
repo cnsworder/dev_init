@@ -43,9 +43,6 @@
 
 (setq inhibit-startup-message t)
 
-;; 字体配置
-(set-default-font "Source Code Pro 16")
-
 (provide 'init-theme)
 
 ;;; init-theme.el ends here
