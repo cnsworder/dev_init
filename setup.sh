@@ -128,27 +128,8 @@ function init_vim() {
         echo "backup ~/.vimrc to ~/.vimrc.bak"
     fi
     ln -s ${THIS_PATH}/vimrc ~/.vimrc
-    sed -i "s/\(colorscheme molokai\)/\"\1/g" vimrc
-    sed -i "s/\(colorscheme tango\)/\"\1/g" vimrc
     vim +PluginInstall +qall
-    sed -i "s/\"\(colorscheme molokai\)/\1/g" vimrc
-    sed -i "s/\"\(colorscheme tango\)/\1/g" vimrc
 
-    cd ~/.vim/bundle/YouCompleteMe;\
-        ./install.sh --clang-completer;\
-        cp third_party/ycmd/cpp/ycm/.ycm_extra_conf.py ~/.vim/ \
-        cd -
-
-#    cd ~/.vim/ycm_build;\
-#        cd ycm_build;\
-#        cmake ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/;\
-#        make;\
-#        cd -
-
-
-    #if [[ `id -u` == 0 ]]; then
-    #    echo "export EDITOR=vim" >> /etc/profile
-    #fi
 }
 
 function init_emacs() {
@@ -174,13 +155,7 @@ function init_emacs() {
         mv ~/.emacs ~/.emacs.bak
         echo "backup ~/.emacs to ~/.emacs.bak"
     fi
-    ln -s ${THIS_PATH}/emacs.el ~/.emacs
-
-    if [ -e ~/.emacs.d/snippets ];then
-        mv ~/.emacs.d/snippets ~/.emacs.d/snippets.bak
-        echo "backup ~/.emacs.d/snippets to ~/.emacs.d/snippets.bak"
-    fi
-    ln -s ${THIS_PATH}/emacs.d/snippets ~/.emacs.d/snippets
+    ln -s ${THIS_PATH}/emacs.d ~/.emacs.d
 
     emacs -nw -f install-custom-package
 }
