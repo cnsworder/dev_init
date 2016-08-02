@@ -7,7 +7,7 @@
 PACKAGES="stow vim emacs tmux python ctags cscope global curl aria2 tig ranger the_silver_searcher"
 DEV_PACKAGES="gcc-c++ clang zeal"
 MANAGES="fabric ansible"
-XPACKAGES="gvim i3 termite rofi"
+XPACKAGES="gvim i3 termite rofi compton"
 PIP="pip"
 PYTHON_PACKAGES="virtualenv"
 
