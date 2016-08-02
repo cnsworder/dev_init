@@ -200,7 +200,7 @@ exec_always feh --bg-scale ~/.config/i3/xj.jpg
 # exec_always synapse
 exec_always fcitx
 exec_always conky
-exec compton -d
+exec compton -b
 # exec_always zeal
 
 # exec nm-applet
