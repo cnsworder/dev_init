@@ -4,12 +4,7 @@
 # date: 2014-02-14
 # version: 1.1
 
-PACKAGES="stow vim emacs tmux python ctags cscope global curl aria2 tig ranger the_silver_searcher"
-DEV_PACKAGES="gcc-c++ clang zeal"
-MANAGES="fabric ansible"
-XPACKAGES="gvim i3 termite rofi compton"
-PIP="pip"
-PYTHON_PACKAGES="virtualenv"
+source package.sh
 
 INIT_VIM=false
 INIT_EMACS=false
