@@ -50,12 +50,12 @@
 
 ;;(add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends '(company-keywords
-                                     company-files
-                                     company-abbrev
-                                     company-yasnippet
-                                     company-dabbrev
+                                    company-files
+                                    company-abbrev
+                                    company-yasnippet
+                                    company-dabbrev
                                     company-gtags
-                                        company-etags
+                                    company-etags
                                     company-eclim
                                     company-elisp))
 
@@ -76,14 +76,14 @@
 ;;(add-hook 'c++-mode-hook 'ycmd-mode)
 (company-ycmd-setup)
 
-;; (add-hook 'emacs-lisp-hook
-;;          (lambda()
-;;          (setq (make-local-variable 'company-backends)
-;;                '(company-elisp
-;;                  company-yasnippet
-;;                  company-eclim
-;;                  company-abbrev
-;;                  company-dabbrev))))
+(add-hook 'emacs-lisp-hook
+    (lambda()
+          (setq (make-local-variable 'company-backends)
+                '(company-elisp
+                  company-yasnippet
+                  company-eclim
+                  company-abbrev
+                  company-dabbrev))))
 
 (require 'company-go)
 (add-hook 'go-mode-hook

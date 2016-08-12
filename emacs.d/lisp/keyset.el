@@ -75,6 +75,11 @@
     (global-set-key (kbd "C-x C-r") 'recentf-open-files)
     (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory)
 
+    (if (eq system-type 'darwin)
+        (global-set-key (kbd "C-c b b") 'browse-url-default-macosx-browser))
+    (global-set-key (kbd "C-c b f") 'browse-url-firefox)
+    (global-set-key (kbd "C-c b c") 'browse-url-chrome)
+
     (global-set-key (kbd "C-c h") 'hack-emacs))
 
 (key-set)
