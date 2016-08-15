@@ -111,8 +111,8 @@
 
     ;; 代码帮助
     (if (eq system-type 'darwin)
-      (package-install 'dash-at-point)
-      (package-install 'zeal-at-point))
+        (package-install 'dash-at-point)
+        (package-install 'zeal-at-point))
     ;;代码跳转
     (package-install 'xcscope)
     (package-install 'ggtags)
@@ -132,6 +132,8 @@
     (package-install 'highlight-parentheses)
     ;; 缩进线
     (package-install 'indent-guide)
+    ;; 缩进对齐
+    (package-install 'aggressive-indent)
     ;; 扩展选择区域
     (package-install 'expand-region)
 
@@ -165,6 +167,6 @@
     ;;(package-install 'nyan-mode)
 
     (kill-emacs)
-)
+    )
 
 (provide 'init-package)
