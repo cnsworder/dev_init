@@ -81,6 +81,8 @@
     (package-install 'dired+)
     ;; 打开当前文件目录
     (package-install 'direx)
+    ;; 打开外部应用
+    (package-install 'crux)
     ;; undo
     (package-install 'undo-tree)
     ;; editorconfig
