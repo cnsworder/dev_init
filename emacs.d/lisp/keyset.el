@@ -35,6 +35,11 @@
     (global-set-key (kbd "C-h v") 'counsel-describe-variable)
     (global-set-key (kbd "C-h f") 'counsel-describe-function)
 
+    (global-set-key (kbd "C-c o") 'crux-open-with)
+
+    ;; 代码补全
+    (global-set-key (kbd "C-c C-o") 'company-complete)
+
     ;; git 相关
     (global-set-key (kbd "C-c g c") 'magit-commit)
     (global-set-key (kbd "C-c g p") 'magit-push)

@@ -26,6 +26,8 @@
 (which-key-mode)
 ;; (window-numbering-mode t)
 
+(require 'crux)
+
 (recentf-mode t)
 (setq-default make-backup-files nil)
 
