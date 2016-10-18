@@ -1,8 +1,15 @@
+# 服务器连接超时
 ServerAliveInterval 60
 ServerAliveCountMax 12
+
+# 已知主机文件 
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 
+# 秘钥转发
+ForwardAgent yes
+
+# 连接主机配置
 Host aliyun
     HostName 1.2.3.5
     Port 22
