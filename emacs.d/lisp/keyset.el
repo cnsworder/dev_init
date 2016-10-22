@@ -38,6 +38,7 @@
     (global-set-key (kbd "C-c o") 'crux-open-with)
 
     ;; 代码补全
+    (global-set-key (kbd "C-c C-y") 'company-mode)
     (global-set-key (kbd "C-c C-o") 'company-complete)
 
     ;; git 相关

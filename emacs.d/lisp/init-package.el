@@ -67,6 +67,11 @@
     (package-install 'dracula-theme)
     ;; powerline
     (package-install 'spaceline)
+    ;; 图标
+    (package-install 'all-the-icons)
+    (package-install 'mode-icons)
+    ;; 首页
+    (package-install 'init-open-recentf)
     ;; 文件列表
     (package-install 'neotree)
     ;; 标签页

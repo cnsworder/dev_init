@@ -39,6 +39,9 @@
 (setq super-save-auto-save-when-idle t)
 (setq auto-save-default nil)
 
+;;(setq init-open-recentf-interface 'swiper)
+(init-open-recentf)
+
 (require 'neotree)
 (when neo-persist-show
   (add-hook 'popwin:before-popup-hook

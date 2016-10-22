@@ -15,6 +15,9 @@
 
 (global-hl-line-mode t)
 
+(require 'all-the-icons)
+(mode-icons-mode t)
+
 ;;(nyan-mode t)
 
 (require 'popwin)
@@ -44,7 +47,9 @@
 (setq inhibit-startup-message t)
 
 ;; 字体配置
-(set-default-font "Source Code Pro 16")
+(set-default-font "SauceCodePro Nerd Font 16")
+
+(setq neo-theme (if window-system 'icons 'arrow))
 
 (provide 'init-theme)
 

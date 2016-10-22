@@ -5,12 +5,10 @@
     ;; If you edit it by hand, you could mess it up, so be careful.
     ;; Your init file should contain only one such instance.
     ;; If there is more than one, they won't work right.
-    '(custom-safe-themes
-         (quote
-             ("b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" default)))
+    '(nil nil t)
     '(package-selected-packages
          (quote
-             (crux aggressive-indent company-quickhelp command-log-mode exec-path-from-shell indent-guide ag emmet-mode company-web expand-region counsel-projectile counsel-osx-app company-go window-numbering xcscope which-key tabbar super-save popwin molokai-theme js2-mode iedit highlight-parentheses google-c-style git-gutter ggtags flycheck-ycmd flycheck-google-cpplint evil elpy ecb dracula-theme direx dired+ dash-at-point company-c-headers cmake-mode avy anaconda-mode ace-jump-mode))))
+             (init-open-recentf mode-icons all-the-icons xcscope window-numbering which-key web-mode tabbar super-save spaceline smartparens popwin popup neotree molokai-theme markdown-mode magit js2-mode indent-guide iedit highlight-parentheses google-c-style git-gutter ggtags flycheck-ycmd flycheck-google-cpplint expand-region exec-path-from-shell evil emmet-mode elpy editorconfig ecb dracula-theme direx dired+ dash-at-point crux counsel-projectile counsel-osx-app company-ycmd company-web company-quickhelp company-go company-c-headers command-log-mode cmake-mode avy anaconda-mode aggressive-indent ag ace-jump-mode))))
 (custom-set-faces
     ;; custom-set-faces was added by Custom.
     ;; If you edit it by hand, you could mess it up, so be careful.
