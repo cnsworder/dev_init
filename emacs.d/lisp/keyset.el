@@ -35,6 +35,11 @@
     (global-set-key (kbd "C-h v") 'counsel-describe-variable)
     (global-set-key (kbd "C-h f") 'counsel-describe-function)
 
+    (global-set-key (kbd "C-c m m") 'bm-toggle)
+    (global-set-key (kbd "C-c m l") 'bm-show-all)
+    (global-set-key (kbd "C-c m n") 'bm-next)
+    (global-set-key (kbd "C-c m p") 'bm-previous)
+
     (global-set-key (kbd "C-c o") 'crux-open-with)
 
     ;; 代码补全

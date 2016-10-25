@@ -82,6 +82,8 @@
     (package-install 'popwin)
     ;; 窗口跳转
     (package-install 'window-numbering)
+    ;; bookmarks
+    (package-install 'bm)
     ;; 目录增强
     (package-install 'dired+)
     ;; 打开当前文件目录
