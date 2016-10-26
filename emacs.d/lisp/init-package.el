@@ -72,6 +72,8 @@
     (package-install 'mode-icons)
     ;; 首页
     (package-install 'init-open-recentf)
+    ;; 高亮当前行和列
+    (package-install 'crosshairs)
     ;; 文件列表
     (package-install 'neotree)
     ;; 标签页

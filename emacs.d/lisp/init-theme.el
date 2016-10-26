@@ -1,5 +1,5 @@
 ;;; packates init-theme
-;;; Codes
+;;; Code:
 
 ;; 不要tab页了没用
 ;;(require 'tabbar)
@@ -11,9 +11,12 @@
 ;;(setq speedbar-use-images nil)
 
 (require 'highlight-parentheses)
+
 (global-highlight-parentheses-mode t)
 
-(global-hl-line-mode t)
+;; (global-hl-line-mode t)
+
+;; (crosshairs-mode t)
 
 (require 'all-the-icons)
 (mode-icons-mode t)

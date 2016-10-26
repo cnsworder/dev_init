@@ -67,8 +67,8 @@
     `("python" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
 
 (setq-default ycmd-global-config
-              (expand-file-name
-               "~/dev/ycmd/cpp/ycm/.ycm_extra_conf.py"))
+    (expand-file-name
+        "~/dev/ycmd/cpp/ycm/.ycm_extra_conf.py"))
 
 ;;(global-ycmd-mode)
 ;;(add-hook 'c++-mode-hook 'ycmd-mode)

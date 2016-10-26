@@ -18,7 +18,8 @@
 
     ;;快捷键设置
     (global-set-key (kbd "M-x") 'counsel-M-x)
-    (global-set-key (kbd "C-x C-b") 'ivy-switch-buffer)
+    (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+    (global-set-key (kbd "C-x C-b") 'ibuffer)
     (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
     (global-set-key (kbd "C-s") 'swiper)
@@ -29,6 +30,7 @@
     (global-set-key (kbd "C-c C-e") 'hippie-expand)
     (global-set-key (kbd "C-c C-b") 'counsel-bookmark)
 
+    (global-set-key (kbd "C-c C-h") 'crosshairs-mode)
     (global-set-key (kbd "C-c C-m") 'bookmark-set)
     (global-set-key (kbd "C-c C-v") 'er/expand-region)
 
@@ -39,12 +41,16 @@
     (global-set-key (kbd "C-c m l") 'bm-show-all)
     (global-set-key (kbd "C-c m n") 'bm-next)
     (global-set-key (kbd "C-c m p") 'bm-previous)
+    (global-set-key (kbd "C-c m s") 'bm-bookmark-annotate)
 
     (global-set-key (kbd "C-c o") 'crux-open-with)
 
     ;; 代码补全
-    (global-set-key (kbd "C-c C-y") 'company-mode)
+    (global-set-key (kbd "C-c C-y") 'global-ycmd-mode)
     (global-set-key (kbd "C-c C-o") 'company-complete)
+
+    ;; iedit mode
+    (global-set-key (kbd "C-c i") 'iedit-mode)
 
     ;; git 相关
     (global-set-key (kbd "C-c g c") 'magit-commit)
