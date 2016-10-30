@@ -1,5 +1,5 @@
-;;; package -- 
-;;; Commentary: 
+;;; package --
+;;; Commentary:
 ;;; file emacs
 ;;; author cnsworder, cnsworder@gmail.com
 

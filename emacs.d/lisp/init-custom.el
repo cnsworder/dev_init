@@ -43,11 +43,11 @@
 (init-open-recentf)
 
 (require 'neotree)
-(when neo-persist-show
-  (add-hook 'popwin:before-popup-hook
-            (lambda() (setq neo-persist-show nil)))
-  (add-hook 'popwin:after-popup-hook
-            (lambda () (setq neo-persist-show t))))
+;;(when neo-persist-show
+;;  (add-hook 'popwin:before-popup-hook
+;;            (lambda() (setq neo-persist-show nil)))
+;;  (add-hook 'popwin:after-popup-hook
+;;            (lambda () (setq neo-persist-show t))))
 
 (setq projectile-switch-project-action 'neotree-projectile-action)
 
