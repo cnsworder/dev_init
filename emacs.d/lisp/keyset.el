@@ -52,6 +52,9 @@
     ;; iedit mode
     (global-set-key (kbd "C-c i") 'iedit-mode)
 
+    ;; aggressive-indent-mode
+    (global-set-key (kbd "C-c C-x i") 'aggressive-indent-mode)
+
     ;; git 相关
     (global-set-key (kbd "C-c g c") 'magit-commit)
     (global-set-key (kbd "C-c g p") 'magit-push)

@@ -112,33 +112,34 @@
 
 (defun *init-python* ()
 
-  "Init python."
+    "Init python."
 
-  (interactive )
-  (anaconda-mode t)
-  (hs-minor-mode t)
-  (elpy-mode t)
-  (elpy-enable)
-  (elpy-use-ipython)
-  (setq company-backends '(elpy-company-backend
-                           company-ycmd
-                           (company-keywords
-                            company-files
-                            company-gtags
-                            company-etags
-                            company-yasnippet
-                            company-abbrev
-                            company-dabbrev)
-                           company-bbdb
-                           company-nxml
-                           company-css
-                           company-files
-                           (company-dabbrev-code
-                            company-gtags
-                            company-etags
-                            company-keywords)
-                           company-oddmuse
-                           company-dabbrev)))
+    (interactive )
+    (anaconda-mode t)
+    (hs-minor-mode t)
+    (elpy-mode t)
+    (elpy-enable)
+    (elpy-use-ipython)
+    (aggressive-indent-mode nil)
+    (setq company-backends '(elpy-company-backend
+                                company-ycmd
+                                (company-keywords
+                                    company-files
+                                    company-gtags
+                                    company-etags
+                                    company-yasnippet
+                                    company-abbrev
+                                    company-dabbrev)
+                                company-bbdb
+                                company-nxml
+                                company-css
+                                company-files
+                                (company-dabbrev-code
+                                    company-gtags
+                                    company-etags
+                                    company-keywords)
+                                company-oddmuse
+                                company-dabbrev)))
 
 (add-hook 'python-mode-hook
           (lambda ()
