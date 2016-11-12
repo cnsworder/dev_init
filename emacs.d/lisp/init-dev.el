@@ -64,11 +64,14 @@
 ;;                (expand-file-name "~/dev/ycmd/ycmd")))
 ;; (setq-default ycmd-server-command ycmd-bin)
 (setq-default ycmd-server-command
-    `("python" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
+    '("python" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
 
 (setq-default ycmd-global-config
     (expand-file-name
         "~/dev/ycmd/cpp/ycm/.ycm_extra_conf.py"))
+
+(setq-default ycmd-min-num-chars-for-completion 1)
+(setq-default ycmd-seed-identifiers-with-keywords t)
 
 ;;(global-ycmd-mode)
 ;;(add-hook 'c++-mode-hook 'ycmd-mode)
