@@ -147,19 +147,20 @@
             (*init-python*)))
 
 (add-hook 'c-mode-common-hook
-          (lambda ()
-             (interactive "")
-             (require 'google-c-style)
-             (require 'flycheck-google-cpplint)
-             (flycheck-add-next-checker 'c/c++-clang
-                                        'c/c++-googlelint '(append ))
-             (google-set-c-style)
-             (google-make-newline-indent)
-             (setq c-default-style "K&R")
-             (setq c-basic-offset 4)
-             (add-to-list 'company-backends '(company-clang
-                                              company-c-headers
-                                              company-cmake))))
+    (lambda ()
+        (interactive "")
+        (require 'google-c-style)
+        (require 'flycheck-google-cpplint)
+        (ycmd-mode t)
+        (flycheck-add-next-checker 'c/c++-clang
+            'c/c++-googlelint '(append ))
+        (google-set-c-style)
+        (google-make-newline-indent)
+        (setq c-default-style "K&R")
+        (setq c-basic-offset 4)
+        (add-to-list 'company-backends '(company-clang
+                                            company-c-headers
+                                            company-cmake))))
 
 (add-hook 'c-mode-hook
           'c++-mode)

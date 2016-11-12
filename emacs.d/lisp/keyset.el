@@ -26,34 +26,27 @@
     (global-set-key (kbd "C-c C-r") 'ivy-resume)
     (global-set-key (kbd "C-c C-i") 'counsel-imenu)
     (global-set-key (kbd "C-c C-g") 'counsel-git)
-    (global-set-key (kbd "C-c C-a") 'counsel-ag)
     (global-set-key (kbd "C-c C-e") 'hippie-expand)
     (global-set-key (kbd "C-c C-b") 'counsel-bookmark)
+    (global-set-key (kbd "C-c a g") 'counsel-ag)
 
-    (global-set-key (kbd "C-c C-h") 'crosshairs-mode)
     (global-set-key (kbd "C-c C-m") 'bookmark-set)
     (global-set-key (kbd "C-c C-v") 'er/expand-region)
 
     (global-set-key (kbd "C-h v") 'counsel-describe-variable)
     (global-set-key (kbd "C-h f") 'counsel-describe-function)
 
-    (global-set-key (kbd "C-c m m") 'bm-toggle)
-    (global-set-key (kbd "C-c m l") 'bm-show-all)
-    (global-set-key (kbd "C-c m n") 'bm-next)
-    (global-set-key (kbd "C-c m p") 'bm-previous)
-    (global-set-key (kbd "C-c m s") 'bm-bookmark-annotate)
+    (global-set-key (kbd "C-c b m") 'bm-toggle)
+    (global-set-key (kbd "C-c b l") 'bm-show-all)
+    (global-set-key (kbd "C-c b n") 'bm-next)
+    (global-set-key (kbd "C-c b p") 'bm-previous)
+    (global-set-key (kbd "C-c b a") 'bm-bookmark-annotate)
 
     (global-set-key (kbd "C-c o") 'crux-open-with)
 
     ;; 代码补全
-    (global-set-key (kbd "C-c C-y") 'global-ycmd-mode)
+    (global-set-key (kbd "C-c m y") 'global-ycmd-mode)
     (global-set-key (kbd "C-c C-o") 'company-complete)
-
-    ;; iedit mode
-    (global-set-key (kbd "C-c i") 'iedit-mode)
-
-    ;; aggressive-indent-mode
-    (global-set-key (kbd "C-c C-x i") 'aggressive-indent-mode)
 
     ;; git 相关
     (global-set-key (kbd "C-c g c") 'magit-commit)
@@ -75,28 +68,37 @@
     (global-set-key (kbd "C-c p p") 'projectile-switch-project)
 
     ;; package
-    (global-set-key (kbd "C-c C-p") 'package-list-packages)
+    (global-set-key (kbd "C-c p k") 'package-list-packages)
 
-    (global-set-key (kbd "C-c f") 'neotree-toggle)
+    (global-set-key (kbd "C-c f t") 'neotree-toggle)
     (global-set-key (kbd "C-c s") 'eshell)
-    ;;(global-set-key (kbd "C-c f f") '(shell-command '"astyle --style=kr"))
+    (global-set-key (kbd "C-c f f") '(shell-command '"astyle --style=kr"))
     (global-set-key (kbd "C-c r") 'revert-buffer)
-    (global-set-key (kbd "C-c l") 'linum-mode)
-    (global-set-key (kbd "C-c w") 'whitespace-mode)
+    (global-set-key (kbd "C-c m l") 'linum-mode)
+    (global-set-key (kbd "C-c m w") 'whitespace-mode)
     (if (eq system-type 'darwin)
         (global-set-key (kbd "C-c d") 'dash-at-point)
         (global-set-key (kbd "C-c d") 'zeal-at-point))
     ;;(global-set-key (kbd "C-c b") 'refill-mode)
     (global-set-key (kbd "C-c C-l") 'toggle-truncate-lines)
 
-    (global-set-key (kbd "C-c e") 'emmet-mode)
-    (global-set-key (kbd "C-c c") 'c++-mode)
+    ;; iedit mode
+    (global-set-key (kbd "C-c m u") 'iedit-mode)
+
+    ;; 行列高亮
+    (global-set-key (kbd "C-c m h") 'crosshairs-mode)
+
+    ;; aggressive-indent-mode
+    (global-set-key (kbd "C-c m i") 'aggressive-indent-mode)
+
+    (global-set-key (kbd "C-c m e") 'emmet-mode)
+    (global-set-key (kbd "C-c m c") 'c++-mode)
 
     (global-set-key (kbd "C-x C-r") 'recentf-open-files)
     (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory)
 
     (if (eq system-type 'darwin)
-        (global-set-key (kbd "C-c b b") 'browse-url-default-macosx-browser))
+        (global-set-key (kbd "C-c b m") 'browse-url-default-macosx-browser))
     (global-set-key (kbd "C-c b f") 'browse-url-firefox)
     (global-set-key (kbd "C-c b c") 'browse-url-chrome)
 
