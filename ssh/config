@@ -2,9 +2,14 @@
 ServerAliveInterval 60
 ServerAliveCountMax 12
 
-# 已知主机文件 
+# 已知主机文件
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
+
+# 连接重用
+ControlMaster auto
+ControlPath /var/tmp/ssh_mux_%h_%p_%r
+ControlPersist 600
 
 # 秘钥转发
 ForwardAgent yes
