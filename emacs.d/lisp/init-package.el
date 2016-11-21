@@ -105,6 +105,8 @@
     (package-install 'counsel)
     (if (eq system-type 'darwin)
         (package-install 'counsel-osx-app))
+    ;; 搜索
+    (package-install 'fzf)
     ;;(package-install 'ecb)
     ;;(package-install 'smex)
     ;; vim 模式
