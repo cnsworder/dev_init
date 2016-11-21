@@ -64,7 +64,7 @@
 ;;                (expand-file-name "~/dev/ycmd/ycmd")))
 ;; (setq-default ycmd-server-command ycmd-bin)
 (setq-default ycmd-server-command
-    '("python" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
+              `("python" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
 
 (setq-default ycmd-global-config
     (expand-file-name
