@@ -71,7 +71,8 @@
     (package-install 'all-the-icons)
     (package-install 'mode-icons)
     ;; 首页
-    (package-install 'init-open-recentf)
+    ;;(package-install 'init-open-recentf)
+    (package-install 'dashboard)
     ;; 高亮当前行和列
     (package-install 'crosshairs)
     ;; 文件列表

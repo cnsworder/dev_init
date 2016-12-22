@@ -41,6 +41,13 @@
 
 ;;(setq init-open-recentf-interface 'swiper)
 (init-open-recentf)
+;; (require 'dashboard)
+;; (dashboard-setup-startup-hook)
+
+;; (setq dashboard-items '((recents . 5)
+;;                            (bookmarks . 5)
+;;                            (projects . 5)))
+;; (page-break-lines-mode)
 
 (require 'neotree)
 ;;(when neo-persist-show

@@ -50,7 +50,8 @@
 (setq inhibit-startup-message t)
 
 ;; 字体配置
-(set-default-font "SauceCodePro Nerd Font 16")
+;; (set-default-font "SauceCodePro Nerd Font 16")
+(set-default-font "Inziu Iosevka Slab SC 16")
 
 (setq neo-theme (if window-system 'icons 'arrow))
 
