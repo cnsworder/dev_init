@@ -26,21 +26,23 @@
 (require 'popwin)
 (popwin-mode t)
 
-(if window-system
-    (require 'dracula-theme)
-  (require 'molokai-theme))
+;; (if window-system
+;;   (require 'dracula-theme)
+;;   (require 'molokai-theme))
 
-;;暗色主题下光标颜色设置一下
+(require 'gruvbox-theme)
+
+;; 暗色主题下光标颜色设置一下
 (set-cursor-color "White")
 (setq-default cursor-type 'bar)
 
-;;去掉工具栏
+;; 去掉工具栏
 (if window-system
-   (tool-bar-mode 0))
+    (tool-bar-mode 0))
 
-;;开启折叠
-;;(hs-minor-mode t)
-;;显示行号
+;; 开启折叠
+;; (hs-minor-mode t)
+;; 显示行号
 (global-linum-mode t)
 (column-number-mode t)
 

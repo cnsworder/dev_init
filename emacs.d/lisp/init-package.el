@@ -65,6 +65,7 @@
     ;; molokai 配色
     (package-install 'molokai-theme)
     (package-install 'dracula-theme)
+    (package-install 'druvbox-theme)
     ;; powerline
     ;; (package-install 'spaceline)
     ;; 图标
