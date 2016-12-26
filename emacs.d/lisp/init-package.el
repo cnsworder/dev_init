@@ -64,6 +64,7 @@
 
     ;; molokai 配色
     (package-install 'dracula-theme)
+    (package-install 'gruvbox-theme)
     ;; 文件列表
     (package-install 'neotree)
     ;; 自动保存

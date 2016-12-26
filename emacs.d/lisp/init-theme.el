@@ -20,9 +20,11 @@
 (require 'popwin)
 (popwin-mode t)
 
-(if window-system
-    (require 'dracula-theme)
-  (require 'molokai-theme))
+;; (if window-system
+;;    (require 'dracula-theme)
+;;  (require 'molokai-theme))
+
+(require 'gruvbox-theme)
 
 ;;暗色主题下光标颜色设置一下
 (set-cursor-color "White")

@@ -42,7 +42,8 @@ Plugin 'terryma/vim-multiple-cursors.git'
 Plugin 'editorconfig/editorconfig-vim'
 
 "主题配色
-Plugin 'zenorocha/dracula-theme',{'rtp':'vim/'}
+" Plugin 'zenorocha/dracula-theme',{'rtp':'vim/'}
+Plugin 'morhetz/gruvbox'
 
 "搜索定位
 Plugin 'Lokaltog/vim-easymotion'
@@ -247,7 +248,9 @@ syntax on
 set backspace=indent,eol,start
 
 try
-    colorscheme dracula
+    " colorscheme dracula
+    set background=dark
+    colorscheme gruvbox
 catch
     colorscheme ron
 endtry
