@@ -89,3 +89,4 @@ for tool in ~/dev/tools/*.sh; do
 done
 
 # screenfetch
+[ -f ~/.fzf.zsh  ] && source ~/.fzf.zsh
