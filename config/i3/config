@@ -225,10 +225,10 @@ for_window [class="(?i)screenkey"] floating enable
 #bindsym $mod+a [title="vim"] focus
 
 # class color           边框     背景     文本     指示器     子框架
-client.focused          #636363 #566074 #ffffff #2e9ef4
-client.focused_inactive #636363 #636363 #ffffff #484e50
-client.unfocused        #636363 #636363 #888888 #292d2e
-client.urgent           #636363 #636363 #ffffff #900000
+client.focused          #d79921 #1d2021 #ebdbb2 #d65d0e
+client.focused_inactive #a89984 #282828 #fabd2f #484e50
+client.unfocused        #a89984 #282828 #fbf1c7 #fe8019
+client.urgent           #a89984 #282828 #fbf1c7 #fe8019
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
