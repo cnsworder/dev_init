@@ -19,6 +19,7 @@
 ;;(add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
+(setq package-enable-at-startup nil)
 (package-initialize)
 
 (require 'cl-lib)
