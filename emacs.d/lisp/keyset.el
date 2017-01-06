@@ -66,10 +66,10 @@
     ;; projectile
     (global-set-key (kbd "C-c p f") 'counsel-projectile-find-file)
     (global-set-key (kbd "C-c p a") 'projectile-ag)
-    (global-set-key (kbd "C-c p p") 'projectile-switch-project)
+    (global-set-key (kbd "C-c p l") 'projectile-switch-project)
 
     ;; package
-    (global-set-key (kbd "C-c p k") 'package-list-packages)
+    (global-set-key (kbd "C-c p p") 'package-list-packages)
 
     (global-set-key (kbd "C-c f t") 'neotree-toggle)
     (global-set-key (kbd "C-c s") 'eshell)

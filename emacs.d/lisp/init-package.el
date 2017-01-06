@@ -9,15 +9,15 @@
 
 ;;设置插件服务器
 (require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
-;;(setq package-archives
-;;'(("gnu-cn" . "http://elpa.codefalling.com/gnu/")
-;;("org-cn" . "http://elpa.codefalling.com/org/")
-;;("melpa-cn" . "http://elpa.codefalling.com/melpa/")))
-;;(add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
+;; (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+;; (add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
+(setq package-archives
+    '(("gnu-cn" . "http://elpa.emacs-china.org/gnu/")
+         ("org-cn" . "http://elpa.emacs-china.org/org/")
+         ("melpa-cn" . "http://elpa.emacs-china.org/melpa/")))
+;; (add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages/"))
+;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
 (setq package-enable-at-startup nil)
 (package-initialize)
