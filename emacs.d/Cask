@@ -60,8 +60,7 @@
 ;;快速操作
 (depends-on "swiper")
 (depends-on "counsel")
-;; (if (eq system-type 'darwin)
-    (depends-on "counsel-osx-app") ;;)
+(depends-on "counsel-osx-app")
 
 ;; 搜索
 (depends-on "fzf")
@@ -77,9 +76,8 @@
 (depends-on "company-go")
 (depends-on "company-c-headers")
 ;; 代码帮助
-;; (if (eq system-type 'darwin)
-    (depends-on "dash-at-point")
-;;    (depends-on "zeal-at-point"))
+(depends-on "dash-at-point")
+(depends-on "zeal-at-point")
 
 ;; 代码片段补全
 (depends-on "yasnippet")

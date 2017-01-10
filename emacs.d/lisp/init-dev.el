@@ -9,9 +9,6 @@
     :config
     (yas-global-mode t))
 
-;; (setq-default tab-width 4)
-;; (setq-default indent-tabs-mode nil)
-
 ;; editorconfig
 (use-package editorconfig
     :config
@@ -23,18 +20,21 @@
     (exec-path-from-shell-initialize))
 
 ;; 缩进线
-;; (indent-guide-global-mode)
+(use-package indent-guide
+    :config
+    (indent-guide-global-mode))
 
 (use-package git-gutter
     :config
     (global-git-gutter-mode t)
     (git-gutter:linum-setup))
 
-(use-package cscope
+(use-package xcscope
     :config
     (cscope-minor-mode t))
-(ggtags-mode t)
-;;(ggtags-global-mode t)
+(use-package ggtags
+    :config
+    (ggtags-mode t))
 
 (use-package flycheck
     :config
@@ -91,9 +91,10 @@
                   company-abbrev
                   company-dabbrev))))
 
-(require 'company-go)
-(add-hook 'go-mode-hook
-          (add-to-list 'company-backends 'company-go))
+(use-package company-go
+    :config
+    (add-hook 'go-mode-hook
+        (add-to-list 'company-backends 'company-go)))
 
 ;;(require 'cedet)
 ;;(load-file "/usr/share/emacs/24.3/lisp/cedet/cedet.elc")
@@ -108,10 +109,18 @@
 ;;        '(("\\.html\\'" . web-mode)
 ;;          ("\\.js\\'" . js2-mode))))
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;; (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(use-package js2-mode
+    :mode "\\.js\\'")
+(use-package web-mode
+    :mode ("\\.html\\'" . web-mode))
 
-(emmet-mode t)
+(use-package emmet-mode
+    :bind
+    ("C-c m e" . emmet-mode)
+    :config
+    (emmet-mode t))
 
 ;; (add-hook  'markdown-mode-hook
 ;;    (lambda ()
