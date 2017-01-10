@@ -5,6 +5,7 @@
 
 ;; 包管理
 (depends-on "cask")
+(depends-on "pallet")
 (depends-on "use-package")
 
 ;; 快捷键

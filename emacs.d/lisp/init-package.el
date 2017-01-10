@@ -7,11 +7,16 @@
 
 ;;{{VERSION}}
 
-;;设置插件服务器
+;;设置插件管理工具
 (if (eq system-type 'darwin)
     (require 'cask)
     (require  'cask "~/.cask/cask.el"))
 (cask-initialize)
+
+;; 插件cask的管理器
+(use-package pallet
+    :config
+    (pallet-mode t))
 
 ;; (require 'package)
 ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
