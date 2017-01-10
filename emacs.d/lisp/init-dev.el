@@ -5,36 +5,41 @@
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
-(require 'yasnippet)
-(yas-global-mode t)
-(setq-default tab-width 4)
-(setq-default indent-tabs-mode nil)
+(use-package yasnippet
+    :config
+    (yas-global-mode t))
+
+;; (setq-default tab-width 4)
+;; (setq-default indent-tabs-mode nil)
 
 ;; editorconfig
-(require 'editorconfig)
-(editorconfig-mode t)
+(use-package editorconfig
+    :config
+    (editorconfig-mode t))
 
 ;; $PATH
-(require 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
+(use-package exec-path-from-shell
+    :config
+    (exec-path-from-shell-initialize))
 
 ;; 缩进线
-(indent-guide-global-mode)
+;; (indent-guide-global-mode)
 
-(require 'git-gutter)
-(global-git-gutter-mode t)
-(git-gutter:linum-setup)
+(use-package git-gutter
+    :config
+    (global-git-gutter-mode t)
+    (git-gutter:linum-setup))
 
-;; (require 'projectile)
-;; (projectile-global-mode)
-
-(cscope-minor-mode t)
+(use-package cscope
+    :config
+    (cscope-minor-mode t))
 (ggtags-mode t)
 ;;(ggtags-global-mode t)
 
-(require 'flycheck)
-(global-flycheck-mode t)
-(flycheck-ycmd-setup)
+(use-package flycheck
+    :config
+    (global-flycheck-mode t)
+    (flycheck-ycmd-setup))
 
 ;;(require 'company)
 ;;(require 'company-clang)

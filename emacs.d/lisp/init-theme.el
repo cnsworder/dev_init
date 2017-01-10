@@ -10,27 +10,21 @@
 ;;(setq speedbar-show-unknown-files t)
 ;;(setq speedbar-use-images nil)
 
-(require 'highlight-parentheses)
+;; (require 'highlight-parentheses)
+(use-package highlight-parentheses
+    :config
+    (global-highlight-parentheses-mode t))
 
-(global-highlight-parentheses-mode t)
+(use-package all-the-icons
+    :config
+    (mode-icons-mode t))
 
-;; (global-hl-line-mode t)
+(use-package popwin
+    :config
+    (popwin-mode t))
 
-;; (crosshairs-mode t)
+(use-package gruvbox-theme)
 
-(require 'all-the-icons)
-(mode-icons-mode t)
-
-;;(nyan-mode t)
-
-(require 'popwin)
-(popwin-mode t)
-
-;; (if window-system
-;;   (require 'dracula-theme)
-;;   (require 'molokai-theme))
-
-(require 'gruvbox-theme)
 
 ;; 暗色主题下光标颜色设置一下
 (set-cursor-color "White")
