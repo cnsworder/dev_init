@@ -11,6 +11,27 @@
 5. 使用`dracula`做为主题
 6. 使用`magit`作为git前端
 
+## 演示
+
+### 包管理
+![](image/cask.gif)
+
+### 文件管理
+![](image/file.gif)
+
+### 项目管理
+![](image/project.gif)
+
+### 搜索
+![](image/search.gif)
+
+### 命令补全
+![](image/counsel.gif)
+
+### 代码补全
+![](image/ycmd.gif)
+
+
 ## 语言支持
 
 c/c++:
