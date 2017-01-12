@@ -1,6 +1,6 @@
 # 顺手的emacs
 
-这是自己使用的emacs环境，经常用来写 `c/c++` `python` 偶尔写点`HTML`和`javascript`。
+这是自己使用的emacs环境，经常用来写 `c/c++` `python` `Go` 偶尔写点`HTML`和`javascript`。
 
 ## 特性描述
 
@@ -8,28 +8,28 @@
 2. 使用`which-key`来做快捷键提示
 3. 使用`company`做补全的前端
 4. 使用`ycmd`做为代码补全的后端
-5. 使用`dracula`做为主题
+5. 使用`gruvbox`做为主题
 6. 使用`magit`作为git前端
 
 ## 演示
 
 ### 包管理
-![](image/cask.gif)
+![cask](http://ocr26ve0z.bkt.clouddn.com/cask.gif)
 
 ### 文件管理
-![](image/file.gif)
+![file](http://ocr26ve0z.bkt.clouddn.com/file.gif)
 
 ### 项目管理
-![](image/project.gif)
+![project](http://ocr26ve0z.bkt.clouddn.com/project.gif)
 
 ### 搜索
-![](image/search.gif)
+![search](http://ocr26ve0z.bkt.clouddn.com/search.gif)
 
 ### 命令补全
-![](image/counsel.gif)
+![sounsel](http://ocr26ve0z.bkt.clouddn.com/counsel.gif)
 
 ### 代码补全
-![](image/ycmd.gif)
+![ycmd](http://ocr26ve0z.bkt.clouddn.com/ycm.gif)
 
 
 ## 语言支持
@@ -65,7 +65,7 @@ javascript:
 
 | 插件 | 用途 |
 | --- | --- |
-| dracula-theme / molokai-theme | 配色 |
+| gruvbox-theme / dracula-theme / molokai-theme | 配色 |
 | neotree | 文件列表 |
 | super-save | 自动保存 |
 | popwin | 窗口操作 |
