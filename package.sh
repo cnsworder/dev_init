@@ -1,4 +1,5 @@
-PACKAGES="tmux
+PACKAGES="zsh
+          tmux
           mosh
           python
           stow
