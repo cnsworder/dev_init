@@ -18,6 +18,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "djui/alias-tips"
+zplug "willghatch/zsh-snippets"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/brew", from:oh-my-zsh
 zplug "plugins/brew-cask", from:oh-my-zsh
@@ -46,3 +47,5 @@ fi
 zplug load
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey '^j' snippet-expand
