@@ -193,9 +193,11 @@ function init_shell() {
         yes | ${PM} ${PM_INSTALL} zsh
     fi
 
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+    # git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    # cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
     chsh `which zsh`
+
+    ln -s ./zshrc ~/.zshrc
 
     ln -s Xdefaults ~/.Xdefaults
 }

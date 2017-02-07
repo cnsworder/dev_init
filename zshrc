@@ -50,3 +50,16 @@ zplug load
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 bindkey '^j' snippet-expand
+
+function allup() {
+    echo "brew update application..."
+    brew update &
+    echo "zplug update zsh..."
+    zplug update > /dev/null &
+    echo "vimplug update vim..."
+    vim +PlugUpdate +qall &
+    echo "cask update emacs..."
+    cd ~/.emacs.d && cask update &
+    cd -
+    wait
+}
