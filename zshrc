@@ -55,11 +55,11 @@ function allup() {
     echo "brew update application..."
     brew update &
     echo "zplug update zsh..."
-    zplug update > /dev/null &
-    echo "vimplug update vim..."
-    vim +PlugUpdate +qall &
+    zplug update &
     echo "cask update emacs..."
     cd ~/.emacs.d && cask update &
     cd -
+    echo "vimplug update vim..."
+    vim +PlugUpdate +qall
     wait
 }
