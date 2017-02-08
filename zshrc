@@ -1,4 +1,6 @@
-export EDITOR=vim
+if which vim; then
+    export EDITOR=vim
+fi
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
   git clone https://github.com/zplug/zplug ~/.zplug
@@ -29,9 +31,14 @@ zplug "plugins/autojump", from:oh-my-zsh
 zplug "themes/amuse", as:theme, from:oh-my-zsh
 
 zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+zplug "plugins/linux", from:oh-my-zsh, if:"[[ $OSTYPE == *linux* ]]"
 
-zplug "/usr/local/opt/fzf/shell", from:local
-zplug "~/dev/tools", from:local, use:"*.sh"
+if which fzf > /dev/null; then
+    zplug "/usr/local/opt/fzf/shell", from:local
+fi
+if [ -d ~/dev/tools ]; then
+    zplug "~/dev/tools", from:local, use:"*.sh"
+fi
 
 # Add a bunch more of your favorite packages!
 
@@ -52,14 +59,24 @@ zplug load
 bindkey '^j' snippet-expand
 
 function allup() {
-    echo "brew update application..."
-    brew update &
+    if which brew; then
+        echo "brew update application..."
+        brew update &
+    fi
+
     echo "zplug update zsh..."
     zplug update &
-    echo "cask update emacs..."
-    cd ~/.emacs.d && cask update &
-    cd -
-    echo "vimplug update vim..."
-    vim +PlugUpdate +qall
+
+    if which cask; then
+        echo "cask update emacs..."
+        cd ~/.emacs.d && cask update &
+        cd -
+    fi
+
+    if which vim; then
+        echo "vimplug update vim..."
+        vim +PlugUpdate +qall
+    fi
+
     wait
 }
