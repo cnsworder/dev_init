@@ -64,22 +64,24 @@ bindkey '^j' snippet-expand
 function allup() {
     if which brew; then
         echo "brew update application..."
-        brew update &
+        yes | brew upgrade &
     fi
 
     echo "zplug update zsh..."
     zplug update &
+    zplug upgrade &
 
     if which cask; then
         echo "cask update emacs..."
-        cd ~/.emacs.d && cask update &
+        cd ~/.emacs.d && cask upgrade &
+        cask update &
         cd -
     fi
+
+    wait
 
     if which vim > /dev/null; then
         echo "vimplug update vim..."
         vim +PlugUpdate +qall
     fi
-
-    wait
 }
