@@ -65,6 +65,7 @@ function allup() {
     if which brew; then
         echo "brew update application..."
         yes | brew upgrade
+        brew cleanup
     fi
 
     echo "zplug update zsh..."
