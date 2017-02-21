@@ -21,7 +21,6 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "djui/alias-tips"
 zplug "willghatch/zsh-snippets"
-zplug "jocelynmallon/zshmarks"
 zplug "supercrabtree/k"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/brew", from:oh-my-zsh
@@ -38,6 +37,8 @@ if which fzf > /dev/null; then
     zplug "/usr/local/opt/fzf/shell", from:local, if:"[[ $OSTYPE == *darwin* ]]"
     zplug "/usr/share/fzf", from:local, if:"[[ $OSTYPE == *linux* ]]"
     zplug "urbainvaes/fzf-marks"
+else
+    zplug "jocelynmallon/zshmarks"
 fi
 if [ -d ~/dev/tools ]; then
     zplug "~/dev/tools", from:local, use:"*.sh"
@@ -70,6 +71,7 @@ function allup() {
 
     echo "zplug update zsh..."
     zplug update
+    zplug clear
 
     if which cask; then
         echo "cask update emacs..."
@@ -80,6 +82,6 @@ function allup() {
 
     if which vim > /dev/null; then
         echo "vimplug update vim..."
-        vim +PlugUpdate
+        vim +PlugUpdate +PlugUpgrade + PlugClean
     fi
 }
