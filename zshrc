@@ -47,7 +47,7 @@ fi
 # Add a bunch more of your favorite packages!
 
 # Install packages that have not been installed yet
-if ! zplug check --verbose; then
+if ! zplug check; then
     printf "Install? [y/N]: "
     if read -q; then
         echo; zplug install
