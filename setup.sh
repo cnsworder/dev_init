@@ -4,6 +4,10 @@
 # date: 2014-02-14
 # version: 1.1
 
+BASE_DIR= $(cd $(dirname ${BASH_SOURCE[0]})) && pwd
+ln -s ${BASE_DIR} ~/.config/dev_init
+
+
 source package.sh
 
 INIT_VIM=false
