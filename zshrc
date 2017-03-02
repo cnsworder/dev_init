@@ -75,8 +75,12 @@ function allup() {
 
     if which cask; then
         echo "cask update emacs..."
-        cd ~/.emacs.d && cask upgrade || cask update
-        cd -
+        if [ -d ~/.emacs.d ]; then
+            cd ~/.emacs.d
+            cask upgrade
+            cask update
+            cd -
+        fi
     fi
 
 
