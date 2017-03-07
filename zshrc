@@ -23,6 +23,7 @@ zplug "djui/alias-tips"
 zplug "willghatch/zsh-snippets"
 zplug "supercrabtree/k"
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/zsh_reload", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 zplug "plugins/autojump", from:oh-my-zsh
