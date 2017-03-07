@@ -63,29 +63,29 @@ zplug load
 bindkey '^j' snippet-expand
 
 function allup() {
-    if which brew; then
-        echo "brew update application..."
-        yes | brew upgrade
-        brew cleanup
-    fi
-
-    echo "zplug update zsh..."
-    zplug update
-    zplug clear
-
-    if which cask; then
-        echo "cask update emacs..."
-        if [ -d ~/.emacs.d ]; then
-            cd ~/.emacs.d
-            cask upgrade
-            cask update
-            cd -
-        fi
-    fi
+#    if which brew; then
+#        echo "brew update application..."
+#        yes | brew upgrade
+#        brew cleanup
+#    fi
+#
+#    echo "zplug update zsh..."
+#    zplug update
+#    zplug clear
+#
+#    if which cask; then
+#        echo "cask update emacs..."
+#        if [ -d ~/.emacs.d ]; then
+#            cd ~/.emacs.d
+#            cask upgrade
+#            cask update
+#            cd -
+#        fi
+#    fi
 
 
     if which vim > /dev/null; then
         echo "vimplug update vim..."
-        vim +PlugUpdate +PlugUpgrade + PlugClean
+        vim +PlugUpdate\ --sync +PlugUpgrade\ --sync +PlugClean\ --sync +qall
     fi
 }
