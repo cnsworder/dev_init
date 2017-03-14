@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # Mac OS X自动化配置
 
 
@@ -19,3 +19,17 @@ function install_package() {
        cat mas.list |  awk '{print $1}' | xargs mas instatll
    fi
 }
+
+while getopts "ib" arg; do
+    case $arg in
+        'i')
+            install_package
+            ;;
+        'b')
+            backup_package
+            ;;
+        *)
+            echo "Usege: -i -b"
+            ;;
+    esac
+done
