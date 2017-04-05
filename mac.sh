@@ -9,6 +9,9 @@ function backup_package() {
 }
 
 function install_package() {
+   if [ -f "tap.list" ]; then
+      cat tap.list | xargs brew tap
+   fi
    if [ -f "brew.list" ]; then
        cat brew.list | xargs brew install
    fi
