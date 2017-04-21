@@ -69,6 +69,7 @@
 (depends-on "smartparens")
 (depends-on "super-save")
 (depends-on "swiper")
+(depends-on "symbol-overlay")
 (depends-on "tabbar")
 (depends-on "undo-tree")
 (depends-on "use-package")
