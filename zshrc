@@ -23,6 +23,7 @@ zplug "djui/alias-tips"
 zplug "willghatch/zsh-snippets"
 zplug "supercrabtree/k"
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/zsh_reload", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 zplug "plugins/autojump", from:oh-my-zsh
@@ -33,10 +34,6 @@ zplug "plugins/cask", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 
 zplug "plugins/linux", from:oh-my-zsh, if:"[[ $OSTYPE == *linux* ]]"
-
-if which tmux > /dev/null; then
-    zplug "plugins/tmux", from:oh-my-zsh
-fi
 
 if which fzf > /dev/null; then
     zplug "/usr/local/opt/fzf/shell", from:local, if:"[[ $OSTYPE == *darwin* ]]"
@@ -65,31 +62,40 @@ zplug load
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+eval "$(direnv hook zsh)"
+eval "$(aliases init --global)"
 bindkey '^j' snippet-expand
 
 function allup() {
-    if which brew; then
-        echo "brew update application..."
-        yes | brew upgrade
-        brew cleanup
+    clear
+    if which brew > /dev/null; then
+        echo ">> brew update application..."
+        yes | brew upgrade &> ~/allup.log
+        brew cleanup &>> ~/.aliasesallup.log
     fi
 
-    echo "zplug update zsh..."
-    zplug update
-    zplug clear
+    echo ">> zplug update zsh..."
+    zplug update &>> ~/allup.log
+    zplug clear &>> ~/allup.log
 
     if which cask; then
-        echo "cask update emacs..."
+        echo ">> cask update emacs..."
         if [ -d ~/.emacs.d ]; then
             cd ~/.emacs.d
-            cask upgrade
-            cask update
-            cd -
+            cask upgrade &>> ~/allup.log
+            cask update &>> ~/callup.log
+            cd - > /dev/null
         fi
     fi
 
     if which vim > /dev/null; then
-        echo "vimplug update vim..."
+        echo ">> vimplug update vim..."
         vim +PlugUpdate\ --sync +PlugUpgrade\ --sync +PlugClean\ --sync +qall
+        clear
     fi
+
+    cat ~/allup.log
+    echo
+    echo "[[ All plugin Upgraded! ]]"
+
 }
