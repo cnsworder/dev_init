@@ -115,6 +115,8 @@
     :mode "\\.js\\'")
 (use-package web-mode
     :mode ("\\.html\\'" . web-mode))
+(use-package vue-mode
+    :mode "\\.vue\\'")
 
 (use-package emmet-mode
     :bind
