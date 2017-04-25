@@ -62,26 +62,28 @@ zplug load
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+eval "$(direnv hook zsh)"
+eval "$(aliases init --global)"
 bindkey '^j' snippet-expand
 
 function allup() {
     clear
     if which brew > /dev/null; then
         echo ">> brew update application..."
-        yes | brew upgrade &> allup.log
-        brew cleanup &>> allup.log
+        yes | brew upgrade &> ~/allup.log
+        brew cleanup &>> ~/.aliasesallup.log
     fi
 
     echo ">> zplug update zsh..."
-    zplug update &>> allup.log
-    zplug clear &>> allup.log
+    zplug update &>> ~/allup.log
+    zplug clear &>> ~/allup.log
 
     if which cask; then
         echo ">> cask update emacs..."
         if [ -d ~/.emacs.d ]; then
             cd ~/.emacs.d
-            cask upgrade &>> allup.log
-            cask update &>> allup.log
+            cask upgrade &>> ~/allup.log
+            cask update &>> ~/callup.log
             cd - > /dev/null
         fi
     fi
@@ -92,7 +94,7 @@ function allup() {
         clear
     fi
 
-    cat allup.log
+    cat ~/allup.log
     echo
     echo "[[ All plugin Upgraded! ]]"
 

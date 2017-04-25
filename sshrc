@@ -1,0 +1,14 @@
+export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/vimrc' | source \$MYVIMRC"
+
+if [ ! -d ~/.vim ]; then
+   mkdir ~/.vim
+fi
+
+vim_plugs=(init.vim plugs.vim conf.vim style.vim keymap.vim)
+
+for plug in ${vim_plugs[@]}; do
+    if [ ! -f ~/.vim/${plug} ]; then
+        cp $SSHHOME/.sshrc.d/${plug} ~/.vim/${plug}
+    fi
+done
+
