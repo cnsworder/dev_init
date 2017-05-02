@@ -83,7 +83,7 @@ function allup() {
         if [ -d ~/.emacs.d ]; then
             cd ~/.emacs.d
             cask upgrade &>> ~/allup.log
-            cask update &>> ~/callup.log
+            cask update &>> ~/allup.log
             cd - > /dev/null
         fi
     fi
