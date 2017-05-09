@@ -62,8 +62,14 @@ zplug load
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(direnv hook zsh)"
-eval "$(aliases init --global)"
+if which direnv > /dev/null; then
+    eval "$(direnv hook zsh)"
+fi
+
+if which aliases > /dev/null; then
+    eval "$(aliases init --global)"
+fi
+
 bindkey '^j' snippet-expand
 
 function allup() {
