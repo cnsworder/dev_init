@@ -1,3 +1,11 @@
+# zsh configure
+# author cnsworder
+# Ctrl-g go to dir
+# Ctrl-j snippet complete
+# Alt-r fzf dir
+# Ctrl-r fzf commder history
+# Ctrl-t fzf file
+
 if which vim > /dev/null; then
     export EDITOR=vim
 fi
