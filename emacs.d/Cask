@@ -21,6 +21,7 @@
 (depends-on "company-web")
 (depends-on "company-ycmd")
 (depends-on "counsel")
+(depends-on "counsel-gtags")
 (depends-on "counsel-osx-app")
 (depends-on "crosshairs")
 (depends-on "crux")

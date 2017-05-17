@@ -30,6 +30,13 @@
     (global-set-key (kbd "C-c C-e") 'hippie-expand)
     (global-set-key (kbd "C-c C-b") 'counsel-bookmark)
     (global-set-key (kbd "C-c a g") 'counsel-ag)
+    (global-set-key (kbd "C-c m t") 'counsel-gtags-mode)
+    (global-set-key (kbd "C-c t s") 'counsel-gtags-find-symbol)
+    (global-set-key (kbd "C-c t r") 'counsel-gtags-find-reference)
+    (global-set-key (kbd "C-c t d") 'counsel-gtags-find-definition)
+    (global-set-key (kbd "C-c t b") 'counsel-gtags-go-backward)
+    (global-set-key (kbd "C-c t c") 'counsel-gtags-create-tags)
+    (global-set-key (kbd "C-c t u") 'counsel-gtags-update-tags)
 
     (global-set-key (kbd "C-c C-m") 'bookmark-set)
     (global-set-key (kbd "C-c C-v") 'er/expand-region)
@@ -82,6 +89,10 @@
         (global-set-key (kbd "C-c d") 'zeal-at-point))
     ;;(global-set-key (kbd "C-c b") 'refill-mode)
     (global-set-key (kbd "C-c C-l") 'toggle-truncate-lines)
+
+    ;; ggtags-mode
+    (global-set-key (kbd "C-c m g") 'ggtags-mode)
+
 
     ;; iedit mode
     (global-set-key (kbd "C-c m u") 'iedit-mode)
