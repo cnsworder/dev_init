@@ -8,7 +8,7 @@ set -e
 if which brew; then
     brew install cask
 elif [ ! -d ~/.cask ]; then
-    git clone https://github.com/cask/cask.git ~/.cask
+	curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 fi
 
 if [ ! -d ~/.emacs.d ]; then
