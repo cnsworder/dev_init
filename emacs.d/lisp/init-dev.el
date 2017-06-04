@@ -113,6 +113,7 @@
 ;; (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (use-package js2-mode
     :mode "\\.js\\'")
+
 (use-package web-mode
     :mode ("\\.html\\'" . web-mode))
 (use-package vue-mode

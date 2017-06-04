@@ -3,6 +3,7 @@
 (source "org" "http://epla.emacs-china.org/org/")
 
 (depends-on "ace-jump-mode")
+(depends-on "add-node-modules-path")
 (depends-on "ag")
 (depends-on "aggressive-indent")
 (depends-on "all-the-icons")
