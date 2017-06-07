@@ -52,6 +52,7 @@
 (setq company-minimum-prefix-length 1)
 (setq company-show-numbers t)
 (setq company-require-match nil)
+(setq company-dabbrev-downcase nil)
 
 ;;(add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends '(company-keywords

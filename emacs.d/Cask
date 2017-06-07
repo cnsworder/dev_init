@@ -73,6 +73,7 @@
 (depends-on "swiper")
 (depends-on "symbol-overlay")
 (depends-on "tabbar")
+(depends-on "tern")
 (depends-on "undo-tree")
 (depends-on "use-package")
 (depends-on "vue-mode")
