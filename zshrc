@@ -1,11 +1,3 @@
-# zsh configure
-# author cnsworder
-# Ctrl-g go to dir
-# Ctrl-j snippet complete
-# Alt-r fzf dir
-# Ctrl-r fzf commder history
-# Ctrl-t fzf file
-
 if which vim > /dev/null; then
     export EDITOR=vim
 fi
@@ -16,10 +8,13 @@ if [[ ! -d ~/.zplug ]]; then
 fi
 
 export ZSH=$HOME/.zplug/repos/robbyrussell/oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # Essential
 source ~/.zplug/init.zsh
+
+clear
+echo -n "Loading plugins..."
 
 # Make sure to use double quotes to prevent shell expansion
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
@@ -27,14 +22,14 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
-zplug "djui/alias-tips"
-zplug "willghatch/zsh-snippets"
+# zplug "djui/alias-tips"
+# zplug "willghatch/zsh-snippets"
 zplug "supercrabtree/k"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/zsh_reload", from:oh-my-zsh
+# zplug "plugins/zsh_reload", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
-zplug "plugins/autojump", from:oh-my-zsh
+# zplug "plugins/autojump", from:oh-my-zsh
 zplug "themes/amuse", as:theme, from:oh-my-zsh
 
 zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
@@ -68,16 +63,21 @@ fi
 
 zplug load
 
+clear
+echo  " \e[92m
+\t ##########################
+\t #                        #
+\t #   ┌─┐┬─┐┌─┐┌─┐┌─┐┬ ┬   #
+\t #   │  ├┬┘│ │└─┐└─┐├─┤   #
+\t #   └─┘┴└─└─┘└─┘└─┘┴ ┴   #
+\t #                        #
+\t ##########################
+\e[0m"
+
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if which direnv > /dev/null; then
-    eval "$(direnv hook zsh)"
-fi
-
-if which aliases > /dev/null; then
-    eval "$(aliases init --global)"
-fi
-
+eval "$(direnv hook zsh)"
+eval "$(aliases init --global)"
 bindkey '^j' snippet-expand
 
 function allup() {
@@ -113,3 +113,5 @@ function allup() {
     echo "[[ All plugin Upgraded! ]]"
 
 }
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
