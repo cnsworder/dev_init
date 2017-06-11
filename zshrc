@@ -8,7 +8,7 @@ if [[ ! -d ~/.zplug ]]; then
 fi
 
 export ZSH=$HOME/.zplug/repos/robbyrussell/oh-my-zsh
-#source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # Essential
 source ~/.zplug/init.zsh
@@ -63,7 +63,7 @@ fi
 
 zplug load
 
-clear
+reset
 echo  " \e[92m
 \t ##########################
 \t #                        #
@@ -77,8 +77,8 @@ echo  " \e[92m
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(direnv hook zsh)"
-eval "$(aliases init --global)"
-bindkey '^j' snippet-expand
+# eval "$(aliases init --global)"
+# bindkey '^j' snippet-expand
 
 function allup() {
     clear
