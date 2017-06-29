@@ -38,6 +38,8 @@
     (global-set-key (kbd "C-c t c") 'counsel-gtags-create-tags)
     (global-set-key (kbd "C-c t u") 'counsel-gtags-update-tags)
 
+    (global-set-key (kbd "M-g a") 'avy-goto-char)
+
     (global-set-key (kbd "C-c C-m") 'bookmark-set)
     (global-set-key (kbd "C-c C-v") 'er/expand-region)
 
