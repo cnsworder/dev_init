@@ -12,6 +12,7 @@
     (require 'cask)
     (require  'cask "~/.cask/cask.el"))
 (cask-initialize)
+(setq use-package-always-ensure t)
 
 ;; 插件cask的管理器
 (use-package pallet
