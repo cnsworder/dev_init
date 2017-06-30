@@ -1,6 +1,14 @@
 
 ;;; Code
 
+
+(defun format-buffer ()
+    "格式化"
+    (interactive)
+    ;; C-x h and C-M-\
+    (indent-region (point-min) (point-max) nil)
+    )
+
 (defun key-set ()
     "设置快捷键"
 
@@ -115,6 +123,8 @@
         (global-set-key (kbd "C-c b m") 'browse-url-default-macosx-browser))
     (global-set-key (kbd "C-c b f") 'browse-url-firefox)
     (global-set-key (kbd "C-c b c") 'browse-url-chrome)
+
+    (global-set-key (kbd "C-c f m") 'format-buffer)
 
     (global-set-key (kbd "C-c h") 'hack-emacs))
 
