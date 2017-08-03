@@ -9,7 +9,13 @@ charset = utf-8
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[{*.js,*.json}]
+[*.js]
+indent_size = 2
+
+[{*.yaml,*.yml,*.json}]
+indent_size = 2
+
+[*.css]
 indent_size = 2
 
 [*.html]

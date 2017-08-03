@@ -1,0 +1,28 @@
+# 文件处理模式
+--mode=c
+
+# 代码风格
+--style=kr
+
+# 缩进
+--indent=space=4
+--convert-tabs
+
+# 单行加括号
+--add-brackets
+
+# 运算符空格
+--pad-oper
+--pad-header
+
+# 指针靠近名称
+--align-pinter=name
+
+# 添加空行
+--break-blocks
+
+# 最大长度
+--max-code-length=100
+
+# 逻辑运算后换行
+--break-after-logical
