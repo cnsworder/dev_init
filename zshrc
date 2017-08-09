@@ -63,6 +63,14 @@ fi
 
 zplug load
 
+# pyenv
+export PYENV_ROOT=$HOME/.pyenv
+eval "$(pyenv init -)"
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
 reset
 echo  " \e[92m
 \t ##########################
