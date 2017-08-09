@@ -81,7 +81,7 @@
 ;;                (expand-file-name "~/dev/ycmd/ycmd")))
 ;; (setq-default ycmd-server-command ycmd-bin)
 (setq-default ycmd-server-command
-    `("python" ,(expand-file-name "~/dev/ycmd/ycmd")))
+    `("python3" ,(expand-file-name "~/dev/ycmd/ycmd")))
 
 (setq-default ycmd-global-config
     (expand-file-name

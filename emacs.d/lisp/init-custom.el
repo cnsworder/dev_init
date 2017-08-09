@@ -40,14 +40,17 @@
 (setq auto-save-default nil)
 
 ;;(setq init-open-recentf-interface 'swiper)
-(init-open-recentf)
-;; (require 'dashboard)
-;; (dashboard-setup-startup-hook)
+;; (init-open-recentf)
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+(setq dashboard-banner-logo-title "Cross Emacs")
+(setq dashboard-setup-startup-banner 'logo)
 
-;; (setq dashboard-items '((recents . 5)
-;;                            (bookmarks . 5)
-;;                            (projects . 5)))
-;; (page-break-lines-mode)
+(setq dashboard-items '((recents . 5)
+                           (bookmarks . 5)
+                           (projects . 5)
+                           (agenda . 5)))
+(page-break-lines-mode)
 
 (require 'neotree)
 ;;(when neo-persist-show
