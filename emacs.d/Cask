@@ -41,7 +41,6 @@
 (depends-on "find-file-in-project")
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
-(depends-on "flycheck-google-cpplint")
 (depends-on "flycheck-ycmd")
 (depends-on "font-lock+")
 (depends-on "fzf")

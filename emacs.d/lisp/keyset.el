@@ -86,7 +86,7 @@
     (global-set-key (kbd "C-c p l") 'projectile-switch-project)
 
     ;; package
-    (global-set-key (kbd "C-c p p") 'package-list-packages)
+    (global-set-key (kbd "C-x p") 'package-list-packages)
 
     (global-set-key (kbd "C-c f t") 'neotree-toggle)
     (global-set-key (kbd "C-c s") 'eshell)
