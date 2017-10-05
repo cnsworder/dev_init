@@ -30,7 +30,7 @@ zplug "plugins/tmux", from:oh-my-zsh
 # zplug "plugins/zsh_reload", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 # zplug "plugins/autojump", from:oh-my-zsh
-zplug "themes/amuse", as:theme, from:oh-my-zsh
+zplug "themes/ys", as:theme, from:oh-my-zsh
 
 zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "plugins/cask", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
