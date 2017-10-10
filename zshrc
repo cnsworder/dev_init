@@ -52,17 +52,27 @@ fi
 # Add a bunch more of your favorite packages!
 
 # Install packages that have not been installed yet
-if ! zplug check; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
+function check() {
+    echo -n "\nplug check..."
+    if ! zplug check; then
+        printf "Install? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        else
+            echo
+        fi
     fi
+    touch ~/.zplug/.installed
+}
+
+if [ ! -e ~/.zplug/.installed ]; then
+    check
 fi
 
+echo -n "\nzplug loaded..."
 zplug load
 
+echo -n "\ninit python env..."
 # pyenv
 export PYENV_ROOT=$HOME/.pyenv
 eval "$(pyenv init -)"
