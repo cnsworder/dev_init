@@ -131,6 +131,9 @@
 (use-package vue-mode
     :mode "\\.vue\\'")
 
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'web-mode-hook 'prettier-js-mode)
+
 (use-package emmet-mode
     :bind
     ("C-c m e" . emmet-mode)

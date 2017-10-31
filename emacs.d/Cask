@@ -67,6 +67,7 @@
 (depends-on "package-build")
 (depends-on "pallet")
 (depends-on "popwin")
+(depends-on "prettier-js")
 (depends-on "projectile")
 (depends-on "pyvenv")
 (depends-on "request")
