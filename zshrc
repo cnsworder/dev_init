@@ -167,7 +167,7 @@ function allup() {
     zshup
     emacsup
     vimup
-    echoup
+    echolog
 
     echo "[[ All plugin Upgraded! ]]"
 }
