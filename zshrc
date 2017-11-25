@@ -98,18 +98,44 @@ eval "$(direnv hook zsh)"
 # eval "$(aliases init --global)"
 # bindkey '^j' snippet-expand
 
-function allup() {
-    clear
+function linuxup() {
+    if which dnf > /dev/null; then
+        echo ">> dnf update application..."
+        dnf -y update &> ~/allup.log
+        return
+    fi
+    if which yum > /dev/null; then
+        echo ">> yum update application..."
+        yum -y update &> ~/allup.log
+        return
+    fi
+    if which pacman > /dev/null; then
+        echo ">> pacman update application..."
+        yes | pacman -Syu &> ~/allup.log
+        return
+    fi
+    if which aptitude > /dev/null; then
+        echo ">> apt update application..."
+        yes | aptitude update | aptitude upgrade &> ~/allup.log
+        return
+    fi
+}
+
+function macup() {
     if which brew > /dev/null; then
         echo ">> brew update application..."
         yes | brew upgrade &> ~/allup.log
         brew cleanup &>> ~/.aliasesallup.log
     fi
+}
 
+function zshup() {
     echo ">> zplug update zsh..."
     zplug update &>> ~/allup.log
     zplug clear &>> ~/allup.log
+}
 
+function emacsup() {
     if which cask; then
         echo ">> cask update emacs..."
         if [ -d ~/.emacs.d ]; then
@@ -119,17 +145,31 @@ function allup() {
             cd - > /dev/null
         fi
     fi
+}
 
+function vimup() {
     if which vim > /dev/null; then
         echo ">> vimplug update vim..."
         vim +PlugUpdate\ --sync +PlugUpgrade\ --sync +PlugClean\ --sync +qall
         clear
     fi
+}
 
+function echolog() {
     cat ~/allup.log
     echo
-    echo "[[ All plugin Upgraded! ]]"
+}
 
+function allup() {
+    clear
+    linuxup
+    macup
+    zshup
+    emacsup
+    vimup
+    echoup
+
+    echo "[[ All plugin Upgraded! ]]"
 }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
