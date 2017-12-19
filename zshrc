@@ -173,3 +173,4 @@ function allup() {
 }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+ssh-add 2> /dev/null
