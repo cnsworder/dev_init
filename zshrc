@@ -94,7 +94,9 @@ echo  " \e[92m
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(direnv hook zsh)"
+if wich direnv > /dev/null; then
+    eval "$(direnv hook zsh)"
+fi
 # eval "$(aliases init --global)"
 # bindkey '^j' snippet-expand
 
