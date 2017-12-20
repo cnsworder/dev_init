@@ -1,5 +1,5 @@
 function load_omz() {
-    echo "Loading oh my zsh"
+    echo "Loading oh-my-zsh"
     export ZSH=$HOME/.zplug/repos/robbyrussell/oh-my-zsh
     source $ZSH/oh-my-zsh.sh
 }
@@ -55,14 +55,20 @@ function check() {
 }
 
 function init_python_env() {
-    echo "init python env..."
-    # pyenv
-    export PYENV_ROOT=$HOME/.pyenv
-    eval "$(pyenv init -)"
 
     # virtualenvwrapper
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
+    if [ -d $HOME/.virtualenvs ]; then
+        export WORKON_HOME=$HOME/.virtualenvs
+        source /usr/local/bin/virtualenvwrapper.sh
+    fi
+
+    # pyenv
+    if [  -d $HOME/.pyenv ]; then
+        export PYENV_ROOT=$HOME/.pyenv
+        eval "$(pyenv init -)"
+    fi
+
+    echo "init python env..."
 }
 
 
@@ -76,18 +82,19 @@ function echo_logo () {
     \t #                        #
     \t ##########################
     \e[0m"
+    echo "\t >> $(whoami)@$(hostname) <<"
 }
 
 function init_env () {
-    if which vim > /dev/null; then
+    if which vim &> /dev/null; then
         export EDITOR=vim
-    elif which emacs > /dev/null; then
+    elif which emacs &> /dev/null; then
         export EDITOR=emacs
     fi
 
     #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-    if which direnv > /dev/null; then
+    if which direnv &> /dev/null; then
         eval "$(direnv hook zsh)"
     fi
     # eval "$(aliases init --global)"
@@ -96,14 +103,15 @@ function init_env () {
 
 function init_zplug () {
     if [[ ! -d ~/.zplug ]]; then
-        git clone https://github.com/zplug/zplug ~/.zplug
-        source ~/.zplug/init.zsh && zplug update
+        git clone https://github.com/zplug/zplug ~/.zplug && source ~/.zplug/init.zsh && zplug update
     fi
 
-    if [ -d ~/.zplug ]; then
-        load_omz
-        source ~/.zplug/init.zsh
+    if [ ! -d ~/.zplug ]; then
+        return 1
     fi
+
+    load_omz
+    source ~/.zplug/init.zsh
 
     if which zplug &> /dev/null; then
         load_plugs
@@ -212,6 +220,12 @@ function allup() {
     echolog
 
     echo "[[ All plugin Upgraded! ]]"
+}
+
+function sshsync() {
+    SRC=$1
+    DIS=$2
+    rsync -avrhP $1 $2 --exclude=".git*"
 }
 
 main
