@@ -201,7 +201,7 @@ function init_shell() {
     # cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
     chsh `which zsh`
 
-    ln -s ./zshrc ~/.zshrc
+    cd crossh && ./install.sh
 
     ln -s Xdefaults ~/.Xdefaults
 }
