@@ -225,7 +225,7 @@ function allup() {
 function sshsync() {
     SRC=$1
     DIS=$2
-    rsync -avrhP $1 $2 --exclude=".git*"
+    rsync -avrhP $1 $2 --exclude=".git*" --exclude=".DS_Store" --exclude=".svn*"
 }
 
 main

@@ -2,3 +2,6 @@
 --ignore=.stowrc
 --ignore=README.md
 --ignore=install.sh
+--ignore=.gitignore
+--ignore=.DS_Store
+
