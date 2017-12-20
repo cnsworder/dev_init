@@ -11,8 +11,12 @@ elif [ ! -d ~/.cask ]; then
     curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 fi
 
-if [ ! -d ~/.emacs.d ]; then
-    ln -s `pwd`/emacs.d ~/.emacs.d
+if which stow &> /dev/null; then
+    stow . ${HOME}
+else
+    if [ ! -d ~/.emacs.d ]; then
+        ln -s `pwd`/emacs.d ~/.emacs.d
+    fi
 fi
 
 cd ~/.emacs.d
