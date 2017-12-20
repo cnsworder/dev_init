@@ -65,79 +65,6 @@ function init_python_env() {
     source /usr/local/bin/virtualenvwrapper.sh
 }
 
-function linuxup() {
-    if which dnf > /dev/null; then
-        echo ">> dnf update application..."
-        dnf -y update &> ~/allup.log
-        return
-    fi
-    if which yum > /dev/null; then
-        echo ">> yum update application..."
-        yum -y update &> ~/allup.log
-        return
-    fi
-    if which pacman > /dev/null; then
-        echo ">> pacman update application..."
-        yes | pacman -Syu &> ~/allup.log
-        return
-    fi
-    if which aptitude > /dev/null; then
-        echo ">> apt update application..."
-        yes | aptitude update | aptitude upgrade &> ~/allup.log
-        return
-    fi
-}
-
-function macup() {
-    if which brew &> /dev/null; then
-        echo ">> brew update application..."
-        yes | brew upgrade &> ~/allup.log
-        brew cleanup &>> ~/.aliasesallup.log
-    fi
-}
-
-function zshup() {
-    echo ">> zplug update zsh..."
-    zplug update &>> ~/allup.log
-    zplug clear &>> ~/allup.log
-}
-
-function emacsup() {
-    if which cask &> /dev/null; then
-        echo ">> cask update emacs..."
-        if [ -d ~/.emacs.d ]; then
-            cd ~/.emacs.d
-            cask upgrade &>> ~/allup.log
-            cask update &>> ~/allup.log
-            cd - > /dev/null
-        fi
-    fi
-}
-
-function vimup() {
-    if which vim &> /dev/null; then
-        echo ">> vimplug update vim..."
-        vim +PlugUpdate\ --sync +PlugUpgrade\ --sync +PlugClean\ --sync +qall
-        clear
-    fi
-}
-
-function echolog() {
-    cat ~/allup.log
-    echo
-}
-
-function allup() {
-    clear
-    linuxup
-    macup
-    zshup
-    emacsup
-    vimup
-    echolog
-
-    echo "[[ All plugin Upgraded! ]]"
-}
 
 function echo_logo () {
     echo  " \e[92m
@@ -154,6 +81,8 @@ function echo_logo () {
 function init_env () {
     if which vim > /dev/null; then
         export EDITOR=vim
+    elif which emacs > /dev/null; then
+        export EDITOR=emacs
     fi
 
     #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -192,7 +121,7 @@ function init_iterm() {
 }
 
 function init_ssh() {
-    ssh-add 2> /dev/null
+    ssh-add &> /dev/null
 }
 
 function main() {
@@ -201,10 +130,88 @@ function main() {
     init_env
     init_iterm
     init_ssh
-    clear
     reset
     echo_logo
 }
 
-main
 
+function linuxup() {
+    if which dnf > /dev/null; then
+        echo ">> dnf update application..."
+        dnf -y update &> ~/allup.log
+        return
+    fi
+    if which yum > /dev/null; then
+        echo ">> yum update application..."
+        yum -y update &> ~/allup.log
+        return
+    fi
+    if which pacman > /dev/null; then
+        echo ">> pacman update application..."
+        yes | pacman -Syu &> ~/allup.log
+        return
+    fi
+    if which aptitude > /dev/null; then
+        echo ">> apt update application..."
+        yes | aptitude update | aptitude upgrade &> ~/allup.log
+        return
+    fi
+}
+
+function macup() {
+    if which brew &> /dev/null; then
+        echo ">> brew update application..."
+        yes | brew upgrade &> ~/allup.log
+        brew cleanup &>> ~/.aliasesallup.log
+    fi
+}
+
+function zshup() {
+    echo ">> zplug update zsh..."
+    zplug update &>> ~/allup.log
+    zplug clear &>> ~/allup.log
+}
+
+function emacsup() {
+    if ! which emacs &> /dev/null; then
+        return 2
+    fi
+    if ! which cask &> /dev/null; then
+        return 3
+    fi
+    echo ">> cask update emacs..."
+    if [ -d ~/.emacs.d ]; then
+        cd ~/.emacs.d
+        cask upgrade &>> ~/allup.log
+        cask update &>> ~/allup.log
+        cd - > /dev/null
+    fi
+}
+
+function vimup() {
+    if ! which vim &> /dev/null; then
+        return 4
+    fi
+    echo ">> vimplug update vim..."
+    vim +PlugUpdate\ --sync +PlugUpgrade\ --sync +PlugClean\ --sync +qall
+    clear
+}
+
+function echolog() {
+    cat ~/allup.log
+    echo
+}
+
+function allup() {
+    clear
+    linuxup
+    macup
+    zshup
+    emacsup
+    vimup
+    echolog
+
+    echo "[[ All plugin Upgraded! ]]"
+}
+
+main
