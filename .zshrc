@@ -82,7 +82,8 @@ function echo_logo () {
     \t #                        #
     \t ##########################
     \e[0m"
-    echo "\t >> $(whoami)@$(hostname) <<"
+    tput rev;tput cup 9 6
+    echo ">> $(whoami)@$(hostname) <<"
 }
 
 function init_env () {
@@ -99,6 +100,9 @@ function init_env () {
     fi
     # eval "$(aliases init --global)"
     # bindkey '^j' snippet-expand
+
+    [ -f ~/.environment ] && source ~/.environment
+    [ -f ~/.aliases ] && source ~/.aliases
 }
 
 function init_zplug () {
