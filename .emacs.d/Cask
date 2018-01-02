@@ -30,6 +30,7 @@
 (depends-on "dashboard")
 (depends-on "deferred")
 (depends-on "dired+")
+(depends-on "direnv")
 (depends-on "direx")
 (depends-on "dumb-jump")
 (depends-on "editorconfig")
