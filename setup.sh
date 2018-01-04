@@ -156,7 +156,8 @@ function init_emacs() {
     fi
     ln -s ${THIS_PATH}/emacs.d ~/.emacs.d
 
-    emacs -nw -f install-custom-package
+    # emacs -nw -f install-custom-package
+    cd ~/.emacs.d && cask install
 }
 
 
