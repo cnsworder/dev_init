@@ -119,16 +119,8 @@ function init_vim() {
         fi
         yes | ${PM} ${PM_INSTALL} vim
     fi
-
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
-
-    if [ -e ~/.vimrc ];then
-        mv ~/.vimrc ~/.vimrc.bak
-        echo "backup ~/.vimrc to ~/.vimrc.bak"
-    fi
-    ln -s ${THIS_PATH}/vimrc ~/.vimrc
-    vim +PluginInstall +qall
-
+    cd crossvim && ./setup.sh
+    cd -
 }
 
 function init_emacs() {
@@ -139,7 +131,7 @@ function init_emacs() {
         fi
         yes | ${PM} ${PM_INSTALL} emacs
     fi
-    cd crossemacs && setup.sh
+    cd crossemacs && ./setup.sh
     cd -
 }
 
