@@ -139,25 +139,8 @@ function init_emacs() {
         fi
         yes | ${PM} ${PM_INSTALL} emacs
     fi
-    MAJOR=$(emacs --version | head -1 | awk '{print $3}' | awk -F. '{print $1}')
-
-    if (( ${MAJOR} < 24 )); then
-       echo "emacs version < 24, will install elpa..."
-       git clone https://github.com/technomancy/package.el elpa
-       ELPA="$(pwd)/elpa"
-       sed -i "s,;;{{VERSION}},(if (<= emacs-major-version 23)\n    (add-to-list \'load-path \"${ELPA}\")),g" emacs
-       #TODO: 经常出错emacs 24以下版本暂时不支持了
-       return
-    fi
-
-    if [ -e ~/.emacs ];then
-        mv ~/.emacs ~/.emacs.bak
-        echo "backup ~/.emacs to ~/.emacs.bak"
-    fi
-    ln -s ${THIS_PATH}/emacs.d ~/.emacs.d
-
-    # emacs -nw -f install-custom-package
-    cd ~/.emacs.d && cask install
+    cd crossemacs && setup.sh
+    cd -
 }
 
 
