@@ -129,7 +129,9 @@ function init_zplug () {
 }
 
 function init_iterm() {
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    if [ '$(uname)' = 'Darwin' ]; then
+        test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    fi
 }
 
 function init_ssh() {
@@ -137,9 +139,9 @@ function init_ssh() {
 }
 
 function main() {
+    init_env
     init_zplug
     init_python_env
-    init_env
     init_iterm
     init_ssh
     reset
