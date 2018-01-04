@@ -1,0 +1,90 @@
+" .vimrc
+" cnsworder@gmail.com
+" simple vim
+
+set nocompatible
+set fileencoding=utf-8
+set encoding=utf-8
+set fileencodings=utf-8,gb18030,gb2312,gbk
+set clipboard=unnamed
+filetype off
+syntax off
+
+set backupdir=/tmp
+set directory=/tmp
+
+
+if has("gui_running")
+    set guioptions-=T
+else
+    set t_Co=256
+"    colorscheme tango
+endif
+
+if has("gui_running")
+    "set guifont=文泉驿等宽微米黑\ 12
+    set guifont=DejaVu\ Sans\ Mono\ 10
+    "set guifont=Source\ Code\ Pro:h16
+endif
+
+set nobackup
+set cursorline
+"set cursorcolumn
+"set hlsearch
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+"set list
+
+"let t_Co=256
+set laststatus=2
+set number
+set nowrap
+set cscopeprg=gtags-cscope
+
+set encoding=utf-8
+
+let mapleader=";"
+
+nnoremap <leader>n :set number! <cr>
+nnoremap <leader>l :set list! <cr>
+nnoremap <leader>b :set wrap!<cr>
+
+nmap <silent> <leader>ww :cw<cr>
+nmap <silent> <leader>wc :cclose<cr>
+nmap <silent> <leader>s :Ag<space>
+nmap <silent> <leader>q :q <cr>
+nmap <silent> <leader>qq :q! <cr>
+nmap <silent> <leader>w :w <cr>
+nmap <silent> <leader>wq :wq <cr>
+nmap <silent> <leader>qa :qall<cr>
+nmap <silent> <leader>a :A <cr>
+map <leader>zz :set foldenable<cr>
+map <leader>zn :set nofoldenable<cr>
+
+
+"set foldmethod=syntax
+set foldmethod=indent
+set nofoldenable
+syntax on
+set backspace=indent,eol,start
+
+try
+    " colorscheme dracula
+    set background=dark
+    colorscheme gruvbox
+catch
+    colorscheme ron
+endtry
+
+if executable('ag')
+    set grepprg="ag -nogroup --nocolor"
+endif
+
+function! Hackvim()
+    :e ~/.vimrc
+endfunction
+command! Hackvim :call Hackvim()
+nmap <leader>h :call Hackvim()<cr>
