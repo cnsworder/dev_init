@@ -19,7 +19,8 @@ function load_plugs() {
     zplug "plugins/git", from:oh-my-zsh
     zplug "plugins/tmux", from:oh-my-zsh
     # zplug "plugins/zsh_reload", from:oh-my-zsh
-    zplug "plugins/z", from:oh-my-zsh
+    # zplug "plugins/z", from:oh-my-zsh
+    zplug "plugins/fasd", from:oh-my-zsh
     # zplug "plugins/autojump", from:oh-my-zsh
     zplug "themes/ys", as:theme, from:oh-my-zsh
 
@@ -93,6 +94,9 @@ function init_env () {
         export EDITOR=emacs
     fi
 
+    # if which fasd &> /dev/null;then
+    #     eval "$(fasd --init auto)"
+    # fi
     #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
     if which direnv &> /dev/null; then
@@ -129,7 +133,9 @@ function init_zplug () {
 }
 
 function init_iterm() {
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    if [ '$(uname)' = 'Darwin' ]; then
+        test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    fi
 }
 
 function init_ssh() {
@@ -138,8 +144,8 @@ function init_ssh() {
 
 function main() {
     init_zplug
-    init_python_env
     init_env
+    init_python_env
     init_iterm
     init_ssh
     reset
