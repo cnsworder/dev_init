@@ -1,3 +1,5 @@
 alias ll='ls -l'
 alias fzf='fzf -m'
 alias svim="vim -u .vimrc.base"
+alias z='cd `fasd -ld|fzf --reverse`'
+alias zz='$EDITOR `fasd -lf|fzf --reverse`'

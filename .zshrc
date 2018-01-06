@@ -19,7 +19,8 @@ function load_plugs() {
     zplug "plugins/git", from:oh-my-zsh
     zplug "plugins/tmux", from:oh-my-zsh
     # zplug "plugins/zsh_reload", from:oh-my-zsh
-    zplug "plugins/z", from:oh-my-zsh
+    # zplug "plugins/z", from:oh-my-zsh
+    zplug "plugins/fasd", from:oh-my-zsh
     # zplug "plugins/autojump", from:oh-my-zsh
     zplug "themes/ys", as:theme, from:oh-my-zsh
 
@@ -93,6 +94,9 @@ function init_env () {
         export EDITOR=emacs
     fi
 
+    # if which fasd &> /dev/null;then
+    #     eval "$(fasd --init auto)"
+    # fi
     #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
     if which direnv &> /dev/null; then
@@ -139,8 +143,8 @@ function init_ssh() {
 }
 
 function main() {
-    init_env
     init_zplug
+    init_env
     init_python_env
     init_iterm
     init_ssh
