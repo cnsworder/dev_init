@@ -1,15 +1,20 @@
 alias ll='ls -l'
 alias fzf='fzf -m'
 alias svim="vim -u .vimrc.base"
-alias z='cd $(fasd -ld|fzf --reverse)'
-alias zd='fasd_cd -ldi'
-#alias zz='$EDITOR `fasd -lf|fzf --reverse`'
+alias z='fasd_cd -ldi'
+alias zz='fasd -fi -e $EDITOR'
 
 ## functions
 function zf() {
-   selected=$(fasd -lf | fzf --reverse)
-   echo $selected
+   selected=$(fasd -lf $1 | fzf --reverse)
    if [ x"" != x"$selected" ]; then
      $EDITOR $selected
    fi
+}
+function zd() {
+   selected=$(fasd -ld $1 | fzf --reverse)
+   if [ x"" != x"$selected" ]; then
+     cd $selected
+   fi
+
 }
