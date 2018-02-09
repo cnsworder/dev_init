@@ -22,7 +22,7 @@ set backupdir=/tmp
 set directory=/tmp
 
 " 匹配增强
-if ! has("packadd") && v:version > 800
+if ! has("nvim") && v:version > 800
     packadd! matchit
 endif
 " set rtp+=~/.vim/plugged
@@ -115,6 +115,15 @@ let g:ycm_filetype_blacklist = {
             \ 'qf' : 1,
             \ 'gitcommit' : 1,
             \ }
+
+inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+
+let g:AutoPairs = {'[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
+inoremap <buffer><silent> ) <C-R>=AutoPairsInsert(')')<CR>
 
 let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=1
