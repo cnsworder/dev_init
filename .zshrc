@@ -189,6 +189,11 @@ function zshup() {
     zplug clear &>> ~/allup.log
 }
 
+function pipup() {
+    echo ">> python pip update..."
+    python3 -m pip install --upgrade $(python3 -m pip list --outdated | awk '{print $1}' | tr '\n' ' ')
+}
+
 function emacsup() {
     if ! which emacs &> /dev/null; then
         return 2
@@ -224,6 +229,7 @@ function allup() {
     linuxup
     macup
     zshup
+    pipup
     emacsup
     vimup
     echolog
