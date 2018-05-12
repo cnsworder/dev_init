@@ -32,6 +32,8 @@
 (depends-on "dired+")
 (depends-on "direnv")
 (depends-on "direx")
+(depends-on "docker-compose-mode")
+(depends-on "dockerfile-mode")
 (depends-on "dumb-jump")
 (depends-on "editorconfig")
 (depends-on "elpy")

@@ -154,6 +154,7 @@
     (hs-minor-mode t)
     (elpy-mode t)
     (elpy-enable)
+    (setq elpy-rpc-python-command "python3")
     (elpy-use-ipython)
     (aggressive-indent-mode nil)
     (setq company-backends '(elpy-company-backend

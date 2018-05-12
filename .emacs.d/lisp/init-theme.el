@@ -34,6 +34,10 @@
 (if window-system
     (tool-bar-mode 0))
 
+;; 去掉滚动条
+;; (scroll-bar-mode 0)
+;; (fringe-mode 0)
+
 ;; 开启折叠
 ;; (hs-minor-mode t)
 ;; 显示行号
