@@ -50,6 +50,7 @@
 (depends-on "ggtags")
 (depends-on "git-commit")
 (depends-on "git-gutter")
+(depends-on "git-gutter+")
 (depends-on "go-mode")
 (depends-on "google-c-style")
 (depends-on "gruvbox-theme")

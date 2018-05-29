@@ -35,10 +35,9 @@
     :config
     (indent-guide-global-mode))
 
-(use-package git-gutter
+(use-package git-gutter+
     :config
-    (global-git-gutter-mode t)
-    (git-gutter:linum-setup))
+    (global-git-gutter+-mode t))
 
 (use-package xcscope
     :config
