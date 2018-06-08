@@ -1,0 +1,5 @@
+rofi.lines: 10
+rofi.show-icons: true
+rofi.drun-icons-theme: Arc
+rofi.sidebar-mode: true
+rofi.modi: drun,run,ssh,window,windowcd
