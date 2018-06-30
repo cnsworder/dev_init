@@ -191,7 +191,7 @@ function zshup() {
 
 function pipup() {
     echo ">> python pip update..."
-    python3 -m pip install --upgrade $(python3 -m pip list --outdated | awk '{print $1}' | tr '\n' ' ')
+    python3 -m pip install --upgrade $(python3 -m pip list --outdated | awk 'NR > 2 { print $1}' | tr '\n' ' ')
 }
 
 function emacsup() {
