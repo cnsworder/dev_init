@@ -1,6 +1,12 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 source package.sh
+
+IS_ROOT=$(id -u)
+
+if [[ "${IS_ROOT}" != "0" ]]; then
+    return
+fi
 
 function pre_package() {
 
@@ -40,24 +46,19 @@ function update_package() {
     yes | ${PM} ${PM_UPDATE}
 }
 
-pre_package
 
-HAVE_REAL_PATH=true
-
-IS_ROOT=$(id -u)
 
 
 function init_package() {
 
-    echo "Installing packages..."
+    pre_package
 
-    if [[ "${IS_ROOT}" != "0" ]]; then
-        return
-    fi
+    echo "Installing packages..."
 
     update_package
 
     yes | ${PM} ${PM_INSTALL} ${PACKAGES}
 
 }
+
 
