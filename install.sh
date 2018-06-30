@@ -5,6 +5,7 @@ source package.sh
 IS_ROOT=$(id -u)
 
 if [[ "${IS_ROOT}" != "0" ]]; then
+    echo "Not root!"
     return
 fi
 
@@ -61,4 +62,4 @@ function init_package() {
 
 }
 
-
+init_package
