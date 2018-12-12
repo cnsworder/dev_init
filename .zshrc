@@ -1,6 +1,9 @@
 function load_omz() {
     echo "Loading oh-my-zsh"
     export ZSH=$HOME/.zplug/repos/robbyrussell/oh-my-zsh
+    if [ ! -d ${ZSH} ]; then
+        git clone https://github.com/robbyrussell/oh-my-zsh.git ${ZSH}
+    fi
     source $ZSH/oh-my-zsh.sh
 }
 

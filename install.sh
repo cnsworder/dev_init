@@ -6,7 +6,7 @@ IS_ROOT=$(id -u)
 
 if [[ "${IS_ROOT}" != "0" ]]; then
     echo "Not root!"
-    return
+    exit -1
 fi
 
 function pre_package() {
