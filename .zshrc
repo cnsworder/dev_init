@@ -30,6 +30,7 @@ function load_plugs() {
     zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
     zplug "plugins/cask", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
     zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+    zplug "iam4x/zsh-iterm-touchbar", if:"[[ $OSTYPE == *darwin* ]]"
 
     zplug "plugins/linux", from:oh-my-zsh, if:"[[ $OSTYPE == *linux* ]]"
 
