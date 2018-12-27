@@ -108,6 +108,8 @@ function init_env () {
     # eval "$(aliases init --global)"
     # bindkey '^j' snippet-expand
 
+    export PATH=$PATH:/usr/local/sbin:/usr/local/bin
+
     [ -f ~/.environment ] && source ~/.environment
     [ -f ~/.aliases ] && source ~/.aliases
 }
