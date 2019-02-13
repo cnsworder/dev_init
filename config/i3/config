@@ -89,6 +89,7 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
+bindsym $mod+button2 fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -98,6 +99,7 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+z floating toggle
+bindsym $mod+button1 floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -197,17 +199,11 @@ bindsym $mod+m scratchpad show
 
 # 自动启动应用
 exec_always feh --bg-scale ~/.config/i3/xj.jpg
-# exec_always synapse
 exec_always fcitx
 exec_always conky
-exec compton -b
 # exec_always zeal
 
-# exec nm-applet
-# exec dolphin
-# exec stardict
-
-exec ~/hdmi.sh
+# exec ~/hdmi.sh
 
 #将应用自动移动到工作区
 assign [class="(?i)google"] 3
@@ -233,9 +229,20 @@ client.urgent           #a89984 #282828 #fbf1c7 #fe8019
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-exec lxqt-notificationd
-# exec dunst
-exec --no-startup-id lxqt-panel
+exec compton -b
+exec dunst
+exec --no-startup-id tint2
+# exec lxqt-notificationd
+# exec --no-startup-id lxqt-panel
+
+set $mode_code Launch: Code
+bindsym $mod+o mode "$mode_code"
+mode "$code_code" {
+   bindsym v exec vim
+   bindsym e exec emacs
+
+   bindsysm Escape mode "default"
+}
 
 #bar {
 #        id bar-0
