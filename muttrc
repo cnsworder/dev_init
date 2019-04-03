@@ -1,7 +1,7 @@
 set editor = "vim"
 set folder=~/mail
 
-set imap_user=yichong@victorysoft.com.cn
+set imap_user=cnsworder
 set imap_pass=
 set spoolfile=imap://imap.263.net/INBOX/
 
