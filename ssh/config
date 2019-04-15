@@ -14,11 +14,14 @@ ControlPersist 600
 # 秘钥转发
 ForwardAgent yes
 
+ForwardX11 yes
+
+Host *
+    User root
+
 # 连接主机配置
 Host aliyun
     HostName 1.2.3.5
     Port 22
     User root
-    ForwardX11 yes
-    ServerAliveInterval 60
     IdentityFile .ssh/id_rsa
