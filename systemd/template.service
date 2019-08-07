@@ -1,0 +1,12 @@
+[Unit]
+Description=Victorysoft Transfer
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=gunicorn的全路径 后边加上参数
+WorkingDirectory=这里写应用的目录
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
