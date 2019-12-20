@@ -1,4 +1,5 @@
 */.cask
+.DS_Store
 anaconda-mode
 auto-save-list
 bookmarks

@@ -5,14 +5,20 @@
 
 set -e
 
-if which brew; then
-    brew install cask
-elif [ ! -d ~/.cask ]; then
-    curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+function install_cask() {
+    if which brew &> /dev/null; then
+        brew install cask
+    elif [ ! -d ~/.cask ]; then
+        curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+    fi
+}
+
+if !which cask &> /dev/null; then
+    install_cask
 fi
 
 if which stow &> /dev/null; then
-    stow . ${HOME}
+    stow . -t ${HOME}
 else
     if [ ! -d ~/.emacs.d ]; then
         ln -s `pwd`/emacs.d ~/.emacs.d
