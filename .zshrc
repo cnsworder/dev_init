@@ -38,6 +38,7 @@ function load_plugs() {
         zplug "/usr/local/opt/fzf/shell", from:local, if:"[[ $OSTYPE == *darwin* ]]"
         zplug "/usr/share/fzf", from:local, if:"[[ $OSTYPE == *linux* ]]"
         zplug "urbainvaes/fzf-marks"
+        zplug "SleepyBag/fuzzy-fs", use:fuzzy-fs
     else
         zplug "jocelynmallon/zshmarks"
     fi
