@@ -27,3 +27,4 @@
 ;;; init.el ends here
 
 (put 'upcase-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)

@@ -6,9 +6,7 @@
 set -e
 
 function install_cask() {
-    if which brew &> /dev/null; then
-        brew install cask
-    elif [ ! -d ~/.cask ]; then
+    if [ ! -d ~/.cask ]; then
         curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
     fi
 }
