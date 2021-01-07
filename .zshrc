@@ -180,9 +180,16 @@ function linuxup() {
 function macup() {
     if which brew &> /dev/null; then
         echo ">> brew update application..."
+        export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+        export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
         yes | brew upgrade &> ~/allup.log
         brew cleanup &>> ~/.aliasesallup.log
     fi
+}
+
+function brew_mirror() {
+    git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+    git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask.git
 }
 
 function zshup() {
