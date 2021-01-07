@@ -231,6 +231,7 @@ client.urgent           #a89984 #282828 #fbf1c7 #fe8019
 # finds out, if available)
 exec compton -b
 exec dunst
+# exec --no-startup-id polybar bar
 exec --no-startup-id tint2
 # exec lxqt-notificationd
 # exec --no-startup-id lxqt-panel
