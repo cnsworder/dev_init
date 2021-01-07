@@ -1,5 +1,5 @@
 [Unit]
-Description=Victorysoft Transfer
+Description=cnsworder
 After=network.target
 
 [Service]
