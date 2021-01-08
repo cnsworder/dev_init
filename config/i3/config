@@ -35,6 +35,7 @@ workspace_layout tabbed
 #bindsym $mod+Return exec i3-sensible-terminal
 
 bindsym $mod+Return exec termite
+# bindsym $mod+Return exec terminator
 # bindsym $mod+Return exec konsole
 # bindsym $mod+Shift+Return exec urxvt
 
@@ -174,11 +175,12 @@ bindsym $mod+r mode "resize"
 bindsym $mod+c exec i3lock -i ~/.i3/xj.jpg
 
 #默认边框
-new_window 1pixel
+default_border pixel 1
+default_floating_border normal 2
 
 #切换边框
 bindsym $mod+t border normal
-bindsym $mod+y border 1pixel
+bindsym $mod+y border pixel 1
 bindsym $mod+u border none
 
 #切换工作区
@@ -191,7 +193,7 @@ bindsym $mod+x move workspace to output left
 focus_follows_mouse no
 
 # workspace_auto_back_and_forth <yes|no>
-workspace_auto_back_and_forth no
+workspace_auto_back_and_forth yes
 
 # 暂存区
 bindsym $mod+n move scratchpad
@@ -242,7 +244,7 @@ mode "$code_code" {
    bindsym v exec vim
    bindsym e exec emacs
 
-   bindsysm Escape mode "default"
+   bindsym Escape mode "default"
 }
 
 #bar {
