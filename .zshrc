@@ -29,7 +29,7 @@ function load_plugs() {
 
     zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
     zplug "plugins/cask", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-    zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+    zplug "plugins/macos", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
     zplug "iam4x/zsh-iterm-touchbar", if:"[[ $OSTYPE == *darwin* ]]"
 
     zplug "plugins/linux", from:oh-my-zsh, if:"[[ $OSTYPE == *linux* ]]"
@@ -143,12 +143,19 @@ function init_ssh() {
     ssh-add &> /dev/null
 }
 
+function use_nvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+}
+
 function main() {
     init_zplug
     init_env
     init_python_env
     init_iterm
     init_ssh
+    use_nvm
     reset
     echo_logo
 }
@@ -181,7 +188,7 @@ function macup() {
     if which brew &> /dev/null; then
         echo ">> brew update application..."
         export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-        export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+        export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles"
         yes | brew upgrade &> ~/allup.log
         brew cleanup &>> ~/.aliasesallup.log
     fi
@@ -202,6 +209,7 @@ function pipup() {
     echo ">> python pip update..."
     python3 -m pip install --upgrade $(python3 -m pip list --outdated | awk 'NR > 2 { print $1}' | tr '\n' ' ')
 }
+
 
 function emacsup() {
     if ! which emacs &> /dev/null; then
