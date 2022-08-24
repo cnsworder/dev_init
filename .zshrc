@@ -7,6 +7,32 @@ function load_omz() {
     source $ZSH/oh-my-zsh.sh
 }
 
+function init_env () {
+    if which vim &> /dev/null; then
+        export EDITOR=vim
+    elif which emacs &> /dev/null; then
+        export EDITOR=emacs
+    fi
+
+    # if which fasd &> /dev/null;then
+    #     eval "$(fasd --init auto)"
+    # fi
+    #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+    if which direnv &> /dev/null; then
+        eval "$(direnv hook zsh)"
+    fi
+    # eval "$(aliases init --global)"
+    # bindkey '^j' snippet-expand
+
+    export HOMEBREW_PREFIX=/opt/homebrew
+    export PATH=$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH:/usr/local/sbin:/usr/local/bin
+    echo "PATH: $PATH"
+
+    [ -f ~/.environment ] && source ~/.environment
+    [ -f ~/.aliases ] && source ~/.aliases
+}
+
 function load_plugs() {
     echo "Loading plugins..."
 
@@ -35,7 +61,7 @@ function load_plugs() {
     zplug "plugins/linux", from:oh-my-zsh, if:"[[ $OSTYPE == *linux* ]]"
 
     if which fzf &> /dev/null; then
-        zplug "/usr/local/opt/fzf/shell", from:local, if:"[[ $OSTYPE == *darwin* ]]"
+        zplug "$HOMEBREW_PREFIX/opt/fzf/shell", from:local, if:"[[ $OSTYPE == *darwin* ]]"
         zplug "/usr/share/fzf", from:local, if:"[[ $OSTYPE == *linux* ]]"
         zplug "urbainvaes/fzf-marks"
         zplug "SleepyBag/fuzzy-fs", use:fuzzy-fs
@@ -86,29 +112,6 @@ function echo_logo () {
     echo ">> $(whoami)@$(hostname) <<"
 }
 
-function init_env () {
-    if which vim &> /dev/null; then
-        export EDITOR=vim
-    elif which emacs &> /dev/null; then
-        export EDITOR=emacs
-    fi
-
-    # if which fasd &> /dev/null;then
-    #     eval "$(fasd --init auto)"
-    # fi
-    #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-    if which direnv &> /dev/null; then
-        eval "$(direnv hook zsh)"
-    fi
-    # eval "$(aliases init --global)"
-    # bindkey '^j' snippet-expand
-
-    export PATH=$PATH:/usr/local/sbin:/usr/local/bin
-
-    [ -f ~/.environment ] && source ~/.environment
-    [ -f ~/.aliases ] && source ~/.aliases
-}
 
 function init_zplug () {
     if [[ ! -d ~/.zplug ]]; then
@@ -146,12 +149,12 @@ function init_ssh() {
 function use_nvm() {
   export NVM_DIR="$HOME/.nvm"
   [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 }
 
 function main() {
-    init_zplug
     init_env
+    init_zplug
     init_python_env
     init_iterm
     init_ssh
