@@ -14,10 +14,13 @@ function init_env () {
         export EDITOR=emacs
     fi
 
-    # if which fasd &> /dev/null;then
-    #     eval "$(fasd --init auto)"
-    # fi
-    #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    if which fzf &> /dev/null; then
+        [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    fi
+
+    if which zoxide &> /dev/null; then
+        eval "$(zoxide init zsh)"
+    fi
 
     if which direnv &> /dev/null; then
         eval "$(direnv hook zsh)"
@@ -26,7 +29,7 @@ function init_env () {
     # bindkey '^j' snippet-expand
 
     export HOMEBREW_PREFIX=/opt/homebrew
-    export PATH=$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH:/usr/local/sbin:/usr/local/bin
+    export PATH=$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:/opt/homebrew/opt/openjdk/bin:$PATH:/usr/local/sbin:/usr/local/bin
     echo "PATH: $PATH"
 
     [ -f ~/.environment ] && source ~/.environment
@@ -48,8 +51,7 @@ function load_plugs() {
     zplug "plugins/git", from:oh-my-zsh
     zplug "plugins/tmux", from:oh-my-zsh
     # zplug "plugins/zsh_reload", from:oh-my-zsh
-    # zplug "plugins/z", from:oh-my-zsh
-    zplug "plugins/fasd", from:oh-my-zsh
+    zplug "plugins/z", from:oh-my-zsh
     # zplug "plugins/autojump", from:oh-my-zsh
     zplug "themes/ys", as:theme, from:oh-my-zsh
 
