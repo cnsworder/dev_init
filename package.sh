@@ -14,8 +14,8 @@ PACKAGES="zsh
           ranger
           fzf
           lrzsz
-          the_silver_searcher
-          autojump"
+          ripgrep
+          zoxide"
 
 DEV_PACKAGES="gcc-c++
               clang
