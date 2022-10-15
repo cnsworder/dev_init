@@ -1,7 +1,39 @@
 function load_omz() {
     echo "Loading oh-my-zsh"
     export ZSH=$HOME/.zplug/repos/robbyrussell/oh-my-zsh
+    if [ ! -d ${ZSH} ]; then
+        git clone https://github.com/robbyrussell/oh-my-zsh.git ${ZSH}
+    fi
     source $ZSH/oh-my-zsh.sh
+}
+
+function init_env () {
+    if which vim &> /dev/null; then
+        export EDITOR=vim
+    elif which emacs &> /dev/null; then
+        export EDITOR=emacs
+    fi
+
+    if which fzf &> /dev/null; then
+        [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    fi
+
+    if which zoxide &> /dev/null; then
+        eval "$(zoxide init zsh)"
+    fi
+
+    if which direnv &> /dev/null; then
+        eval "$(direnv hook zsh)"
+    fi
+    # eval "$(aliases init --global)"
+    # bindkey '^j' snippet-expand
+
+    export HOMEBREW_PREFIX=/opt/homebrew
+    export PATH=$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:/opt/homebrew/opt/openjdk/bin:$PATH:/usr/local/sbin:/usr/local/bin
+    echo "PATH: $PATH"
+
+    [ -f ~/.environment ] && source ~/.environment
+    [ -f ~/.aliases ] && source ~/.aliases
 }
 
 function load_plugs() {
@@ -19,21 +51,22 @@ function load_plugs() {
     zplug "plugins/git", from:oh-my-zsh
     zplug "plugins/tmux", from:oh-my-zsh
     # zplug "plugins/zsh_reload", from:oh-my-zsh
-    # zplug "plugins/z", from:oh-my-zsh
-    zplug "plugins/fasd", from:oh-my-zsh
+    zplug "plugins/z", from:oh-my-zsh
     # zplug "plugins/autojump", from:oh-my-zsh
     zplug "themes/ys", as:theme, from:oh-my-zsh
 
     zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
     zplug "plugins/cask", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-    zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+    zplug "plugins/macos", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+    zplug "iam4x/zsh-iterm-touchbar", if:"[[ $OSTYPE == *darwin* ]]"
 
     zplug "plugins/linux", from:oh-my-zsh, if:"[[ $OSTYPE == *linux* ]]"
 
     if which fzf &> /dev/null; then
-        zplug "/usr/local/opt/fzf/shell", from:local, if:"[[ $OSTYPE == *darwin* ]]"
+        zplug "$HOMEBREW_PREFIX/opt/fzf/shell", from:local, if:"[[ $OSTYPE == *darwin* ]]"
         zplug "/usr/share/fzf", from:local, if:"[[ $OSTYPE == *linux* ]]"
         zplug "urbainvaes/fzf-marks"
+        zplug "SleepyBag/fuzzy-fs", use:fuzzy-fs
     else
         zplug "jocelynmallon/zshmarks"
     fi
@@ -75,38 +108,12 @@ function init_python_env() {
 
 function echo_logo () {
     echo  " \e[92m
-██╗       ██████╗██████╗  ██████╗ ███████╗███████╗      ██╗
-╚██╗     ██╔════╝██╔══██╗██╔═══██╗██╔════╝██╔════╝     ██╔╝
- ╚██╗    ██║     ██████╔╝██║   ██║███████╗███████╗    ██╔╝
- ██╔╝    ██║     ██╔══██╗██║   ██║╚════██║╚════██║    ╚██╗
-██╔╝     ╚██████╗██║  ██║╚██████╔╝███████║███████║     ╚██╗
-╚═╝       ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝      ╚═╝
+    I'm cross orbit!
     \e[0m"
-    tput rev;tput cup 9 10
+    tput rev;tput cup 4 3
     echo ">> $(whoami)@$(hostname) <<"
 }
 
-function init_env () {
-    if which vim &> /dev/null; then
-        export EDITOR=vim
-    elif which emacs &> /dev/null; then
-        export EDITOR=emacs
-    fi
-
-    # if which fasd &> /dev/null;then
-    #     eval "$(fasd --init auto)"
-    # fi
-    #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-    if which direnv &> /dev/null; then
-        eval "$(direnv hook zsh)"
-    fi
-    # eval "$(aliases init --global)"
-    # bindkey '^j' snippet-expand
-
-    [ -f ~/.environment ] && source ~/.environment
-    [ -f ~/.aliases ] && source ~/.aliases
-}
 
 function init_zplug () {
     if [[ ! -d ~/.zplug ]]; then
@@ -141,12 +148,19 @@ function init_ssh() {
     ssh-add &> /dev/null
 }
 
+function use_nvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+}
+
 function main() {
-    init_zplug
     init_env
+    init_zplug
     init_python_env
     init_iterm
     init_ssh
+    use_nvm
     reset
     echo_logo
 }
@@ -178,9 +192,16 @@ function linuxup() {
 function macup() {
     if which brew &> /dev/null; then
         echo ">> brew update application..."
+        export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+        export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles"
         yes | brew upgrade &> ~/allup.log
         brew cleanup &>> ~/.aliasesallup.log
     fi
+}
+
+function brew_mirror() {
+    git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+    git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask.git
 }
 
 function zshup() {
@@ -188,6 +209,12 @@ function zshup() {
     zplug update &>> ~/allup.log
     zplug clear &>> ~/allup.log
 }
+
+function pipup() {
+    echo ">> python pip update..."
+    python3 -m pip install --upgrade $(python3 -m pip list --outdated | awk 'NR > 2 { print $1}' | tr '\n' ' ')
+}
+
 
 function emacsup() {
     if ! which emacs &> /dev/null; then
