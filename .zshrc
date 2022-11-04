@@ -13,7 +13,7 @@ function init_env () {
     elif which emacs &> /dev/null; then
         export EDITOR=emacs
     fi
-
+    
     if which fzf &> /dev/null; then
         [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
     fi
@@ -29,11 +29,14 @@ function init_env () {
     # bindkey '^j' snippet-expand
 
     export HOMEBREW_PREFIX=/opt/homebrew
-    export PATH=$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:/opt/homebrew/opt/openjdk/bin:$PATH:/usr/local/sbin:/usr/local/bin
+    export PATH=/opt/homebrew/opt/openjdk/bin:$PATH:/usr/local/sbin:/usr/local/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin
     echo "PATH: $PATH"
 
     [ -f ~/.environment ] && source ~/.environment
     [ -f ~/.aliases ] && source ~/.aliases
+
+    zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
 }
 
 function load_plugs() {
