@@ -8,7 +8,7 @@
 ;;{{VERSION}}
 
 ;;设置插件管理工具
-(require  'cask "~/.cask/cask.el")
+(require  'cask "$HOMEBREW_PREFIX/opt/cask/cask.el")
 (cask-initialize)
 (setq use-package-always-ensure t)
 

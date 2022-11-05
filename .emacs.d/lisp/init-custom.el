@@ -50,7 +50,7 @@
                            (bookmarks . 5)
                            (projects . 5)
                            (agenda . 5)))
-(page-break-lines-mode)
+;;(page-break-lines-mode)
 
 (require 'neotree)
 ;;(when neo-persist-show
