@@ -20,6 +20,7 @@
 ;; (require 'package)
 ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))
 ;; (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+;; (add-to-list 'package-archives '("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))
 ;; (add-to-list 'package-archives '("orgmode" . "http://orgmode.org/elpa/"))
 ;; (setq package-archives
 ;; '(("gnu-cn" . "http://elpa.emacs-china.org/gnu/")

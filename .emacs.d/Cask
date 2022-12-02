@@ -1,6 +1,6 @@
-(source "gnu" "http://1.15.88.122/gnu/")
-(source "melpa" "http://1.15.88.122/melpa/")
-(source "org" "http://1.15.88.122/org/")
+(source "gnu" "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu")
+(source "melpa" "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+(source "org" "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
 
 (depends-on "ace-jump-mode")
 (depends-on "add-node-modules-path")
