@@ -5,3 +5,4 @@
 emacs.d/elpa/*
 emacs.d/recentf
 .DS_Store
+lazy-lock.json
