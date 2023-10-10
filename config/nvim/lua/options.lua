@@ -11,3 +11,4 @@ vim.opt.expandtab = true
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.showmode = false
+vim.cmd.colorscheme("catppuccin")
