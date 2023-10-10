@@ -15,13 +15,13 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-;; (package-initialize)
 
+(setq emacs-directory "~/.emacs.d/")
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'init-utils)
 
-(setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
+(setq custom-file (expand-file-name "lisp/custom.el" emacs-directory))
 (load-file custom-file)
 
 ;;; init.el ends here

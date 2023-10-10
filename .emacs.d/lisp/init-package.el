@@ -8,14 +8,9 @@
 ;;{{VERSION}}
 
 ;;设置插件管理工具
-(require  'cask "$HOMEBREW_PREFIX/opt/cask/cask.el")
-(cask-initialize)
+(require  'cask "/opt/homebrew/opt/cask/cask.el")
+(cask--initialize)
 (setq use-package-always-ensure t)
-
-;; 插件cask的管理器
-(use-package pallet
-  :config
-  (pallet-mode t))
 
 ;; (require 'package)
 ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-rpo.org/packages/"))

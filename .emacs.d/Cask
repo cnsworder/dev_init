@@ -1,6 +1,7 @@
-(source "gnu" "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu")
-(source "melpa" "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
 (source "org" "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+(source "gnu"   "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+(source "melpa" "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+(source "nongun" "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongun/")
 
 (depends-on "ace-jump-mode")
 (depends-on "add-node-modules-path")
@@ -23,7 +24,6 @@
 (depends-on "company-c-headers")
 (depends-on "company-ctags")
 (depends-on "company-web")
-(depends-on "compat" "28.1.1.2")
 (depends-on "counsel")
 (depends-on "counsel-gtags")
 (depends-on "counsel-osx-app")

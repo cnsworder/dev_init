@@ -54,7 +54,7 @@
 ;; 开启折叠
 ;; (hs-minor-mode t)
 ;; 显示行号
-(global-linum-mode t)
+(global-display-line-numbers-mode t)
 (column-number-mode t)
 
 ;;(require 'spaceline-config)
