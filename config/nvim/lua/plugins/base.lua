@@ -7,6 +7,16 @@ return {
         end,
     },
     {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                -- config
+            }
+        end,
+        dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    },
+    {
 	    "catppuccin/nvim",
         name="catppuccin",
         config = function()
@@ -26,46 +36,41 @@ return {
         end,
     },
     {
-        "hrsh7th/nvim-cmp",
-        dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-cmdline",
-            "hrsh7th/cmp-vsnip"
-        },
-        event = "VeryLazy",
-        config = function()
-            require('cmp').setup()
-        end,
-    },
-    {
-        "neovim/nvim-lspconfig",
-        config =  function()
-            local lspconfig = require('lspconfig')
-            lspconfig['lua_ls'].setup({})
-        end,
-    },
-    {
-	"williamboman/mason.nvim",
-        config = function()
-            require("mason").setup()
-        end,
-    },
-    {
-       "williamboman/mason-lspconfig.nvim",
-       config = function() 
-           require("mason-lspconfig").setup()
-       end,
-    },
-    {
 	    'nvim-telescope/telescope.nvim',
 	    dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
     },
     {
         "nvimdev/guard.nvim",
         dependencies = {
             "nvimdev/guard-collection",
         },
-	
     }
 }
