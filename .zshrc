@@ -29,7 +29,7 @@ function init_env () {
     # bindkey '^j' snippet-expand
 
     export HOMEBREW_PREFIX=/opt/homebrew
-    export PATH=/opt/homebrew/opt/openjdk/bin:$PATH:/usr/local/sbin:/usr/local/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin
+    export PATH=/opt/homebrew/opt/openjdk/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH:/usr/local/sbin:/usr/local/bin
     echo "PATH: $PATH"
 
     [ -f ~/.environment ] && source ~/.environment
