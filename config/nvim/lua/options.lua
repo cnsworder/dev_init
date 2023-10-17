@@ -12,3 +12,6 @@ vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.showmode = false
 vim.cmd.colorscheme("catppuccin")
+if vim.opt.guifont ~= nil then
+  vim.opt.guifont = "FiraCode_Nerd_Font_Mono:h18"
+end
