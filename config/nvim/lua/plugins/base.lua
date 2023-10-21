@@ -17,6 +17,16 @@ return {
         dependencies = { {'nvim-tree/nvim-web-devicons'}}
     },
     {
+        "xiyaowong/nvim-transparent"
+    },
+    {
+        'nvim-treesitter/nvim-treesitter-context',
+        config = function()
+            require('treesitter-context').setup()
+        end,
+    },
+    {
+        -- theme
 	    "catppuccin/nvim",
         name="catppuccin",
         config = function()
@@ -36,6 +46,7 @@ return {
         end,
     },
     {
+        -- 搜索
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
@@ -56,6 +67,7 @@ return {
         }
     },
     {
+        -- 通知
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {
@@ -71,9 +83,9 @@ return {
         }
     },
     {
+        -- 文档内搜索
         "folke/flash.nvim",
         event = "VeryLazy",
-        ---@type Flash.Config
         opts = {},
         -- stylua: ignore
         keys = {
