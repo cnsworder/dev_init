@@ -10,11 +10,25 @@ return {
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
         config = function()
-            require('dashboard').setup {
-                -- config
-            }
+            require('dashboard').setup()
         end,
         dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    },
+    {
+        "numToStr/FTerm.nvim",
+        config = function()
+            require("FTerm").setup({
+                ft = 'FTerm',
+                border = 'single',
+                cmd = os.getenv('SHELL')
+            })
+            vim.api.nvim_create_user_command(
+                'FTermToggle',
+                require('FTerm').toggle, 
+                { bang = true }
+                )
+            vim.keymap.set('n', '<C-i>', '<CMD>lua require("FTerm").toggle()<CR>')
+        end,
     },
     {
         "xiyaowong/nvim-transparent"
@@ -51,6 +65,25 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             require("telescope").load_extension("noice")
+        end,
+    },
+    {
+        "nvim-telescope/telescope-file-browser.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim"
+        },
+        config = function()
+            require("telescope").load_extension("file_browser")
+        end,
+    },
+    {
+        "nvim-telescope/telescope-project.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+        },
+        config = function()
+            require("telescope").load_extension("project")
         end,
     },
     {
