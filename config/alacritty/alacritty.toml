@@ -1,0 +1,51 @@
+live_config_reload = true
+
+[window]
+blur = true
+opacity = 0.9
+decorations = "full"
+#decorations = "none" # "full"
+dynamic_padding = false
+startup_mode = "Windowed"
+
+[shell]
+program = "/bin/zsh"
+args = ["-l", "-c", "tmux attach || tmux"]
+#program = "/opt/homebrew/bin/tmux"
+#args = ["new", "-A", "-s main"]
+
+[window.dimensions]
+columns = 120
+lines = 60
+
+[font]
+size = 18
+normal.family = "FiraCode Nerd Font Mono"
+normal.style = "Regular"
+
+# Default colors
+[colors.primary]
+background = '#282a36'
+foreground = '#f8f8f2'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#ff5555'
+green   = '#50fa7b'
+yellow  = '#f1fa8c'
+blue    = '#caa9fa'
+magenta = '#ff79c6'
+cyan    = '#8be9fd'
+white   = '#bfbfbf'
+
+# Bright colors
+[colors.bright]
+black   = '#282a35'
+red     = '#ff6e67'
+green   = '#5af78e'
+yellow  = '#f4f99d'
+blue    = '#caa9fa'
+magenta = '#ff92d0'
+cyan    = '#9aedfe'
+white   = '#e6e6e6'
