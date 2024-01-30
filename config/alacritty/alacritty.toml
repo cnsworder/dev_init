@@ -5,8 +5,11 @@ blur = true
 opacity = 0.9
 decorations = "full"
 #decorations = "none" # "full"
-dynamic_padding = false
+dynamic_padding = true
 startup_mode = "Windowed"
+
+padding.x=5
+padding.y=1
 
 [shell]
 program = "/bin/zsh"
