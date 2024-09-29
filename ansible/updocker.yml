@@ -1,0 +1,12 @@
+---
+- name: 更新docker容器
+  remote_user: root
+  tasks:
+    - name: update dockers
+      command: cd {{ item.name }} && docker compose pull && docker-compose up -d
+      with_items:
+        - { name: 'alist'}
+        - { name: 'ddns'}
+        - { name: 'homarr'}
+        - { name: 'kuma'}
+        - { name: 'adguardhome'}

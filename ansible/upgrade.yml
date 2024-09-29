@@ -1,0 +1,22 @@
+---
+- name: debian upgrade
+  remote_user: root
+  hosts: pve debian 
+  tags: debian
+  tasks:
+    - name: pve upgrade
+      apt: 
+        update_cache: true
+        autoremove: true
+        autoclean: true
+        upgrade: yes
+
+- name: archlinux upgrade
+  remote_user: root
+  tags: arch
+  hosts: arch
+  tasks:
+    - name: pacman upgrade
+      pacman: 
+        update_cache: true
+        upgrade: yes

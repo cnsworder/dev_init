@@ -1,0 +1,9 @@
+---
+- name: change password
+  remote_user: root
+  tasks:
+    - name: change password
+      user:
+        name: root
+        password: "{{new_password | password_hash('sha512')}}"
+
