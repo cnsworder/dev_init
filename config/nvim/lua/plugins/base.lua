@@ -60,6 +60,12 @@ return {
         end,
     },
     {
+        "luukvbaal/nnn.nvim",
+        config = function()
+            require('nnn').setup()
+        end,
+    },
+    {
         -- 搜索
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
