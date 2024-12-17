@@ -40,6 +40,18 @@ return {
 		end,
 	},
 	{
+		-- 任务
+		'stevearc/overseer.nvim',
+		config = function()
+			require("overseer").setup()
+		end,
+	},
+	{
+		-- 格式化
+		'stevearc/conform.nvim',
+		opts = {},
+	},
+	{
 		-- 标签
 		"tomasky/bookmarks.nvim",
 		config = function()
@@ -72,6 +84,14 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
+	},
+	{
+		-- git
+		"FabijanZulj/blame.nvim",
+		lazy = false,
+		config = function()
+			require("blame").setup({})
+		end,
 	},
 	{
 		-- 符号列表
