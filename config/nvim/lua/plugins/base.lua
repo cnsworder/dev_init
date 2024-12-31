@@ -7,6 +7,7 @@ return {
         end,
     },
     {
+        -- 启动界面
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
         config = function()
@@ -15,6 +16,7 @@ return {
         dependencies = { {'nvim-tree/nvim-web-devicons'}}
     },
     {
+        -- 浮动命令行
         "numToStr/FTerm.nvim",
         config = function()
             require("FTerm").setup({
@@ -60,6 +62,7 @@ return {
         end,
     },
     {
+        -- 文件列表
         "luukvbaal/nnn.nvim",
         config = function()
             require('nnn').setup()
@@ -171,6 +174,7 @@ return {
         },
     },
     {
+        -- 格式化
         "nvimdev/guard.nvim",
         dependencies = {
             "nvimdev/guard-collection",
