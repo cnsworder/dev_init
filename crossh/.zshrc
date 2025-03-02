@@ -13,7 +13,7 @@ function init_env () {
     elif which emacs &> /dev/null; then
         export EDITOR=emacs
     fi
-
+    
     if which fzf &> /dev/null; then
         [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
     fi
@@ -29,11 +29,20 @@ function init_env () {
     # bindkey '^j' snippet-expand
 
     export HOMEBREW_PREFIX=/opt/homebrew
-    export PATH=$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:/opt/homebrew/opt/openjdk/bin:$PATH:/usr/local/sbin:/usr/local/bin
+    export PATH=/opt/homebrew/opt/openjdk/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH:/usr/local/sbin:/usr/local/bin
     echo "PATH: $PATH"
 
     [ -f ~/.environment ] && source ~/.environment
     [ -f ~/.aliases ] && source ~/.aliases
+
+    zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+    # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+    zstyle ':completion:*' menu no
+    # preview directory's content with eza when completing cd
+    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+    # switch group using `<` and `>`
+    zstyle ':fzf-tab:*' switch-group '<' '>'
+
 }
 
 function load_plugs() {
@@ -45,6 +54,7 @@ function load_plugs() {
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-autosuggestions"
     zplug "zsh-users/zsh-history-substring-search"
+    zplug "zdharma-continuum/fast-syntax-highlighting"
     # zplug "djui/alias-tips"
     # zplug "willghatch/zsh-snippets"
     zplug "supercrabtree/k"
@@ -66,6 +76,7 @@ function load_plugs() {
         zplug "$HOMEBREW_PREFIX/opt/fzf/shell", from:local, if:"[[ $OSTYPE == *darwin* ]]"
         zplug "/usr/share/fzf", from:local, if:"[[ $OSTYPE == *linux* ]]"
         zplug "urbainvaes/fzf-marks"
+        zplug "Aloxaf/fzf-tab"
         zplug "SleepyBag/fuzzy-fs", use:fuzzy-fs
     else
         zplug "jocelynmallon/zshmarks"
