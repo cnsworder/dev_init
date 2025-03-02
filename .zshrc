@@ -36,6 +36,12 @@ function init_env () {
     [ -f ~/.aliases ] && source ~/.aliases
 
     zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+    # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+    zstyle ':completion:*' menu no
+    # preview directory's content with eza when completing cd
+    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+    # switch group using `<` and `>`
+    zstyle ':fzf-tab:*' switch-group '<' '>'
 
 }
 
@@ -48,6 +54,7 @@ function load_plugs() {
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-autosuggestions"
     zplug "zsh-users/zsh-history-substring-search"
+    zplug "zdharma-continuum/fast-syntax-highlighting"
     # zplug "djui/alias-tips"
     # zplug "willghatch/zsh-snippets"
     zplug "supercrabtree/k"
@@ -69,7 +76,7 @@ function load_plugs() {
         zplug "$HOMEBREW_PREFIX/opt/fzf/shell", from:local, if:"[[ $OSTYPE == *darwin* ]]"
         zplug "/usr/share/fzf", from:local, if:"[[ $OSTYPE == *linux* ]]"
         zplug "urbainvaes/fzf-marks"
-	zplug "Aloxaf/fzf-tab"
+        zplug "Aloxaf/fzf-tab"
         zplug "SleepyBag/fuzzy-fs", use:fuzzy-fs
     else
         zplug "jocelynmallon/zshmarks"
