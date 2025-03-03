@@ -17,6 +17,7 @@ PACKAGES="zsh
           netcat
           tcpdump
           direnv
+          asdf
           the_silver_searcher
           fasd
           autojump"
