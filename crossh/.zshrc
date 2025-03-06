@@ -81,6 +81,11 @@ function load_plugs() {
     else
         zplug "jocelynmallon/zshmarks"
     fi
+
+    if which asdf &> /dev/null; then
+        zplug "plugins/asdf". from:oh-my-zsh
+    fi
+
     if [ -d ~/dev/tools ]; then
         zplug "~/dev/tools", from:local, use:"*.sh"
     fi
