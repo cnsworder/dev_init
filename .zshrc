@@ -28,8 +28,8 @@ function init_env () {
     # eval "$(aliases init --global)"
     # bindkey '^j' snippet-expand
 
-    export HOMEBREW_PREFIX=/opt/homebrew
-    export PATH=/opt/homebrew/opt/openjdk/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH:/usr/local/sbin:/usr/local/bin
+    export HOMEBREW_PREFIX=$(brew --prefix)
+    export PATH=$(HOMEBREW_PREFIX)/opt/openjdk/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH:/usr/local/sbin:/usr/local/bin
     echo "PATH: $PATH"
 
     [ -f ~/.environment ] && source ~/.environment
