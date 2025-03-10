@@ -37,10 +37,6 @@
 
 (use-package fic-mode)
 
-(use-package git-gutter+
-  :config
-  (global-git-gutter+-mode t))
-
 (use-package xcscope
   :config
   (cscope-minor-mode t))
