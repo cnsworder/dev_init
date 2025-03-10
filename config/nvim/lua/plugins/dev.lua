@@ -22,8 +22,10 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({})
-			lspconfig.pylsp.setup({})
+			lspconfig.pylyzer.setup({})
 			lspconfig.cmake.setup({})
+			lspconfig.rust_analyzer.setup({})
+			lspconfig.gopls.setup({})
 		end,
 	},
 	{
