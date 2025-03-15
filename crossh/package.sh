@@ -1,25 +1,33 @@
 PACKAGES="zsh
           tmux
-          python3
-          mutt
           mosh
+          python
           stow
           git
-          tig
-          vim
-          aria2
+          lazygit
+          neovim
+          emacs
+          global
           curl
+          httpie
+          aria2
           ranger
-          fzf
-          lrzsz
           htop
           iftop
-          netcat
           tcpdump
+          socat
+          proxychains-ng
+          jq
           direnv
           asdf
-          the_silver_searcher
-          fasd
-          autojump"
+          lrzsz
+          fzf
+          rigprep
+          fd
+          zoxide
+          ffmpeg
+          pandoc
+          yp-dtp
+          minicom"
 
 
