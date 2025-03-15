@@ -3,34 +3,51 @@ PACKAGES="zsh
           mosh
           python
           stow
-          vim
+          git
+          lazygit
+          neovim
           emacs
-          ctags
-          cscope
           global
           curl
+          httpie
           aria2
-          tig
           ranger
-          fzf
+          htop
+          iftop
+          tcpdump
+          socat
+          proxychains-ng 
+          jq
+          direnv
+          asdf
           lrzsz
+          fzf
           ripgrep
-          zoxide"
+          fd
+          zoxide
+          ffmpeg
+          yp-dlp
+          minicom"
 
 DEV_PACKAGES="gcc-c++
               clang
-              zeal"
+              cmake
+              zeal
+              luagit"
 
 MANAGES="fabric
          ansible"
 
 XPACKAGES="i3
-           termite
+           kitty
            rofi
-           compton
-           gvim"
+           neovide
+           scrcpy
+           "
 
 PIP="pip"
 
-PYTHON_PACKAGES="virtualenv
-                 ipython"
+PYTHON_PACKAGES="poetry
+                 ipython
+                 pipx
+                 pyenv"
