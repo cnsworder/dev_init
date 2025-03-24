@@ -16,19 +16,30 @@ return {
 			require("cmp").setup()
 		end,
 	},]]
-    {
-        -- lsp 客户端
-        'saghen/blink.cmp',
-        dependencies = {'rafamadriz/friendly-snippets'},
-        version = '*',
-        opts = {
-            keymap = { preset = 'default'},
-            sources = {
-                default = { 'lsp', 'path', 'snippets', 'buffer'},
+	{
+		-- lsp 客户端
+		"saghen/blink.cmp",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		version = "*",
+		event = { "InsertEnter", "CmdlineEnter" },
+		opts = {
+			keymap = { preset = "default" },
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+			},
+            completion = {
+                keyword = {
+                    range = "full",
+                },
+                list = { selection = { preselect = false, auto_insert = true}},
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 500,
+                },
             },
-            fuzzy = { implementation = 'prefer_rust_with_warning' }
-        }
-    },
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+		},
+	},
 	{
 		-- lsp配置
 		"neovim/nvim-lspconfig",
@@ -56,14 +67,21 @@ return {
 	},
 	{
 		-- 任务
-		'stevearc/overseer.nvim',
+		"stevearc/overseer.nvim",
 		config = function()
 			require("overseer").setup()
 		end,
+		keys = {
+			{
+				"<leader>r",
+				mode = "n",
+				"<CMD>OverseerRun<CR>",
+			},
+		},
 	},
 	{
 		-- 格式化
-		'stevearc/conform.nvim',
+		"stevearc/conform.nvim",
 		opts = {},
 	},
 	{
