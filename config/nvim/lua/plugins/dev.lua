@@ -1,5 +1,5 @@
 return {
-	{
+	--[[ {
 		-- lsp客户端
 		"hrsh7th/nvim-cmp",
 		dependencies = {
@@ -15,7 +15,20 @@ return {
 		config = function()
 			require("cmp").setup()
 		end,
-	},
+	},]]
+    {
+        -- lsp 客户端
+        'saghen/blink.cmp',
+        dependencies = {'rafamadriz/friendly-snippets'},
+        version = '*',
+        opts = {
+            keymap = { preset = 'default'},
+            sources = {
+                default = { 'lsp', 'path', 'snippets', 'buffer'},
+            },
+            fuzzy = { implementation = 'prefer_rust_with_warning' }
+        }
+    },
 	{
 		-- lsp配置
 		"neovim/nvim-lspconfig",
