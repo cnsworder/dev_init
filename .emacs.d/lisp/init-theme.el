@@ -64,7 +64,7 @@
 
 ;; 字体配置
 ;;(set-default-font "SauceCodePro Nerd Font 16")
-(set-frame-font "FiraCode Nerd Font 18" nil t)
+(set-frame-font "FiraCode Nerd Font 20" nil t)
 
 ;;(set-default-font "Inziu Iosevka TC 16")
 

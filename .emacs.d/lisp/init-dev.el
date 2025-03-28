@@ -6,29 +6,38 @@
 (setq-default indent-tabs-mode nil)
 
 (use-package yasnippet
-    :config
-    (yas-global-mode t))
+  :ensure t
+  :hook
+  (prog-mode . yas-minor-mode)
+  :config
+  (yas-reload-all)
+  (yas-global-mode t))
+
+(use-package yasnippet-snippets
+             :ensure t
+             :after yasnippet)
 
 (use-package dumb-jump
-    :bind
-    (("M-g o" . dumb-jump-go-other-window)
-        ("M-g j" . dumb-jump-go)
-        ("M-g i" . dumb-jump-go-prompt)
-        ("M-g x" . dumb-jump-go-prefer-external)
-        ("M-g z" . dumb-jump-go-prefer-external-other-window))
-    :config
-    (dumb-jump-mode)
-    (setq dumb-jump-selector 'ivy))
+  :bind
+  (("M-g o" . dumb-jump-go-other-window)
+   ("M-g j" . dumb-jump-go)
+   ("M-g i" . dumb-jump-go-prompt)
+   ("M-g x" . dumb-jump-go-prefer-external)
+   ("M-g z" . dumb-jump-go-prefer-external-other-window))
+  :config
+  (dumb-jump-mode)
+  (setq dumb-jump-selector 'ivy))
 
 ;; editorconfig
 (use-package editorconfig
-    :config
-    (editorconfig-mode t))
+  :config
+  (editorconfig-mode t))
 
 ;; $PATH
 (use-package exec-path-from-shell
-    :config
-    (exec-path-from-shell-initialize))
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize))
 
 ;; 缩进线
 (use-package indent-guide
@@ -36,6 +45,12 @@
   (indent-guide-global-mode))
 
 (use-package fic-mode)
+
+(use-package format-all
+  :ensure t
+  :defer t
+  :hook (prog-mode . format-all-mode)
+  :bind ("C-c f f" . #'format-all-region-or-buffer))
 
 (use-package xcscope
   :config
@@ -45,7 +60,13 @@
   :config
   (ggtags-mode t))
 
+(use-package eglot
+             :ensure nil
+             :hook (prog-mode . eglot-ensure)
+             :bind ("C-c e f" . eglot-format))
+
 (use-package lsp-mode
+             :ensure t
   :hook ((python-mode . lsp-deferred)
          (go-mode . lsp-deferred)
          (sh-mode . lsp-deferred))
@@ -54,31 +75,39 @@
 ;; debug mode
 ;;(use-package dap-mode)
 (use-package lsp-ui
-  :commands
-  lsp-ui-mode)
-(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+             :ensure t
+             :config
+             (setq lsp-ui-doc-position 'top)
+             :commands
+             lsp-ui-mode)
+(use-package lsp-ivy
+             :ensure t
+             :after (lsp-mode)
+             :commands lsp-ivy-workspace-symbol)
 
-(use-package company-lsp
-  :commands
-  company-capf--current-completion-data)
+(use-package company
+  :ensure t
+  :init (global-company-mode)
+  :config
+  (setq company-minimum-prefix-length 2)
+  (setq company-idle-delay 0.08)
+  (setq company-show-numbers t)
+  (setq company-selection-wrap-around t)
+  (setq company-idle-delay 0.08)
+  (setq company-minimum-prefix-length 1)
+  (setq company-show-numbers t)
+  (define-key company-active-map (kbd "M-/") #'company-complete)
+  )
+
+(use-package company-box
+  :ensure t
+  :if window-system
+  :hook (company-mode . company-box-mode))
 
 (use-package flycheck
   :config
   (global-flycheck-mode t))
 
-;;(require 'company)
-;;(require 'company-clang)
-;;(require 'company-gtags)
-;;(setq company-idle-delay t)
-;;(company-mode t)
-;;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.9.2/")
-(global-company-mode t)
-
-(setq company-idle-delay 0.08)
-(setq company-minimum-prefix-length 1)
-(setq company-show-numbers t)
-(setq company-require-match nil)
-(setq company-dabbrev-downcase nil)
 
 ;;(add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends '(company-keywords
@@ -116,18 +145,18 @@
   :mode "\\.js\\'")
 
 (use-package web-mode
-    :mode ("\\.html\\'" . web-mode))
+  :mode ("\\.html\\'" . web-mode))
 (use-package vue-mode
-    :mode "\\.vue\\'")
+  :mode "\\.vue\\'")
 
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 (add-hook 'web-mode-hook 'prettier-js-mode)
 
 (use-package emmet-mode
-    :bind
-    ("C-c m e" . emmet-mode)
-    :config
-    (emmet-mode t))
+  :bind
+  ("C-c m e" . emmet-mode)
+  :config
+  (emmet-mode t))
 
 ;; (add-hook  'markdown-mode-hook
 ;;    (lambda ()
@@ -142,7 +171,7 @@
   (anaconda-mode t)
   (hs-minor-mode t)
   (elpy-enable)
-  (elpy-mode t)  
+  (elpy-mode t)
   (setq elpy-rpc-python-command "python3")
   (aggressive-indent-mode nil)
   (setq company-backends '(elpy-company-backend
@@ -189,8 +218,8 @@
           'c++-mode)
 
 (add-hook 'c++-mode-hook
-    (lambda ()
-        (setq flycheck-clang-language-standard "c++11")))
+          (lambda ()
+            (setq flycheck-clang-language-standard "c++11")))
 
 
 (global-aggressive-indent-mode 1)
