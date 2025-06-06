@@ -89,13 +89,11 @@
   :ensure t
   :init (global-company-mode)
   :config
-  (setq company-minimum-prefix-length 2)
-  (setq company-idle-delay 0.08)
+  (setq company-minimum-prefix-length 1)
+  (Setq company-idle-delay 0.03)
   (setq company-show-numbers t)
   (setq company-selection-wrap-around t)
-  (setq company-idle-delay 0.08)
-  (setq company-minimum-prefix-length 1)
-  (setq company-show-numbers t)
+  (setq company-tooltip-align-anotations t)
   (define-key company-active-map (kbd "M-/") #'company-complete)
   )
 

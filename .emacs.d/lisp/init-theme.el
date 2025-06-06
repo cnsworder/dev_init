@@ -36,11 +36,18 @@
   :config
   (popwin-mode t))
 
-(use-package gruvbox-theme)
+(use-package ef-themes
+  :ensure t
+  :config
+  (ef-themes-select 'ef-trio-light)
+  (setq ef-themes-mixed-fonts t
+        ef-themes-variable-pitch-ui t)
+  )
+;; (use-package gruvbox-theme)
 
 
 ;; 暗色主题下光标颜色设置一下
-(set-cursor-color "White")
+;;(set-cursor-color "White")
 (setq-default cursor-type 'bar)
 
 ;; 去掉工具栏
@@ -48,8 +55,8 @@
     (tool-bar-mode 0))
 
 ;; 去掉滚动条
-;; (scroll-bar-mode 0)
-;; (fringe-mode 0)
+;;(scroll-bar-mode 0)
+;;(fringe-mode 0)
 
 ;; 开启折叠
 ;; (hs-minor-mode t)
@@ -64,7 +71,7 @@
 
 ;; 字体配置
 ;;(set-default-font "SauceCodePro Nerd Font 16")
-(set-frame-font "Maple mono 20" nil t)
+(set-frame-font "Maple mono NF CN 20" nil t)
 
 ;;(set-default-font "Inziu Iosevka TC 16")
 

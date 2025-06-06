@@ -28,17 +28,6 @@
 
 (put 'upcase-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(gruvbox-dark-hard))
- '(custom-safe-themes
-   '("8363207a952efb78e917230f5a4d3326b2916c63237c1f61d7e5fe07def8d378"
-     "d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d"
-     default))
- '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -47,3 +36,28 @@
  )
 (setq byte-compile-warnings '(cl-functions))
 (setq warning-suppress-log-types '((package reinitialization)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(ace-jump-mode add-node-modules-path ag aggressive-indent
+                   all-the-icons-dired all-the-icons-ivy anaconda-mode
+                   ansi async bm cask-mode company-box
+                   company-c-headers company-ctags company-web
+                   consult-eglot counsel-gtags counsel-osx-app
+                   counsel-projectile crux dash-at-point dashboard
+                   deferred direnv direx dirvish docker-compose-mode
+                   dockerfile-mode dumb-jump ef-themes elpy emmet-mode
+                   exec-path-from-shell expand-region fic-mode
+                   find-file-in-project flycheck-cask format-all fzf
+                   ggtags git-gutter google-c-style gruvbox-theme
+                   gulp-task-runner highlight-parentheses iedit
+                   indent-guide init-open-recentf js2-mode keycast
+                   lsp-ivy lsp-jedi lsp-ui lua-mode magit marginalia
+                   mode-icons neotree package-build pkg-info popwin
+                   prettier-js request rg shut-up smartparens smex
+                   spaceline-all-the-icons super-save symbol-overlay
+                   tabbar tern treemacs undo-tree vscode-icon vue-mode
+                   web-mode xcscope yasnippet-snippets zeal-at-point)))
