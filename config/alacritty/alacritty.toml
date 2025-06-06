@@ -23,7 +23,7 @@ lines = 60
 
 [font]
 size = 18
-normal.family = "FiraCode Nerd Font Mono"
+normal.family = "Maple mono NF CN"
 normal.style = "Regular"
 
 # Default colors

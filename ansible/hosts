@@ -16,3 +16,6 @@
 
 [arch]
 10.68.199.71
+
+[zc]
+192.168.10.100 ansible_user=vslab

@@ -47,7 +47,7 @@
 
 ;; 字体配置
 ;; (set-default-font "SauceCodePro Nerd Font 16")
-(set-default-font "Inziu Iosevka Slab SC 16")
+(set-default-font "Maple Mono NF CN 18")
 
 (setq neo-theme (if window-system 'icons 'arrow))
 
