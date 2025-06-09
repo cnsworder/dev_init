@@ -90,7 +90,7 @@
   :init (global-company-mode)
   :config
   (setq company-minimum-prefix-length 1)
-  (Setq company-idle-delay 0.03)
+  (setq company-idle-delay 0.03)
   (setq company-show-numbers t)
   (setq company-selection-wrap-around t)
   (setq company-tooltip-align-anotations t)

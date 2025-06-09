@@ -41,23 +41,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(ace-jump-mode add-node-modules-path ag aggressive-indent
-                   all-the-icons-dired all-the-icons-ivy anaconda-mode
-                   ansi async bm cask-mode company-box
-                   company-c-headers company-ctags company-web
-                   consult-eglot counsel-gtags counsel-osx-app
-                   counsel-projectile crux dash-at-point dashboard
-                   deferred direnv direx dirvish docker-compose-mode
-                   dockerfile-mode dumb-jump ef-themes elpy emmet-mode
-                   exec-path-from-shell expand-region fic-mode
-                   find-file-in-project flycheck-cask format-all fzf
-                   ggtags git-gutter google-c-style gruvbox-theme
-                   gulp-task-runner highlight-parentheses iedit
-                   indent-guide init-open-recentf js2-mode keycast
-                   lsp-ivy lsp-jedi lsp-ui lua-mode magit marginalia
-                   mode-icons neotree package-build pkg-info popwin
-                   prettier-js request rg shut-up smartparens smex
-                   spaceline-all-the-icons super-save symbol-overlay
-                   tabbar tern treemacs undo-tree vscode-icon vue-mode
-                   web-mode xcscope yasnippet-snippets zeal-at-point)))
+ '(package-selected-packages nil))
