@@ -30,6 +30,7 @@
 
 ;; editorconfig
 (use-package editorconfig
+  :ensure t
   :config
   (editorconfig-mode t))
 
@@ -41,6 +42,7 @@
 
 ;; 缩进线
 (use-package indent-guide
+  :ensure t
   :config
   (indent-guide-global-mode))
 
@@ -53,20 +55,22 @@
   :bind ("C-c f f" . #'format-all-region-or-buffer))
 
 (use-package xcscope
+  :ensure t
   :config
   (cscope-minor-mode t))
 
 (use-package ggtags
+  :ensure t
   :config
   (ggtags-mode t))
 
 (use-package eglot
-             :ensure nil
-             :hook (prog-mode . eglot-ensure)
-             :bind ("C-c e f" . eglot-format))
+  :ensure t
+  :hook (prog-mode . eglot-ensure)
+  :bind ("C-c e f" . eglot-format))
 
 (use-package lsp-mode
-             :ensure t
+  :ensure t
   :hook ((python-mode . lsp-deferred)
          (go-mode . lsp-deferred)
          (sh-mode . lsp-deferred))
@@ -75,15 +79,15 @@
 ;; debug mode
 ;;(use-package dap-mode)
 (use-package lsp-ui
-             :ensure t
-             :config
-             (setq lsp-ui-doc-position 'top)
-             :commands
-             lsp-ui-mode)
+  :ensure t
+  :config
+  (setq lsp-ui-doc-position 'top)
+  :commands
+  lsp-ui-mode)
 (use-package lsp-ivy
-             :ensure t
-             :after (lsp-mode)
-             :commands lsp-ivy-workspace-symbol)
+  :ensure t
+  :after (lsp-mode)
+  :commands lsp-ivy-workspace-symbol)
 
 (use-package company
   :ensure t
@@ -95,6 +99,15 @@
   (setq company-selection-wrap-around t)
   (setq company-tooltip-align-anotations t)
   (define-key company-active-map (kbd "M-/") #'company-complete)
+  (add-to-list 'company-backends '(company-keywords
+                                   company-files
+                                   company-abbrev
+                                   company-yasnippet
+                                   company-dabbrev
+                                   company-lsp
+                                   company-gtags
+                                   company-etags
+                                   company-elisp))
   )
 
 (use-package company-box
@@ -103,20 +116,12 @@
   :hook (company-mode . company-box-mode))
 
 (use-package flycheck
+  :ensure t
   :config
   (global-flycheck-mode t))
 
 
 ;;(add-hook 'after-init-hook 'global-company-mode)
-(add-to-list 'company-backends '(company-keywords
-                                 company-files
-                                 company-abbrev
-                                 company-yasnippet
-                                 company-dabbrev
-                                 company-lsp
-                                 company-gtags
-                                 company-etags
-                                 company-elisp))
 
 
 (add-hook 'emacs-lisp-hook
@@ -140,9 +145,11 @@
 ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (use-package js2-mode
+  :ensure t
   :mode "\\.js\\'")
 
 (use-package web-mode
+  :ensure t
   :mode ("\\.html\\'" . web-mode))
 (use-package vue-mode
   :mode "\\.vue\\'")
@@ -151,6 +158,7 @@
 (add-hook 'web-mode-hook 'prettier-js-mode)
 
 (use-package emmet-mode
+  :ensure t
   :bind
   ("C-c m e" . emmet-mode)
   :config
@@ -219,10 +227,12 @@
           (lambda ()
             (setq flycheck-clang-language-standard "c++11")))
 
-
-(global-aggressive-indent-mode 1)
+(use-package aggressive-indent
+    :ensure t
+    :config
+    (global-aggressive-indent-mode 1)
+    (add-to-list 'aggressive-indent-excluded-modes 'python-mode))
 ;; (add-hook 'prog-mode-hook 'aggressive-indent-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 (provide 'init-dev)
 
 ;;; init-dev.el ends here

@@ -10,18 +10,19 @@
 ;;(setq speedbar-show-unknown-files t)
 ;;(setq speedbar-use-images nil)
 
-;; (require 'highlight-parentheses)
 (use-package highlight-parentheses
+    :ensure t
     :config
     (global-highlight-parentheses-mode t))
 
 (use-package all-the-icons
-  :config
-  (mode-icons-mode t))
+  :ensure t)
 
-(use-package spaceline)
+(use-package spaceline
+  :ensure t)
 
 (use-package spaceline-all-the-icons
+  :ensure t
   :after spaceline
   :config
   (spaceline-all-the-icons-theme)
@@ -33,6 +34,7 @@
   )
 
 (use-package popwin
+  :ensure t
   :config
   (popwin-mode t))
 
@@ -41,8 +43,7 @@
   :config
   (ef-themes-select 'ef-trio-light)
   (setq ef-themes-mixed-fonts t
-        ef-themes-variable-pitch-ui t)
-  )
+        ef-themes-variable-pitch-ui t))
 ;; (use-package gruvbox-theme)
 
 
@@ -71,7 +72,7 @@
 
 ;; 字体配置
 ;;(set-default-font "SauceCodePro Nerd Font 16")
-(set-frame-font "Maple mono NF CN 20" nil t)
+(set-frame-font "Maple mono Normal NF CN 18" nil t)
 
 ;;(set-default-font "Inziu Iosevka TC 16")
 

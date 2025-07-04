@@ -8,7 +8,8 @@
 ;;(setq evil-default-state 'emacs)
 
 ;; 扩展选择区域
-(require 'expand-region)
+(use-package expand-region
+	:ensure t)
 
 ;;搜索配置
 (use-package avy
@@ -16,29 +17,34 @@
 (use-package ace-jump-mode
              :ensure t)
 (use-package marginalia
-             :ensure t
-             :init (marginalia-mode))
-(use-package smartparens-config
-             :ensure nil
-             :config
-             (smartparens-global-mode t))
+  :ensure t
+  :init (marginalia-mode))
+(use-package smartparens
+  :ensure smartparens  ;; install the package
+  :hook (prog-mode text-mode markdown-mode) ;; add `smartparens-mode` to these hooks
+  :config
+  (require 'smartparens-config))
 
 (setq x-select-enable-clipboard t)
 (defalias 'yes-or-no-p 'y-or-n-p)
+(setq-default buffer-file-coding-system 'utf-8-unix)
+(setq-default default-buffer-file-coding-system 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
 
-(require 'crux)
+(use-package crux
+	:ensure t)
 
 (recentf-mode t)
 (setq-default make-backup-files nil)
 
-(global-undo-tree-mode t)
-
 (global-auto-revert-mode t)
-
-(super-save-mode t)
-(setq super-save-auto-save-when-idle t)
-(setq make-backup-files nil)
-(setq auto-save-default nil)
+(use-package super-save
+	 :ensure t
+	 :config
+	 (super-save-mode t)
+	 (setq super-save-auto-save-when-idle t)
+	 (setq make-backup-files nil)
+	 (setq auto-save-default nil))
 
 (use-package counsel
              :ensure t)
@@ -79,13 +85,15 @@
              (setq projectile-tracek-known-projcts-automatically nil))
 
 (use-package counsel-projectile
-             :ensure t
-             :after (projectile)
-             :init (counsel-projectile-mode))
+  :ensure t
+  :after (projectile)
+  :init (counsel-projectile-mode))
 
+(use-package vundo
+  :ensure t)
 (use-package neotree
-             :ensure t
-             )
+  :ensure t
+  )
 (use-package dirvish
              :ensure t)
 
