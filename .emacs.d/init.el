@@ -41,12 +41,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(ace-jump-mode aggressive-indent auto-package-update avy company-box
-                   counsel-projectile crux dashboard direnv dirvish
-                   dumb-jump ef-themes emmet-mode exec-path-from-shell
-                   expand-region fic-mode flycheck format-all ggtags
-                   highlight-parentheses indent-guide js2-mode lsp-ivy
-                   lsp-ui marginalia neotree popwin queue smartparens
-                   spaceline-all-the-icons super-save vue-mode vundo
-                   web-mode xcscope yasnippet-snippets)))
+ '(package-selected-packages nil))

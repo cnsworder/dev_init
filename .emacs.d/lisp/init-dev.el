@@ -76,8 +76,6 @@
          (sh-mode . lsp-deferred))
   :commands (lsp lsp-deferred))
 
-;; debug mode
-;;(use-package dap-mode)
 (use-package lsp-ui
   :ensure t
   :config
@@ -104,10 +102,9 @@
                                    company-abbrev
                                    company-yasnippet
                                    company-dabbrev
-                                   company-lsp
+                                   company-capf
                                    company-gtags
-                                   company-etags
-                                   company-elisp))
+                                   company-etags))
   )
 
 (use-package company-box
@@ -115,13 +112,13 @@
   :if window-system
   :hook (company-mode . company-box-mode))
 
+;; debug mode
+(use-package dap-mode
+  :ensure t)
 (use-package flycheck
   :ensure t
   :config
   (global-flycheck-mode t))
-
-
-;;(add-hook 'after-init-hook 'global-company-mode)
 
 
 (add-hook 'emacs-lisp-hook
@@ -190,7 +187,7 @@
                             company-dabbrev)
                            company-bbdb
                            company-nxml
-                           company-lsp
+                           company-capf
                            company-css
                            company-files
                            (company-dabbrev-code
