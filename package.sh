@@ -25,6 +25,9 @@ PACKAGES="zsh
           ripgrep
           fd
           zoxide
+	  fcitx5
+	  fcitx5-rime
+	  fcitx5-configtool
           ffmpeg
           yp-dlp
           minicom"

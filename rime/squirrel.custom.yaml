@@ -1,0 +1,5 @@
+patch:
+  "style/color_scheme": mint_light_blue
+  "style/color_scheme_dark": mint_dark_blue
+  "style/candidate_list_layout":  linear
+  "style/show_paging": true
