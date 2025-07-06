@@ -87,30 +87,29 @@
   :after (lsp-mode)
   :commands lsp-ivy-workspace-symbol)
 
-(use-package company
+(use-package corfu
   :ensure t
-  :init (global-company-mode)
-  :config
-  (setq company-minimum-prefix-length 1)
-  (setq company-idle-delay 0.03)
-  (setq company-show-numbers t)
-  (setq company-selection-wrap-around t)
-  (setq company-tooltip-align-anotations t)
-  (define-key company-active-map (kbd "M-/") #'company-complete)
-  (add-to-list 'company-backends '(company-keywords
-                                   company-files
-                                   company-abbrev
-                                   company-yasnippet
-                                   company-dabbrev
-                                   company-capf
-                                   company-gtags
-                                   company-etags))
-  )
+  :hook (after-init . global-corfu-mode)
+  :custom
+  (corfu-auto t)
+  (corfu-auto-deply 0)
+  (corfu-min-width 1)
+  (corfu-auto-frefix 1)
+  (corfu-quit-no-match 'separator)
+  :init
+  (corfu-history-mode)
+  (corfu-popupinfo-mode))
 
-(use-package company-box
+(use-package cape
   :ensure t
-  :if window-system
-  :hook (company-mode . company-box-mode))
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-keyword)
+  (add-to-list 'completion-at-point-functions #'cape-ispell)
+  (add-to-list 'completion-at-point-functions #'cape-dict)
+  (add-to-list 'completion-at-point-functions #'cape-symbol)
+  (add-to-list 'completion-at-point-functions #'cape-line))
 
 ;; debug mode
 (use-package dap-mode
@@ -121,13 +120,13 @@
   (global-flycheck-mode t))
 
 
-(add-hook 'emacs-lisp-hook
-          (lambda()
-            (setq (make-local-variable 'company-backends)
-                  '(company-elisp
-                    company-yasnippet
-                    company-abbrev
-                    company-dabbrev))))
+;;(add-hook 'emacs-lisp-hook
+;;          (lambda()
+;;            (setq (make-local-variable 'company-backends)
+;;                  '(company-elisp
+;;                    company-yasnippet
+;;                    company-abbrev
+;;                    company-dabbrev))))
 
 ;; (use-package company-go
 ;; :config
@@ -143,16 +142,15 @@
 ;; (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (use-package js2-mode
   :ensure t
-  :mode "\\.js\\'")
+  :mode "\\.js\\'"
+  :hook prettier-js-mode)
 
 (use-package web-mode
   :ensure t
-  :mode ("\\.html\\'" . web-mode))
+  :mode ("\\.html\\'" . web-mode)
+  :hook prettier-js-mode)
 (use-package vue-mode
   :mode "\\.vue\\'")
-
-(add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'web-mode-hook 'prettier-js-mode)
 
 (use-package emmet-mode
   :ensure t
@@ -161,41 +159,36 @@
   :config
   (emmet-mode t))
 
-;; (add-hook  'markdown-mode-hook
-;;    (lambda ()
-;;      (global-set-key (kbd "C-c p") 'markdown-preview)))
-;;
 
 (defun *init-python* ()
 
   "Init python."
 
   (interactive )
-  (anaconda-mode t)
   (hs-minor-mode t)
   (elpy-enable)
   (elpy-mode t)
   (setq elpy-rpc-python-command "python3")
-  (aggressive-indent-mode nil)
-  (setq company-backends '(elpy-company-backend
-                           (company-keywords
-                            company-files
-                            company-gtags
-                            company-etags
-                            company-yasnippet
-                            company-abbrev
-                            company-dabbrev)
-                           company-bbdb
-                           company-nxml
-                           company-capf
-                           company-css
-                           company-files
-                           (company-dabbrev-code
-                            company-gtags
-                            company-etags
-                            company-keywords)
-                           company-oddmuse
-                           company-dabbrev)))
+  (aggressive-indent-mode nil))
+;;  (setq company-backends '(elpy-company-backend
+;;                           (company-keywords
+;;                            company-files
+;;                            company-gtags
+;;                            company-etags
+;;company-yasnippet
+;;                            company-abbrev
+;; company-dabbrev)
+;;                         company-bbdb
+;;                          company-nxml
+;;                         company-capf
+;;                         company-css
+;;                        company-files
+;;                         (company-dabbrev-code
+;;                         company-gtags
+;;                         company-etags
+;;                         company-keywords)
+;;                        company-oddmuse
+;;                        company-dabbrev)))
 
 (add-hook 'python-mode-hook
           (lambda ()
@@ -212,10 +205,10 @@
             (google-set-c-style)
             (google-make-newline-indent)
             (setq c-default-style "K&R")
-            (setq c-basic-offset 4)
-            (add-to-list 'company-backends '(company-clang
-                                             company-c-headers
-                                             company-cmake))))
+            (setq c-basic-offset 4)))
+            ;;(add-to-list 'company-backends '(company-clang
+            ;;                                 company-c-headers
+            ;;                                company-cmake))))
 
 (add-hook 'c-mode-hook
           'c++-mode)

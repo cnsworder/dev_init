@@ -6,32 +6,17 @@
 ;;(setq tabbar-buffer-groups-function nil)
 ;;(tabbar-mode t)
 
-;;(require 'sr-speedbar)
-;;(setq speedbar-show-unknown-files t)
-;;(setq speedbar-use-images nil)
 
 (use-package highlight-parentheses
-    :ensure t
-    :config
-    (global-highlight-parentheses-mode t))
+  :ensure t
+  :config
+  (global-highlight-parentheses-mode t))
 
-(use-package all-the-icons
+(use-package nerd-icons
   :ensure t)
 
 (use-package spaceline
   :ensure t)
-
-(use-package spaceline-all-the-icons
-  :ensure t
-  :after spaceline
-  :config
-  (spaceline-all-the-icons-theme)
-  (spaceline-all-the-icons--setup-anzu)            ;; Enable anzu searching
-  (spaceline-all-the-icons--setup-package-updates) ;; Enable package update indicator
-  (spaceline-all-the-icons--setup-git-ahead)       ;; Enable # of commits ahead of upstream in git
-  (spaceline-all-the-icons--setup-paradox)         ;; Enable Paradox mode line
-  (spaceline-all-the-icons--setup-neotree)         ;; Enable Neotree mode line
-  )
 
 (use-package popwin
   :ensure t
@@ -72,9 +57,7 @@
 
 ;; 字体配置
 ;;(set-default-font "SauceCodePro Nerd Font 16")
-(set-frame-font "Maple mono Normal NF CN 18" nil t)
-
-;;(set-default-font "Inziu Iosevka TC 16")
+(set-frame-font "-*-maple mono normal nf cn-medium-normal-*-16-*")
 
 
 (setq neo-theme (if window-system 'icons 'arrow))
