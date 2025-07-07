@@ -1,6 +1,20 @@
 ;;; packates init-theme
 ;;; Code:
 
+;; 去掉工具栏
+(if window-system
+    (tool-bar-mode 0))
+
+;; 去掉滚动条
+;;(scroll-bar-mode 0)
+;;(fringe-mode 0)
+
+;; 显示行号
+(global-display-line-numbers-mode t)
+(column-number-mode t)
+(display-line-numbers-mode)
+
+(setq inhibit-startup-message t)
 (use-package highlight-parentheses
   :ensure t
   :config
@@ -34,21 +48,8 @@
 ;;(set-cursor-color "White")
 (setq-default cursor-type 'bar)
 
-;; 去掉工具栏
-(if window-system
-    (tool-bar-mode 0))
 
-;; 去掉滚动条
-;;(scroll-bar-mode 0)
-;;(fringe-mode 0)
 
-;; 开启折叠
-;; (hs-minor-mode t)
-;; 显示行号
-(global-display-line-numbers-mode t)
-(column-number-mode t)
-
-(setq inhibit-startup-message t)
 
 ;; 字体配置
 ;;(set-default-font "SauceCodePro Nerd Font 16")
