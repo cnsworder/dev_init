@@ -1,22 +1,20 @@
 ;;; packates init-theme
 ;;; Code:
 
-;; 不要tab页了没用
-;;(require 'tabbar)
-;;(setq tabbar-buffer-groups-function nil)
-;;(tabbar-mode t)
-
-
 (use-package highlight-parentheses
   :ensure t
   :config
   (global-highlight-parentheses-mode t))
 
 (use-package nerd-icons
-  :ensure t)
+  :ensure t
+  :custom
+  (nerd-icons-font-family "Maple Mono Normal NF CN"))
 
 (use-package spaceline
-  :ensure t)
+  :ensure t
+  :config
+  (spaceline-spacemacs-theme))
 
 (use-package popwin
   :ensure t
@@ -50,17 +48,12 @@
 (global-display-line-numbers-mode t)
 (column-number-mode t)
 
-;;(require 'spaceline-config)
-;;(spaceline-spacemacs-theme)
-
 (setq inhibit-startup-message t)
 
 ;; 字体配置
 ;;(set-default-font "SauceCodePro Nerd Font 16")
 (set-frame-font "-*-maple mono normal nf cn-medium-normal-*-16-*")
-
-
-(setq neo-theme (if window-system 'icons 'arrow))
+(set-frame-font (font-spec :family "Maple Mono Normal NF CN" :size 16))
 
 (provide 'init-theme)
 

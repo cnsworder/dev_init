@@ -42,14 +42,18 @@
   (setq make-backup-files nil)
   (setq auto-save-default nil))
 
-(use-package consult
-  :ensure t
-  :bind
-  (("C-s" . consult-line)))
+(use-package counsel
+  :ensure t)
 
-(use-package vertico
+(use-package ivy
   :ensure t
-  :hook (after-init . vertico-mode))
+  :init
+  (ivy-mode t)
+  (counsel-mode t)
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  )
 
 (use-package orderless
   :ensure t
@@ -67,7 +71,6 @@
   (dashboard-setup-startup-hook)
   (setq dashboard-banner-logo-title "Cross Emacs")
   (setq dashboard-setup-startup-banner 'logo)
-
   (setq dashboard-items '((recents . 5)
                           (bookmarks . 5)
                           (projects . 5)
@@ -103,17 +106,6 @@
 (use-package nerd-icons-completion
   :config
   (nerd-icons-completion-mode))
-
-(use-package nerd-icons-corfu
-  :ensure t
-  :config
-  (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter)
-
-  (setq nerd-icons-corfu-mapping
-        '((array :style "cod" :icon "symbol_array" :face font-lock-type-face)
-          (boolean :style "cod" :icon "symbol_boolean" :face font-lock-builtin-face)
-          (file :fn nerd-icons-icon-for-file :face font-lock-string-face)
-          (t :style "cod" :icon "code" :face font-lock-warning-face))))
 
 (use-package dirvish
   :ensure t
