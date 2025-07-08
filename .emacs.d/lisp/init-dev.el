@@ -118,10 +118,10 @@
 ;; debug mode
 (use-package dap-mode
   :ensure t)
-(use-package flycheck
+(use-package flymake
   :ensure t
   :config
-  (global-flycheck-mode t))
+  (flymake-mode t))
 
 
 (add-hook 'emacs-lisp-hook
