@@ -3,3 +3,9 @@ patch:
   "style/color_scheme_dark": mint_dark_blue
   "style/candidate_list_layout":  linear
   "style/show_paging": true
+  "style/font_face": 'LXGW WenKai'
+  "style/font_point": 16
+  "style/label_font_face": 'SimZhiSong'
+  "style/label_font_point": 16
+  "style/comment_font_face": 'SimZhiSong'
+  "style/comment_font_point": 14

@@ -1,2 +1,7 @@
 patch:
   "menu/page_size": 9
+  schema_list:
+    - schema: rime_mint            # 薄荷拼音
+    - schema: double_pinyin_flypy  # 小鹤双拼
+    - schema: rime_mint_flypy      # 薄荷拼音-小鹤混输方案
+    - schema: t9                   # 仓九宫格-全拼输入
