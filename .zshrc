@@ -236,31 +236,6 @@ function pipup() {
 }
 
 
-function emacsup() {
-    if ! which emacs &> /dev/null; then
-        return 2
-    fi
-    if ! which cask &> /dev/null; then
-        return 3
-    fi
-    echo ">> cask update emacs..."
-    if [ -d ~/.emacs.d ]; then
-        cd ~/.emacs.d
-        cask upgrade &>> ~/allup.log
-        cask update &>> ~/allup.log
-        cd - > /dev/null
-    fi
-}
-
-function vimup() {
-    if ! which vim &> /dev/null; then
-        return 4
-    fi
-    echo ">> vimplug update vim..."
-    vim +PlugUpdate\ --sync +PlugUpgrade\ --sync +PlugClean\ --sync +qall
-    clear
-}
-
 function echolog() {
     cat ~/allup.log
     echo
@@ -271,8 +246,6 @@ function allup() {
     linuxup
     macup
     zshup
-    emacsup
-    vimup
     echolog
 
     echo "[[ All plugin Upgraded! ]]"
