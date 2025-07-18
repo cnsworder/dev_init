@@ -15,7 +15,7 @@ function init_env () {
     fi
     
     if which fzf &> /dev/null; then
-        [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+	eval "$(fzf --zsh)"
     fi
 
     if which zoxide &> /dev/null; then
@@ -86,8 +86,8 @@ function load_plugs() {
         zplug "plugins/asdf". from:oh-my-zsh
     fi
 
-    if [ -d ~/dev/tools ]; then
-        zplug "~/dev/tools", from:local, use:"*.sh"
+    if [ -d ~/dev/dev_init/tools ]; then
+        zplug "~/dev/dev_init/tools", from:local, use:"*.sh"
     fi
 }
 
@@ -105,6 +105,10 @@ function check() {
 }
 
 function init_python_env() {
+
+    if which uv &> /dev/null; then
+       eval "$(uv generate-shell-completion zsh)"
+    fi 
 
     # virtualenvwrapper
     if [ -d $HOME/.virtualenvs ]; then
@@ -232,31 +236,6 @@ function pipup() {
 }
 
 
-function emacsup() {
-    if ! which emacs &> /dev/null; then
-        return 2
-    fi
-    if ! which cask &> /dev/null; then
-        return 3
-    fi
-    echo ">> cask update emacs..."
-    if [ -d ~/.emacs.d ]; then
-        cd ~/.emacs.d
-        cask upgrade &>> ~/allup.log
-        cask update &>> ~/allup.log
-        cd - > /dev/null
-    fi
-}
-
-function vimup() {
-    if ! which vim &> /dev/null; then
-        return 4
-    fi
-    echo ">> vimplug update vim..."
-    vim +PlugUpdate\ --sync +PlugUpgrade\ --sync +PlugClean\ --sync +qall
-    clear
-}
-
 function echolog() {
     cat ~/allup.log
     echo
@@ -267,8 +246,6 @@ function allup() {
     linuxup
     macup
     zshup
-    emacsup
-    vimup
     echolog
 
     echo "[[ All plugin Upgraded! ]]"
