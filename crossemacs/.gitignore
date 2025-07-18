@@ -1,4 +1,9 @@
 */.cask
+.emacs.d/.cache
+.emacs.d/elpa
+.emacs.d/elpy
+.emacs.d/transient
+.DS_Store
 anaconda-mode
 auto-save-list
 bookmarks
@@ -11,3 +16,5 @@ smex-items
 snippets
 tramp
 url
+*~undo-tree~
+.last-package-update-day

@@ -8,6 +8,7 @@
 (setq backup-directory-alist '(("." . "/tmp")))
 (setenv "PATH" (concat ".:/Users/crossorbit/bin/:/usr/local/bin:" (getenv "PATH")))
 
-(use-package direnv)
+(use-package direnv
+	:ensure t)
 
 (provide 'init-env)
