@@ -65,6 +65,10 @@ return {
 			require("mason-lspconfig").setup()
 		end,
 	},
+        {
+               -- tags
+               "majutsushi/tagbar"
+        },
 	{
 		-- 任务
 		"stevearc/overseer.nvim",
