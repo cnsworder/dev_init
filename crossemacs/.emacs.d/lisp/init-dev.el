@@ -68,6 +68,17 @@
   :config
   (ggtags-mode t))
 
+(use-package symbols-outline
+  :ensure t
+  :bind ("C-c i" . symbols-outline-show)
+  :init
+  (add-hook 'lsp-mode-hook ; Or `eglot-mode-hook' 
+            (lambda ()
+              (setq-local symbols-outline-fetch-fn #'symbols-outline-lsp-fetch)))
+  :config
+  (setq symbols-outline-window-position 'left)
+  (symbols-outline-follow-mode))
+
 ;;(use-package eglot
 ;;  :ensure t
 ;;  :hook (prog-mode . eglot-ensure)
