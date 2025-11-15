@@ -39,19 +39,19 @@
 
 (use-package ef-themes
   :ensure t
+  :init
+  (ef-themes-take-over-modus-themes-mode 1)
   :config
-  (ef-themes-select 'ef-trio-light)
-  (setq ef-themes-mixed-fonts t
-        ef-themes-variable-pitch-ui t))
+  (setq ef-themes-mixed-fonts t)
+  (setq ef-themes-variable-pitch-ui t)
+  (modus-themes-load-theme 'ef-deuteranopia-light))
+
 ;; (use-package gruvbox-theme)
 
 
 ;; 暗色主题下光标颜色设置一下
 ;;(set-cursor-color "White")
 (setq-default cursor-type 'bar)
-
-
-
 
 ;; 字体配置
 ;;(set-default-font "SauceCodePro Nerd Font 16")
