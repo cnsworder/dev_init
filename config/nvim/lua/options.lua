@@ -15,3 +15,6 @@ vim.cmd.colorscheme("catppuccin")
 if vim.opt.guifont ~= nil then
   vim.opt.guifont = "Maple_Mono_Normal_NF_CN:h18"
 end
+
+vim.g.vim_ai_roles_config_file = "~/.config/nvim/roles.ini"
+vim.g.vim_ai_token_file_path = "~/.config/ai.token"

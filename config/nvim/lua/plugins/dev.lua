@@ -65,10 +65,18 @@ return {
 			require("mason-lspconfig").setup()
 		end,
 	},
-        {
-               -- tags
-               "majutsushi/tagbar"
-        },
+    {
+        -- tags
+        "majutsushi/tagbar"
+    },
+    {
+        -- AI
+        "madox2/vim-ai"
+    },
+    {
+        -- aider
+        "yetone/avante.nvim"
+    },
 	{
 		-- 任务
 		"stevearc/overseer.nvim",
@@ -129,6 +137,10 @@ return {
 		config = function()
 			require("blame").setup({})
 		end,
+	},
+	{
+		-- dash
+		"sunaku/vim-dasht"
 	},
 	{
 		-- 符号列表
