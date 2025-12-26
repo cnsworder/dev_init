@@ -1,0 +1,68 @@
+# :  read (default)  built-in/custom command
+# $  shell           shell command
+# %  shell-pipe      shell command running with the UI
+# !  shell-wait      shell command waiting for a key press
+# &  shell-async     shell command running asynchronously
+# f 当前文件
+# fs 选择的文件
+# fx f和fs
+
+set shell zsh
+
+set shellopts '-eu'
+set ifs "\n"
+
+set scrolloff 10
+
+set icons
+set period 1
+# 设置状态栏格式
+set rulerfmt "  %a|  %p|  \033[7;31m %m \033[0m|  \033[7;33m %c \033[0m|  \033[7;35m %s \033[0m|  \033[7;36m %v \033[0m|  \033[7;34m %f \033[0m|  %i/%t"
+ 
+# 设置提示格式
+set promptfmt "\033[32;1m%u@%h\033[0m:\033[34;1m%d\033[0m\033[1m%f\033[0m"
+
+map <enter> zsh
+map x $$f
+map X !$f
+
+cmd openwith %"$@" "$fx"
+cmd open &xdg-open "$f" > /dev/null 2> /dev/null &
+
+map F fzf
+
+# 解压
+cmd extract ${{
+    set -f
+    archive="${fx%.*}"
+    mkdir "$archive"
+    cd "$archive"
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip -O gbk $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+
+cmd fzf ${{
+    res="$( \
+        RG_PREFIX="rg --column --line-number --no-heading --color=always \
+            --smart-case "
+        FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
+            fzf --bind "change:reload:$RG_PREFIX {q} || true" \
+            --ansi --layout=reverse --header 'Search in files' \
+            | cut -d':' -f1
+    )"
+    [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
+}}
+
+cmd commit ${{
+    set -f
+    git add $fx
+    git commit -m "$1"
+}}
+

@@ -75,7 +75,29 @@ return {
     },
     {
         -- aider
-        "yetone/avante.nvim"
+        "GeorgesAlkhouri/nvim-aider",
+        cmd = "Aider",
+        dependencies = {
+            { "folke/snacks.nvim", version = ">=2.24.0" },
+            --- The below dependencies are optional
+            "catppuccin/nvim",
+            "nvim-tree/nvim-tree.lua",
+            --- Neo-tree integration
+            {
+             "nvim-neo-tree/neo-tree.nvim",
+                opts = function(_, opts)
+                    require("nvim_aider.neo_tree").setup(opts)
+            end,
+            },
+        },
+        config = function()
+            require("nvim_aider").setup({
+                aider_cmd="aider",
+                args = {
+                    "--config ~/.config/aider.yml"
+                },
+            })
+        end,
     },
 	{
 		-- 任务
