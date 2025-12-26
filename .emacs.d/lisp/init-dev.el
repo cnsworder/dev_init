@@ -14,8 +14,8 @@
   (yas-global-mode t))
 
 (use-package yasnippet-snippets
-             :ensure t
-             :after yasnippet)
+  :ensure t
+  :after yasnippet)
 
 (use-package dumb-jump
   :bind
@@ -52,17 +52,26 @@
     (git-gutter:linum-setup))
 (use-package fic-mode)
 
+;; 高亮当前
+(use-package highlight-symbol
+  :ensure t
+  :init (highlight-symbol-mode)
+  :bind ("C-c h s" . highlight-symbol))
+
+;; 格式化
 (use-package format-all
   :ensure t
   :defer t
   :hook (prog-mode . format-all-mode)
   :bind ("C-c f f" . #'format-all-region-or-buffer))
 
+;; 搜索
 (use-package xcscope
   :ensure t
   :config
   (cscope-minor-mode t))
 
+;; 索引
 (use-package ggtags
   :ensure t
   :config
@@ -84,6 +93,19 @@
 ;;  :hook (prog-mode . eglot-ensure)
 ;;  :bind ("C-c e f" . eglot-format))
 
+(use-package aidermacs
+  :ensure t
+  :bind
+  (("C-c a m" . aidermacs-transient-menu))
+  :config
+  ;;(setenv "AIDER_MODEL" "openrouter/qwen/qwen3-coder:free")
+  (setq aidermacs-watch-files t)
+  ;;(setq aidermacs-default-model "openrouter/qwen/qwen3-coder:free")
+  (setq aidermacs-config-file "~/.config/aider.yml")
+  :custom
+  (aidermacs-use-architect-mode t))
+
+;; 代码提示
 (use-package lsp-mode
   :ensure t
   :hook ((python-mode . lsp-deferred)

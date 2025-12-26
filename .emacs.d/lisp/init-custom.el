@@ -25,6 +25,11 @@
 (use-package avy
   :ensure t)
 
+;; 历史
+(use-package amx
+  :ensure t
+  :init (amx-mode))
+
 (use-package marginalia
   :ensure t
   :init (marginalia-mode))
