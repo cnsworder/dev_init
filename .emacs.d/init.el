@@ -20,8 +20,6 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'init-utils)
-(require 'server)
-(when (not (server-running-p)) (server-start))
 
 ;;(setq custom-file (expand-file-name "lisp/custom.el" emacs-directory))
 ;;(load-file custom-file)
