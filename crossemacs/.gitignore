@@ -3,6 +3,7 @@
 .emacs.d/elpa
 .emacs.d/elpy
 .emacs.d/transient
+.lsp-session-v1
 .DS_Store
 anaconda-mode
 auto-save-list
@@ -13,8 +14,10 @@ recentf
 request
 server
 smex-items
+amx-items
 snippets
 tramp
 url
 *~undo-tree~
 .last-package-update-day
+.aider*

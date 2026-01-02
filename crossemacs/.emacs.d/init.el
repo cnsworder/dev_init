@@ -41,4 +41,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(ace-jump-mode aggressive-indent aidermacs all-the-icons amx
+                   auto-package-update cape company-box
+                   counsel-projectile crux dap-mode dashboard direnv
+                   dirvish dumb-jump ef-themes elpy embark-consult
+                   emmet-mode exec-path-from-shell expand-region
+                   fic-mode flycheck format-all ggtags git-gutter
+                   highlight-parentheses highlight-symbol indent-guide
+                   js2-mode lsp-ivy lsp-ui marginalia memoize neotree
+                   nerd-icons-completion
+                   nerd-icons-dired nerd-icons-ibuffer orderless
+                   popwin queue smartparens spaceline super-save
+                   symbols-outline treemacs-nerd-icons ultra-scroll
+                   vertico vue-mode vundo web-mode xcscope
+                   yasnippet-snippets)))

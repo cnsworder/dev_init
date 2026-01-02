@@ -9,6 +9,14 @@
 (setq-default default-buffer-file-coding-system 'utf-8-unix)
 (prefer-coding-system 'utf-8-unix)
 
+(use-package ultra-scroll
+  :ensure t
+  :init
+  (setq scroll-conservatively 3 ; or whatever value you prefer, since v0.4
+        scroll-margin 0)        ; important: scroll-margin>0 not yet supported
+  :config
+  (ultra-scroll-mode 1))
+
 ;; 扩展选择区域
 (use-package expand-region
   :ensure t)
@@ -16,6 +24,11 @@
 ;;搜索配置
 (use-package avy
   :ensure t)
+
+;; 历史
+(use-package amx
+  :ensure t
+  :init (amx-mode))
 
 (use-package marginalia
   :ensure t

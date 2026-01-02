@@ -18,6 +18,9 @@
 (require 'keyset)
 (require 'init-custom)
 
+(require 'server)
+(when (not (server-running-p)) (server-start))
+
 (defun hack-emacs ()
   "config file"
   (interactive)
