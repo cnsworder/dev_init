@@ -1,6 +1,12 @@
-# 顺手的emacs
+# AI强化的emacs
 
-这是自己使用的emacs环境，经常用来写 `c/c++` `python` `Go` 偶尔写点`HTML`和`javascript`。
+AI强化的emacs环境，经常用来写 `c/c++` `rust` `python` `go` 偶尔写点`HTML`和`javascript`。
+
+## 安装方法
+
+1. 下载项目到本地
+2. 执行安装 `./setup.sh`
+3. 或者直接建立用户目录下的 `.emacs.d` 的链接.
 
 ## 特性描述
 

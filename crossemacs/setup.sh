@@ -11,3 +11,5 @@ else
         ln -s `pwd`/emacs.d ~/.emacs.d
     fi
 fi
+
+echo "please install aider"
