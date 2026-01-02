@@ -47,9 +47,6 @@ function update_package() {
     yes | ${PM} ${PM_UPDATE}
 }
 
-
-
-
 function init_package() {
 
     pre_package

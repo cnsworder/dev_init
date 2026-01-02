@@ -4,6 +4,12 @@ alias svim="vim -u .vimrc.base"
 alias z='fasd_cd -ldi'
 alias zz='fasd -fi -e $EDITOR'
 
+alias -s md="bat"
+alias -s txt="bat"
+alias -s conf="bat"
+alias -s yml="bat"
+alias -s json="jp ."
+
 ## functions
 function zf() {
    selected=$(fasd -lf $1 | fzf --reverse)

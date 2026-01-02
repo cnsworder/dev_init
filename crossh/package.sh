@@ -1,17 +1,14 @@
 PACKAGES="zsh
           tmux
-          mosh
-          python
           stow
-          git
-          lazygit
           neovim
           emacs
           global
           curl
+          wget
           httpie
           aria2
-          ranger
+          lf
           htop
           iftop
           tcpdump
@@ -25,9 +22,15 @@ PACKAGES="zsh
           rigprep
           fd
           zoxide
+          eza
+          bat                                                                       
+          fpp
+          fd
           ffmpeg
           pandoc
           yp-dtp
+          git
+          lazygit
           minicom"
 
 

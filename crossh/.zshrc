@@ -7,12 +7,31 @@ function load_omz() {
     source $ZSH/oh-my-zsh.sh
 }
 
+function chpwd () {
+    ls
+}
+
+function openuse () {
+    # 输入文件名打开文件
+    alias -s md='bat'
+    alias -s txt='bat'
+    alias -s json='jq .'
+}
+
 function init_env () {
     if which vim &> /dev/null; then
         export EDITOR=vim
     elif which emacs &> /dev/null; then
         export EDITOR=emacs
     fi
+    
+    # 行编辑
+    #autoload -Uz edit-command-line
+    #ze -N edit-command-line
+    #bindkey '^x^e' edit-command-line
+    #
+    # 展开历史
+    #bindke " " magic-space
     
     if which fzf &> /dev/null; then
 	eval "$(fzf --zsh)"
@@ -29,7 +48,7 @@ function init_env () {
     # bindkey '^j' snippet-expand
 
     export HOMEBREW_PREFIX=$(brew --prefix)
-    export PATH=${HOMEBREW_PREFIX}/opt/openjdk/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH:/usr/local/sbin:/usr/local/bin
+    export PATH=~/.local/bin:${HOMEBREW_PREFIX}/opt/openjdk/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/libexec
     echo "PATH: $PATH"
 
     [ -f ~/.environment ] && source ~/.environment
@@ -42,6 +61,8 @@ function init_env () {
     zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
     # switch group using `<` and `>`
     zstyle ':fzf-tab:*' switch-group '<' '>'
+
+    openuse
 
 }
 
