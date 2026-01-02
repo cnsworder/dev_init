@@ -8,7 +8,8 @@ function load_omz() {
 }
 
 function chpwd () {
-    ls
+    eza
+    # du -sh &
 }
 
 function openuse () {
