@@ -44,12 +44,11 @@ return {
 		-- lsp配置
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
-			lspconfig.pylyzer.setup({})
-			lspconfig.cmake.setup({})
-			lspconfig.rust_analyzer.setup({})
-			lspconfig.gopls.setup({})
+			vim.lsp.config("lua_ls", {})
+			vim.lsp.config("pylyzer", {})
+			vim.lsp.config("cmake", {})
+			vim.lsp.config("rust_analyzer", {})
+			vim.lsp.config("gopls", {})
 		end,
 	},
 	{
@@ -181,6 +180,12 @@ return {
 			-- refer to the configuration section below
 		},
 	},
+    {
+        "norcalli/nvim-colorizer.lua",
+        config = function () 
+            require("colorizer").setup()
+        end
+    },
     {
         --debug
         "mfussenegger/nvim-dap"

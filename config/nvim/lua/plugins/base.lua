@@ -84,6 +84,15 @@ return {
         }
     },
     {
+        -- 文件搜索
+        "alexpasmantier/tv.nvim",
+        config = function()
+            require("tv").setup{
+                -- your config here (see Configuration section below)
+            }
+        end,
+    },
+    {
         -- 搜索
         "nvim-telescope/telescope.nvim",
         dependencies = {
