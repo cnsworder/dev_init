@@ -3,6 +3,7 @@ PACKAGES="zsh
           mosh
           python
           stow
+          autin
           git
           lazygit
           neovim
@@ -18,16 +19,22 @@ PACKAGES="zsh
           socat
           proxychains-ng 
           jq
+          jd
           direnv
           asdf
           lrzsz
           fzf
           ripgrep
           fd
+          bat
+          eza
+          pv
+          ethtool
+          tldr
           zoxide
-	  fcitx5
-	  fcitx5-rime
-	  fcitx5-configtool
+          fcitx5
+          fcitx5-rime
+          fcitx5-configtool
           ffmpeg
           yp-dlp
           minicom"
@@ -50,7 +57,7 @@ XPACKAGES="i3
 
 PIP="pip"
 
-PYTHON_PACKAGES="poetry
+PYTHON_PACKAGES="uv
                  ipython
                  pipx
                  pyenv"
