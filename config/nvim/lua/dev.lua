@@ -1,11 +1,11 @@
 local ft = require('guard.filetype')
-ft('c'):fmt('clang-format')
-       :lint('clang-tidy')
+ft('typescript,javascript,typescriptreact'):fmt('prettier')
 ft('lua'):fmt('lsp')
         :append('stylua')
-        :lint('selene')
-ft('typescript,javascript,typescriptreact'):fmt('prettier')
+ft('c'):fmt('clang-format')
+--[[
 ft('python'):fmt('yapf')
             :lint('flake8')
+]]--
 
 

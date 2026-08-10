@@ -93,7 +93,7 @@ return {
         end,
     },
     {
-        -- 搜索
+        -- 搜索 folke/snacks.nvim
         "nvim-telescope/telescope.nvim",
         dependencies = {
             { "nvim-lua/plenary.nvim" },

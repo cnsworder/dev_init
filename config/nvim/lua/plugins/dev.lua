@@ -1,21 +1,4 @@
 return {
-	--[[ {
-		-- lsp客户端
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-cmdline",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-vsnip",
-			"hrsh7th/vim-vsnip",
-			"onsails/lspkind-nvim",
-		},
-		event = "VeryLazy",
-		config = function()
-			require("cmp").setup()
-		end,
-	},]]
 	{
 		-- lsp 客户端
 		"saghen/blink.cmp",
@@ -26,6 +9,9 @@ return {
 			keymap = { preset = "default" },
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer" },
+                per_filetype = {
+                    codecompanion = { "codecompanion" },
+                },
 			},
             completion = {
                 keyword = {
@@ -69,105 +55,76 @@ return {
         "majutsushi/tagbar"
     },
     {
-        -- AI
-        "madox2/vim-ai"
-    },
-    {
-        "yetone/avante.nvim",
-        -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-        -- ⚠️ must add this setting! ! !
-        build = vim.fn.has("win32") ~= 0
-        and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
-        or "make",
-        event = "VeryLazy",
-        version = false, -- Never set this value to "*"! Never!
-        ---@module 'avante'
-        ---@type avante.Config
-        opts = {
-            -- add any opts here
-            -- this file can contain specific instructions for your project
-            instructions_file = "avante.md",
-            -- for example
-            provider = "openai",
-            providers = {
-                openai = {
-                    endpoint = "https://api.minimaxi.com/v1",
-                    model = "MiniMax-M2.5",
-                    api_key_name = "MINIMAX_API_KEY",
-                    timeout = 3000
-                }
-            }
-        },
-        acp_providers = {
-            ["opencode"] = {
-                command = "opencode",
-                args = { "acp" }
-            }
-        },
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            --- The below dependencies are optional,
-            "nvim-mini/mini.pick", -- for file_selector provider mini.pick
-            "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-            "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-            "ibhagwan/fzf-lua", -- for file_selector provider fzf
-            "stevearc/dressing.nvim", -- for input provider dressing
-            "folke/snacks.nvim", -- for input provider snacks
-            "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-            "zbirenbaum/copilot.lua", -- for providers='copilot'
-            {
-                -- support for image pasting
-                "HakonHarnes/img-clip.nvim",
-                event = "VeryLazy",
-                opts = {
-                    -- recommended settings
-                    default = {
-                        embed_image_as_base64 = false,
-                        prompt_for_file_name = false,
-                        drag_and_drop = {
-                            insert_mode = true,
-                        },
-                        -- required for Windows users
-                        use_absolute_path = true,
-                    },
-                },
-            },
-            {
-                -- Make sure to set this up properly if you have lazy=true
-                'MeanderingProgrammer/render-markdown.nvim',
-                opts = {
-                    file_types = { "markdown", "Avante" },
-                },
-                ft = { "markdown", "Avante" },
-            },
-        },
-    },
-    {
-        -- aider
-        "GeorgesAlkhouri/nvim-aider",
-        cmd = "Aider",
-        dependencies = {
-            { "folke/snacks.nvim", version = ">=2.24.0" },
-            --- The below dependencies are optional
-            "catppuccin/nvim",
-            "nvim-tree/nvim-tree.lua",
-            --- Neo-tree integration
-            {
-             "nvim-neo-tree/neo-tree.nvim",
-                opts = function(_, opts)
-                    require("nvim_aider.neo_tree").setup(opts)
-            end,
-            },
-        },
+        "olimorris/codecompanion.nvim",
         config = function()
-            require("nvim_aider").setup({
-                aider_cmd="aider",
-                args = {
-                    "--config ~/.config/aider.yml"
+            require("codecompanion").setup({
+                keys = {
+                    toggle_chat = "<leader>cc",
+                    toggle_actions = "<leader>cp",
+                },
+                opts = {
+                    language = "Chinese",
+                    completion_provider = "blink",
+                        triggers = {
+                            acp_slash_commands = "\\",
+                            editor_context = "#",
+                            slash_commands = "/",
+                            tools = "@",
+                        },
+                },
+                interactions = {
+                    chat = {
+                        adapter = "vs",
+                    },
+                    inline = { adapter = "vs" },
+                    cmd = { adapter = "vs" },
+                    cmd = { adapter = "vs" },
+                },
+                adapters = {
+                    http = {
+                        vs = function()
+                            VS_API = vim.env.VS_API
+                            return require("codecompanion.adapters").extend("openai_compatible", {
+                                env = {
+                                    url = VS_API,
+                                    api_key = "API_KEY",
+                                    chat_url = "/v1/chat/completions",
+                                },
+                                schema = {
+                                    model = {
+                                        default = "gpt-5.5",
+                                        choices = {
+                                            "gpt-5",
+                                            "gpt-5.5",
+                                        },
+                                    },
+                                },
+                            })
+                        end
+                    },
+                    acp = {
+                        opencode = function()
+                            return require("codecompanion.adapters").extend("opencode", {
+                                commands = {
+                                    default = {"opencode", "acp"},
+                                },
+                            })
+                        end,
+                    },
                 },
             })
         end,
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "MeanderingProgrammer/render-markdown.nvim",
+        },
+        opts = {
+            language = "Chinese",
+            opts = {
+                log_level = "DEBUG", -- or "TRACE"
+            },
+        },
     },
 	{
 		-- 任务
