@@ -1,5 +1,6 @@
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.mouse = 'a'
+vim.opt.autoread = true
 
 -- Tab
 vim.opt.tabstop = 4

@@ -32,6 +32,18 @@ return {
         "xiyaowong/nvim-transparent",
     },
     {
+        "nvim-treesitter/nvim-treesitter",
+        lazy = false,
+        branch = 'main',
+        build = ":TSUpdate",
+        config = function()
+            require("nvim-treesitter").setup({
+                ensure_installed = { "markdown", "markdown_inline" },
+                highlight = { enable = true },
+            })
+        end,
+    },
+    {
         "nvim-treesitter/nvim-treesitter-context",
         config = function()
             require("treesitter-context").setup()
@@ -49,12 +61,6 @@ return {
         "nvim-tree/nvim-tree.lua",
         config = function()
             require("nvim-tree").setup()
-        end,
-    },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        config = function()
-            require("nvim-treesitter").setup()
         end,
     },
     {

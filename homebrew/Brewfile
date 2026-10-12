@@ -1,0 +1,232 @@
+tap "anomalyco/tap", trusted: true
+tap "can1357/tap"
+tap "costerwi/calculix"
+tap "deskflow/tap"
+tap "ganeshmshetty/tap"
+tap "steipete/tap"
+# AI pair programming in your terminal
+brew "aider"
+# Performance-portable, length-agnostic SIMD with runtime dispatch
+brew "highway"
+# Language Server for Ansible Files
+brew "ansible-language-server"
+# Download with resuming and segmented downloading
+brew "aria2"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
+# Automatic configure script builder
+brew "autoconf"
+# Language Server for Bash
+brew "bash-language-server"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
+# Cross-platform make
+brew "cmake"
+# Language Server for CMake
+brew "cmake-language-server"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Search API docs offline, in your terminal or browser
+brew "dasht"
+# USB programmer
+brew "dfu-util"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# CLI program that accepts piped input and presents files for selection
+brew "fpp"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# TIFF library and utilities
+brew "libtiff"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Highly customizable changelog generator
+brew "git-cliff"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Language server for the Go language
+brew "gopls"
+# GO Simple Tunnel - a simple tunnel written in golang
+brew "gost"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Development framework for multimedia applications
+brew "gstreamer"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Self-improving AI agent that creates skills from experience
+brew "hermes-agent"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
+brew "iperf3"
+# JSON diff and patch
+brew "jd"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Interactive environments for writing and running code
+brew "jupyterlab"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Cross-platform TUI database management tool
+brew "lazysql"
+# Terminal-based SSH manager
+brew "lazyssh"
+# Terminal file manager
+brew "lf"
+# LLM inference in C/C++
+brew "llama.cpp"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Language Server for the Lua language
+brew "lua-language-server"
+# Fast and user friendly build system
+brew "meson"
+# Menu-driven communications program
+brew "minicom"
+# Deep clean and optimize your Mac
+brew "mole"
+# Remote terminal application
+brew "mosh"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# No Nonsense Neovim Client in Rust
+brew "neovide"
+# Port scanning utility for large networks
+brew "nmap"
+# Tiny, lightning fast, feature-packed file manager
+brew "nnn"
+# NPM registry manager, fast switch between different registries
+brew "nrm"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
+# General-purpose speech recognition model
+brew "openai-whisper"
+# Development kit for the Java programming language
+brew "openjdk@21"
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Cross-platform library for audio I/O
+brew "portaudio"
+# Monitor data's progress through a pipe
+brew "pv"
+# Python Language Server for the Language Server Protocol
+brew "python-lsp-server"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.13"
+# QR Code generation
+brew "qrencode"
+# Safe, concurrent, practical language
+brew "rust"
+# Experimental Rust compiler front-end for IDEs
+brew "rust-analyzer"
+# Rust toolchain installer
+brew "rustup"
+# Display and control your Android device
+brew "scrcpy"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Command-line packet analyzer
+brew "tcpdump"
+# General purpose fuzzy finder TUI
+brew "television"
+# Simplified and community-driven man pages
+brew "tldr"
+# Terminal multiplexer
+brew "tmux"
+# Multi-platform(cross-platform) version of udp2raw-tunnel client
+brew "udp2raw-multiplatform"
+# Tunnel UDP packets over a TCP connection
+brew "udptunnel"
+# Maintained ctags implementation
+brew "universal-ctags"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# C++ Library Manager
+brew "vcpkg"
+# Sends magic packets to wake up network-devices
+brew "wakeonlan"
+# Automatic workarounds for problems in Wine
+brew "winetricks"
+# GNU compiler collection for x86_64-elf
+brew "x86_64-elf-gcc"
+# Language Server for Yaml Files
+brew "yaml-language-server"
+# GTK+ dialog boxes for the command-line
+brew "zenity"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
+# Android SDK component
+cask "android-platform-tools"
+# Display management tool
+cask "betterdisplay"
+# Database management tool
+cask "dbx"
+# Mouse and keyboard sharing utility
+cask "deskflow/tap/deskflow", trusted: true
+# Online diagram software
+cask "drawio"
+cask "font-lxgw-bright"
+cask "font-lxgw-neoxihei"
+cask "font-lxgw-simzhisong"
+cask "font-lxgw-wenkai"
+cask "font-maple-mono-normal-nf-cn"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Homebrew's official GUI
+cask "homebrew-app"
+# Pie menu
+cask "kando"
+# File archiver
+cask "keka"
+# GPU-based terminal emulator
+cask "kitty"
+# Lunar calendar for menu bar
+cask "lunarbar"
+# Instant actions for selected text
+cask "ganeshmshetty/tap/openclip", trusted: true
+# G-code generator for 3D printers
+cask "orcaslicer"
+# Utility to uninstall apps and remove leftover files from old/uninstalled apps
+cask "pearcleaner"
+# Rime input method engine
+cask "squirrel-app"
+# Free and open-source OpenVPN client
+cask "tunnelblick"
+# Network protocol analyzer
+cask "wireshark-app"
+# Open-source version of the X.Org X Window System
+cask "xquartz"
+# Multiplayer code editor
+cask "zed"
+go "golang.org/x/tools/gopls"
+npm "@dbx-app/mcp-server"
+npm "@earendil-works/pi-coding-agent"
+npm "@fission-ai/openspec"
+npm "agent-browser"
+npm "bun"
+npm "corepack"
+npm "openwiki"
+npm "pnpm"
+npm "scrcpy-mcp"
+npm "tree-sitter"
+npm "typescript-language-server"
+npm "typescript"
